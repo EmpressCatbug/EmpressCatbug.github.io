@@ -7,16 +7,21 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file if you have one -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background: #333;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+        }
+        h1, h2 {
+            margin: 0;
+            font-family: 'Georgia', serif;
         }
         nav {
             margin: 10px 0;
@@ -25,16 +30,18 @@
             margin: 0 15px;
             color: #fff;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #ffeaa7; /* Light lavender color on hover */
         }
         section {
             padding: 20px;
             margin: 10px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         footer {
             text-align: center;
@@ -46,11 +53,25 @@
             width: 100%;
         }
         a {
-            color: #0066cc;
+            color: #6c5ce7; /* Lavender link color */
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
+        }
+        .highlight {
+            background-color: #e8f6ff; /* Light blue background for highlights */
+            border-left: 5px solid #6c5ce7; /* Lavender left border */
+            padding: 10px;
+            margin: 10px 0;
+        }
+        iframe {
+            width: 100%;
+            max-width: 640px;
+            height: 480px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -69,18 +90,17 @@
 
     <section id="self-assessment">
         <h2>Professional Self-Assessment</h2>
-        <p>Completing my coursework throughout the Computer Science program and developing this ePortfolio has significantly helped me showcase my strengths and shape my professional goals and values. Throughout the program, I have honed my skills in software development, data structures, algorithms, and database management, which have all contributed to my preparedness for entering the workforce.</p>
-
+        <div class="highlight">
+            <p>Completing my coursework throughout the Computer Science program and developing this ePortfolio has significantly helped me showcase my strengths and shape my professional goals and values. Throughout the program, I have honed my skills in software development, data structures, algorithms, and database management, which have all contributed to my preparedness for entering the workforce.</p>
+        </div>
         <p>For example, my experience in group projects taught me the importance of collaboration and communication with team members and stakeholders. I learned to articulate technical concepts clearly and to adapt my communication style to suit different audiences. Additionally, the hands-on projects have provided me with practical experience in applying data structures and algorithms to solve real-world problems, reinforcing my understanding of these fundamental concepts.</p>
-
         <p>Through my coursework, I gained a solid foundation in software engineering principles and practices, focusing on developing a security mindset to anticipate potential vulnerabilities in software architecture and designs. This knowledge will be invaluable as I transition into the professional world, where ensuring data security is paramount.</p>
-
         <p>The artifacts included in this ePortfolio demonstrate a cohesive narrative of my learning journey. Each enhancement not only showcases the technical skills I have acquired but also reflects my growth in applying computer science principles. I am excited to share these artifacts, which represent the culmination of my efforts throughout the program.</p>
     </section>
 
     <section id="code-review">
         <h2>Informal Code Review Video</h2>
-        <iframe width="640" height="480" src="https://www.youtube.com/embed/9CaSgKfrYw4" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/9CaSgKfrYw4" allowfullscreen></iframe>
         <p>This video provides an overview of the existing functionality of my artifacts, highlights areas for improvement, and outlines planned enhancements. It serves as an introduction to the modifications I will be implementing.</p>
     </section>
 
