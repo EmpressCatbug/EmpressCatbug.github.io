@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Thermostat Project | Takeria Thompson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .project-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .project-page h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .project-page h2 {
+      font-size: 2rem;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      color: #e9d5ff;
+    }
+
+    .project-page h3 {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #c084fc;
+    }
+
+    .project-page p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    .project-diagram {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(186, 127, 255, 0.3);
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .back-link {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      color: #c084fc;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="sparkle-container"></div>
+  <div class="project-page">
+    <h1 class="glow">Smart Thermostat Project</h1>
+    <a class="back-link" href="../index.html">← Back to Portfolio</a>
+
+    <h2>Overview</h2>
+    <p>
+      This project demonstrates a smart thermostat system built on the Texas Instruments CC3220x LaunchPad, a microcontroller commonly used in embedded systems. 
+      Embedded systems are small, dedicated computers integrated into larger devices — like thermostats, medical devices, or even space probes — where they control specific functions in real-time.
+    </p>
+    
+    <p>
+      The thermostat monitors ambient temperature, allows user input via physical buttons, and controls an LED to simulate a heating element's status. It also mimics data reporting to a server, just like how smart home devices share data with a mobile app or cloud platform.
+    </p>
+    
+    <p>
+      Several hardware communication protocols were used to bring this system together:
+      <strong>I2C (Inter-Integrated Circuit)</strong> was used to communicate with a digital temperature sensor — think of it like a short-range conversation between two components on the same circuit board.
+      <strong>UART (Universal Asynchronous Receiver/Transmitter)</strong> enabled data to be sent to a virtual server, similar to how your computer communicates with a USB device.
+      <strong>GPIO (General Purpose Input/Output)</strong> was used to detect when buttons were pressed by the user.
+    </p>
+    
+    <p>
+      Together, these elements form a responsive, modular system that could serve as the foundation for more advanced smart home technologies. This project emphasizes clean architecture, hardware integration, and real-time feedback — core principles in embedded software engineering.
+    </p>    
+
+    <h2>Task Scheduler</h2>
+<p>
+  At the heart of the smart thermostat system is a task scheduler — a logical structure that determines the order and timing of each system action.
+  In embedded systems like this one, we can’t rely on large operating systems to manage tasks in the background, so we build our own simple scheduler
+  to make sure each component runs in the right order, at the right time.
+</p>
+
+<p>
+  The diagram below illustrates the main control flow of the thermostat:
+</p>
+
+<img src="images/TaskScheduler.drawio.png" alt="Task Scheduler Diagram" class="project-diagram" />
+
+<p>
+  The cycle begins with <strong>System Initialization</strong>, where hardware peripherals like sensors, timers, and communication interfaces are configured.
+  Once the system is ready, it proceeds to <strong>Read Temperature via I2C</strong>, which retrieves real-time temperature data from a digital sensor.
+</p>
+
+<p>
+  Next, the program checks for user input in <strong>Check Button States via GPIO</strong>. These physical buttons allow users to raise or lower the target temperature.
+  The <strong>Control LED</strong> step compares the current room temperature with the setpoint and updates the LED status accordingly — for example, turning the light on if the room is too cold.
+</p>
+
+<p>
+  After that, the system enters the <strong>Send Data via UART</strong> stage. Here, simulated data is packaged and sent out as if reporting to a remote server.
+  This step mimics how smart devices communicate with cloud platforms or mobile apps in real-world IoT systems.
+</p>
+
+<p>
+  Finally, a <strong>Timer Event Trigger</strong> introduces a short delay or interval before the scheduler reaches the <strong>End of Cycle</strong>, where it loops back and starts again.
+  This continuous loop ensures the system stays responsive and up to date, monitoring and reacting to new temperature readings and user actions in real time.
+</p>
+
+<p>
+  This modular, loop-based approach is a common practice in embedded systems, and designing it from scratch helped reinforce core concepts like system timing, I/O coordination, and real-time responsiveness.
+</p>
+
+
+<h2>Source Code & Architecture</h2>
+
+<p>
+  The smart thermostat was developed using <strong>Texas Instruments’ Code Composer Studio</strong> and programmed for the TI CC3220x LaunchPad — a powerful microcontroller designed for connected embedded applications.
+  The firmware implements real-time temperature monitoring, user input handling, LED status control, and UART communication using onboard peripherals and drivers from TI’s Software Development Kit (SDK).
+</p>
+
+<h3>Embedded Communication Interfaces</h3>
+<p>
+  <strong>I2C</strong> (Inter-Integrated Circuit) was used to retrieve live temperature data from a TMP006 digital sensor.<br>
+  <strong>GPIO</strong> (General Purpose Input/Output) was used to detect button presses and to control an LED that reflects the system’s heating status.<br>
+  <strong>UART</strong> (Universal Asynchronous Receiver/Transmitter) was used to simulate data transmission to a remote server, mirroring how real-world IoT devices report to cloud platforms.
+</p>
+
+<h3>Platform Evaluation</h3>
+<p>
+  I conducted a technical comparison of three microcontroller platforms — <strong>TI</strong>, <strong>Microchip</strong>, and <strong>Freescale (NXP)</strong> — to evaluate peripheral support, memory capacity, Wi-Fi integration, and development ecosystem.
+</p>
+<ul>
+  <li><strong>TI CC3220x:</strong> Most integrated platform with built-in Wi-Fi, robust security features, and excellent documentation and tooling.</li>
+  <li><strong>Microchip:</strong> Strong performance and support across multiple families, but requires more effort to configure and integrate Wi-Fi solutions.</li>
+  <li><strong>Freescale (NXP):</strong> Powerful architecture, but lacks built-in wireless support, leading to added hardware and software complexity.</li>
+</ul>
+
+<h3>Wi-Fi & Cloud Integration</h3>
+<p>
+  The CC3220x includes built-in Wi-Fi (802.11 b/g/n) and secure socket support, making it ideal for cloud-based communication. It also includes hardware-based encryption and a secure boot process — critical features for any real-world IoT solution.
+</p>
+
+<h3>Memory & Expandability</h3>
+<p>
+  The TI platform offers 1MB of Flash and 256KB of SRAM, which provides ample room for modular code, expansion, and future feature additions such as mobile app connectivity or external sensor integration. These specifications exceed the minimum requirements and allow for scalability.
+</p>
+
+<h3>Code Sample</h3>
+<p>Below is a snippet from the system’s main file, which initializes the board, starts the lightweight TI NoRTOS scheduler, and launches the main application thread:</p>
+
+<pre><code>
+int main(void)
+{
+    Board_init();           // Initialize board peripherals and drivers
+
+    /* Start NoRTOS (TI’s lightweight real-time OS) */
+    NoRTOS_start();
+
+    /* Launch main thread where application logic runs */
+    mainThread(NULL);
+
+    while (1) {}
+}
+</code></pre>
+
+<h3>View the Full Source</h3>
+<p>
+  The complete implementation, including task scheduler logic, I2C sensor integration, UART communication routines, and project documentation, is available here:<br>
+  <a href="https://github.com/EmpressCatbug/CS350Final" target="_blank">🔗 View Code on GitHub</a>
+</p>
+
+
+<h2>Reflection</h2>
+
+<h3>A. Key Accomplishments</h3>
+<p>
+  One of the project’s standout achievements was the successful integration of multiple hardware communication protocols — I2C, UART, and GPIO —
+  into a unified, responsive system. I effectively implemented a task-driven architecture that ensured real-time feedback from the
+  temperature sensor, immediate LED status updates, and seamless user interaction through physical buttons.
+  Additionally, simulating cloud communication via UART demonstrated a working prototype that could easily transition into a connected IoT device.
+</p>
+
+<h3>B. Areas for Improvement</h3>
+<p>
+  While the system operated reliably under normal conditions, I identified opportunities to further optimize the task scheduler for speed and responsiveness.
+  The system could benefit from interrupt-based scheduling for certain tasks rather than a looped polling model. Additionally, adding advanced error handling for
+  UART and sensor read failures would improve system robustness, especially in edge cases or production scenarios.
+</p>
+
+<h3>C. Tools & Support Network</h3>
+<p>
+  To support development, I utilized <strong>TI Code Composer Studio</strong> for coding and debugging, along with draw.io for planning
+  system state diagrams and task flow. I also referenced TI’s developer forums, official documentation, and GitHub repositories from the embedded systems community
+  to troubleshoot hardware communication and system timing behavior. These resources not only helped solve project-specific issues,
+  but also expanded my embedded systems knowledge base for future projects.
+</p>
+
+<h3>D. Transferable Skills</h3>
+<p>
+  This project strengthened a variety of technical and problem-solving skills that are highly transferable to both embedded and general software engineering roles:
+</p>
+<ul>
+  <li>Peripheral communication (I2C, UART, GPIO)</li>
+  <li>Real-time system design and task scheduling</li>
+  <li>Hardware/software integration and debugging</li>
+  <li>Documentation and code modularity</li>
+</ul>
+<p>
+  Beyond the technical aspects, the iterative problem-solving and hands-on implementation process helped reinforce agile thinking,
+  adaptability, and communication — all essential skills for professional development and team collaboration.
+</p>
+
+<h3>E. Maintainability & Scalability</h3>
+<p>
+  The codebase was written with long-term usability in mind. By modularizing core functions and following consistent naming and commenting practices,
+  I ensured that new developers or collaborators could easily understand and extend the system. The design supports scalability;
+  additional sensors, controls, or outputs could be added with minimal structural changes, making this a strong foundation for future smart home applications.
+</p>
+
+
+<h2>Conclusion</h2>
+<p>
+  This project provided a comprehensive, hands-on opportunity to design and implement a real-world embedded system from the ground up.
+  Through the integration of multiple communication protocols, responsive user controls, and simulated server communication,
+  I successfully created a functional prototype that mirrors the behavior of a commercial smart thermostat.
+</p>
+
+<p>
+  Beyond just achieving technical functionality, the experience deepened my understanding of how software interacts with hardware in a live environment.
+  I gained insight into system design considerations such as timing, modularity, and error handling — all of which are crucial for building
+  reliable and scalable embedded applications.
+</p>
+
+<p>
+  This smart thermostat project represents more than a school assignment; it’s a practical demonstration of my ability to design,
+  build, and document embedded solutions that can evolve into real-world products. The knowledge and skills developed during this process
+  directly contribute to my growth as a software engineer and will continue to inform how I approach future hardware-integrated and IoT-based systems.
+</p>
+
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

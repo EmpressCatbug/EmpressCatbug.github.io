@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pirate Maze AI Project | Takeria Thompson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../script.js" defer></script>
+  <style>
+    .project-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .project-page h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .project-page h2 {
+      font-size: 2rem;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      color: #e9d5ff;
+    }
+
+    .project-page h3 {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #c084fc;
+    }
+
+    .project-page p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    pre code {
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.05);
+      padding: 10px 15px;
+      display: block;
+      border-radius: 10px;
+      margin-top: 10px;
+      white-space: pre-wrap;
+    }
+
+    .back-link {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      color: #c084fc;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="sparkle-container"></div>
+  <div class="project-page">
+    <h1 class="glow">Pirate Maze AI Project</h1>
+    <a class="back-link" href="../index.html">← Back to Portfolio</a>
+
+    <h2>Overview</h2>
+    <p>
+      This project involved designing an intelligent pirate agent to compete with a human player in a treasure hunt maze.
+      The pirate uses reinforcement learning to navigate the environment and reach the treasure before the player.
+      This is a classic pathfinding challenge, where the goal is to train the agent to learn optimal movement patterns using rewards and trial-and-error.
+    </p>
+
+    <h2>Project Architecture</h2>
+    <p>
+      The game was implemented in Python and consisted of three key files:
+    </p>
+    <ul>
+      <li><strong>TreasureMaze.py</strong>: Defines the environment, maze layout, rewards, and movement rules.</li>
+      <li><strong>GameExperience.py</strong>: Captures episodes of state transitions and rewards for training.</li>
+      <li><strong>TreasureHuntGame.ipynb</strong>: The Jupyter Notebook where the agent, neural network, and training loop were implemented.</li>
+    </ul>
+    <p>
+      I created a deep Q-learning algorithm to train the pirate using a neural network. This involved defining the reward system,
+      balancing exploration vs. exploitation, and iterating over hundreds of training episodes.
+    </p>
+
+    <h3>Neural Network Training Snippet</h3>
+    <pre><code>
+model = Sequential()
+model.add(Dense(24, input_dim=state_size, activation='relu'))
+model.add(Dense(24, activation='relu'))
+model.add(Dense(action_size, activation='linear'))
+model.compile(loss='mse', optimizer=Adam(lr=learning_rate))
+
+def q_learning_train(maze, agent, episodes, gamma, epsilon):
+    for episode in range(episodes):
+        state = maze.reset()
+        done = False
+        while not done:
+            action = choose_action(state, epsilon)
+            next_state, reward, done = maze.step(action)
+            target = reward + gamma * np.max(agent.predict(next_state))
+            q_values = agent.predict(state)
+            q_values[0][action] = target
+            agent.fit(state, q_values, epochs=1, verbose=0)
+            state = next_state
+    </code></pre>
+
+    <h2>Design Reflection</h2>
+    <p>
+      Designing an intelligent agent that could consistently beat a human in a maze-based treasure hunt required more than just coding —
+      it demanded careful analysis of how both humans and machines approach problem-solving.
+      In my design defense, I explored the parallels between human reasoning (like memory, trial and error, and pattern recognition)
+      and machine learning techniques like reinforcement learning and Q-value approximation.
+    </p>
+
+    <p>
+      The pirate agent learned through trial and error — using rewards to reinforce correct paths and punish inefficient or failed ones.
+      This mirrors how a human might learn a maze by exploring dead ends and eventually building an internal map of where to go.
+      I evaluated how different parameters like reward structure, exploration rate (epsilon), and learning rate impact the agent’s ability
+      to generalize and adapt to new environments.
+    </p>
+
+    <p>
+      I also discussed ethical and design considerations, such as ensuring the agent behaves fairly within the rules of the game
+      and doesn’t exploit unintended behaviors or bugs. While this was a simulated environment, these concerns are directly
+      applicable to real-world AI — where bias, transparency, and predictability are critical to user trust and safety.
+    </p>
+
+    <p>
+      Ultimately, the design defense helped me articulate not just how the algorithm worked, but why the solution was effective,
+      and how to improve or scale it for future use cases.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      This project significantly expanded my understanding of reinforcement learning, neural networks, and agent-based design.
+      I gained experience in applying deep learning to dynamic environments, tuning training parameters, and interpreting AI performance in real-time.
+      The skills acquired through this project are directly applicable to fields like robotics, game development, and intelligent automation.
+    </p>
+  </div>
+</body>
+</html>

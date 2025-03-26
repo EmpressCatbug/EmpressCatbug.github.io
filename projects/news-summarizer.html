@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News Summarizer AI | Takeria Thompson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../script.js" defer></script>
+  <style>
+    .project-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .project-page h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .project-page h2 {
+      font-size: 2rem;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      color: #e9d5ff;
+    }
+
+    .project-page h3 {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #c084fc;
+    }
+
+    .project-page p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    pre code {
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.05);
+      padding: 10px 15px;
+      display: block;
+      border-radius: 10px;
+      margin-top: 10px;
+      white-space: pre-wrap;
+    }
+
+    .back-link {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      color: #c084fc;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="sparkle-container"></div>
+  <div class="project-page">
+    <h1 class="glow">News Summarizer AI</h1>
+    <a class="back-link" href="../index.html">← Back to Portfolio</a>
+
+    <h2>Overview</h2>
+    <p>
+      News Summarizer AI is a full-stack web application currently in development. It’s designed to intelligently scrape, clean, and summarize current news articles using natural language processing and machine learning.
+      Built with FastAPI and Docker, this project explores modern deployment techniques and the integration of AI APIs for automated content summarization.
+    </p>
+
+    <h2>Project Goals</h2>
+    <ul>
+      <li>✅ Automatically crawl and fetch news articles from various public sources</li>
+      <li>✅ Clean and preprocess content using custom NLP pipelines</li>
+      <li>🔄 Summarize the content using the OpenAI API or similar LLM (in progress)</li>
+      <li>🔄 Present clean summaries in a web dashboard or REST API (planned)</li>
+      <li>🔄 Add filtering by topic, sentiment, or region (planned)</li>
+    </ul>
+
+    <h2>Technology Stack</h2>
+    <p>
+      The backend is being developed using <strong>FastAPI</strong> for high-speed web handling, <strong>Uvicorn</strong> as the ASGI server,
+      and <strong>Pydantic</strong> for robust data validation. The app is containerized using <strong>Docker</strong> for consistent deployment across platforms.
+    </p>
+    <ul>
+      <li><strong>FastAPI:</strong> Python-based API framework (async-friendly)</li>
+      <li><strong>OpenAI API:</strong> Summarization powered by GPT models</li>
+      <li><strong>crawl4ai:</strong> Custom scraping library (in testing)</li>
+      <li><strong>Docker:</strong> Used for development, deployment, and scaling</li>
+    </ul>
+
+    <h3>Sample Endpoint (in progress)</h3>
+    <pre><code>
+GET /summarize?url=https://example.com/news-article
+
+Response:
+{
+  "title": "Global Markets Surge After Fed Meeting",
+  "summary": "Markets rebounded following the Federal Reserve's decision to..."
+}
+    </code></pre>
+
+    <h2>Development Status</h2>
+    <p>
+      The web crawler is functional and the FastAPI backend is live in a local environment. The summarization engine using OpenAI’s GPT is partially integrated and is currently being tuned for accuracy and performance.
+    </p>
+    <p>
+      UI/UX components, error handling, and article filtering are planned next, along with a user-facing dashboard to make it accessible for public or enterprise use.
+    </p>
+
+    <h2>Vision</h2>
+    <p>
+      News Summarizer AI was inspired by the increasing volume of digital content and the need for users to consume information quickly and effectively.
+      This tool aims to provide a clean, curated view of trending events with high-quality summaries — useful for researchers, students, journalists, and anyone overwhelmed by information overload.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      While still under construction, this project demonstrates key skills in API development, asynchronous architecture, containerization, and AI integration.
+      It’s also an example of how thoughtful design and technology can come together to solve modern information challenges.
+      Future updates will include deployment to the cloud and a fully interactive dashboard.
+    </p>
+  </div>
+</body>
+</html>
