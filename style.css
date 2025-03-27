@@ -14,6 +14,7 @@
     min-height: 100vh;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    cursor: none;
   }
   
   /* Animated galaxy gradient background */
@@ -163,13 +164,33 @@
     }
   }
   
+  .butterfly-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url('assets/cursor/butterfly.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 9999;
+    animation: flutter 0.05s ease-out;
+  }
+  
+  @keyframes flutter {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-4px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+  
   /* Sparkle Effect */
   #sparkle-container {
     position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 9998;
   }
   
   .sparkle {
@@ -180,6 +201,8 @@
     background: radial-gradient(circle, #e9d5ff 0%, #9333ea 100%);
     box-shadow: 0 0 10px #d8b4fe;
     animation: sparkleFade 0.5s ease-out forwards;
+    z-index: 9998;
+   
   }
   
   @keyframes sparkleFade {

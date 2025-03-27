@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Scene Project | Takeria Thompson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../script.js" defer></script>
+  <style>
+    .project-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .project-page h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .project-page h2 {
+      font-size: 2rem;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      color: #e9d5ff;
+    }
+
+    .project-page h3 {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #c084fc;
+    }
+
+    .project-page p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    ul {
+      color: #ddd;
+      margin-top: 10px;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 100%;
+      box-shadow: 0 0 15px rgba(186, 127, 255, 0.2);
+    }
+
+    .back-link {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      color: #c084fc;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="sparkle-container"></div>
+  <div class="project-page">
+    <h1 class="glow">3D Scene Project Enhancement</h1>
+    <a class="back-link" href="../index.html">← Back to Portfolio</a>
+
+    <h2>Overview</h2>
+    <p>
+      This 3D graphics project began as a final assignment in my CS 330: Computational Graphics and Visualization course.
+      I created a fully interactive OpenGL scene replicating my desk setup — featuring a lavender corner desk, three monitors, and keyboard.
+      The scene included WASD movement, perspective switching, textured surfaces, and multiple lighting types.
+    </p>
+    <p>
+      To improve visual quality and workflow, I enhanced the project by recreating the scene in Blender. This transition allowed me to incorporate high-resolution textures, advanced lighting, animation, and camera control.
+    </p>
+
+    <h2>OpenGL Implementation Highlights</h2>
+<p>
+  The original version of this scene was developed in OpenGL from scratch using C++, with direct control over shaders, geometry, and user interaction logic. I focused on both technical accuracy and user experience.
+</p>
+<ul>
+  <li>📦 Modeled the entire scene using primitive shapes (cubes, cylinders, etc.)</li>
+  <li>🖱️ Mouse-controlled camera orientation (look up/down/left/right)</li>
+  <li>🎮 Keyboard navigation (W/A/S/D movement) with mouse scroll for movement speed adjustment</li>
+  <li>🔁 Real-time perspective switching with keys (P for perspective, O for orthographic)</li>
+  <li>💡 Implemented ambient, diffuse, and specular lighting for realism</li>
+  <li>🧩 Modular function structure (lighting, input, draw calls) for clean, reusable code</li>
+</ul>
+<p>
+  This interactive control system created an intuitive first-person navigation experience, showcasing both visual composition and responsive camera mechanics.
+</p>
+
+
+    <h2>Visual Comparison</h2>
+    <p>Below you can see the transformation from OpenGL to Blender:</p>
+
+    <h3>Before: OpenGL Scene</h3>
+    <img src="images/cat1before.png" alt="OpenGL scene before enhancement" />
+
+    <h3>After: Blender Enhancement</h3>
+    <img src="images/cat1after.png" alt="Blender scene after enhancement" />
+
+    <h2>Blender Enhancement Goals</h2>
+    <p>
+      My goal was to bring realism, creativity, and technical depth to the original concept using Blender.
+      I applied real-world materials, animations, and improved visual feedback that would be difficult to achieve in OpenGL alone.
+    </p>
+    <ul>
+      <li>🎨 UV unwrapping, stylized pastel palette, and reflective materials</li>
+      <li>💡 Advanced lighting (area lights, HDR reflections, soft shadows)</li>
+      <li>📸 Dynamic camera movement and layout control</li>
+      <li>🕹️ Interactive elements such as a floating hologram and backlit keyboard</li>
+    </ul>
+
+    <h2>Reflection</h2>
+<p>
+  One of the most rewarding aspects of this project was developing the camera control system in OpenGL. By handling input buffers and transformation matrices directly, I created a responsive and immersive navigation system — allowing users to move freely with the keyboard (WASD), look around with the mouse, and dynamically adjust speed and viewpoint with scroll and key toggles.
+</p>
+<p>
+  This low-level implementation gave me hands-on experience with mathematical foundations of 3D graphics, including view matrices, field of view adjustments, and event polling.
+  It also helped reinforce best practices in modular programming, which later made the Blender transition easier.
+</p>
+<p>
+  Iteration, modularity, and user-centered interaction design were core to my process — skills that will carry forward in future UI/UX or 3D development roles.
+</p>
+
+
+    <h2>Final Outcome</h2>
+    <p>
+      This project directly aligns with outcomes in software design, innovation, and visual communication.
+      I demonstrated advanced modeling, interactive controls, and creative visual design while adapting to new tools. 
+      It also reflects my attention to usability, detail, and immersive design — all of which will be important in my future UI/UX and graphics work.
+    </p>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

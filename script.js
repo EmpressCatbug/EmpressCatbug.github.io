@@ -36,18 +36,28 @@ const roles = [
   
   document.addEventListener("DOMContentLoaded", () => {
     if (roles.length) setTimeout(type, 500);
-  });
   
-  // ---------- Sparkle Trail ----------
-  const sparkleContainer = document.getElementById("sparkle-container");
+    const butterfly = document.querySelector(".butterfly-cursor");
+    const sparkleContainer = document.getElementById("sparkle-container");
   
-  document.addEventListener("mousemove", (e) => {
-    const sparkle = document.createElement("div");
-    sparkle.className = "sparkle";
-    sparkle.style.left = `${e.clientX}px`;
-    sparkle.style.top = `${e.clientY}px`;
-    sparkleContainer.appendChild(sparkle);
+    document.addEventListener("mousemove", (e) => {
+      const offsetX = -30; // Adjust to center butterfly
+      const offsetY = -30;
   
-    setTimeout(() => sparkle.remove(), 500);
+      const butterflyX = e.clientX + offsetX;
+      const butterflyY = e.clientY + offsetY;
+  
+      // Move butterfly to cursor position
+      butterfly.style.transform = `translate(${butterflyX}px, ${butterflyY}px)`;
+  
+      // Create sparkle at butterfly's center
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.style.left = `${butterflyX + 25}px`; // trail from near center of gif
+      sparkle.style.top = `${butterflyY + 25}px`;
+      sparkleContainer.appendChild(sparkle);
+  
+      setTimeout(() => sparkle.remove(), 500);
+    });
   });
   

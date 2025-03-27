@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animal Rescue Dashboard | Takeria Thompson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../script.js" defer></script>
+  <style>
+    .project-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .project-page h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .project-page h2 {
+      font-size: 2rem;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      color: #e9d5ff;
+    }
+
+    .project-page p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    ul {
+      color: #ddd;
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    pre code {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px;
+      border-radius: 8px;
+      display: block;
+      white-space: pre-wrap;
+      margin-top: 10px;
+    }
+
+    .back-link {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      color: #c084fc;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 100%;
+      box-shadow: 0 0 15px rgba(186, 127, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div id="sparkle-container"></div>
+  <div class="project-page">
+    <h1 class="glow">Grazioso Salvare Animal Rescue Dashboard</h1>
+    <a class="back-link" href="../index.html">← Back to Portfolio</a>
+
+    <h2>Overview</h2>
+    <p>
+      This interactive dashboard was developed for Grazioso Salvare, an animal rescue organization specializing in Water Rescue,
+      Mountain/Wilderness Rescue, and Disaster/Individual Tracking. Built with <strong>MongoDB</strong> and <strong>Dash</strong>,
+      the application allows users to visualize and manage animal data in real-time, making it easier to assess operations and support rescue efforts.
+    </p>
+
+    <h2>Core Features</h2>
+    <ul>
+      <li>📊 <strong>Dynamic Filtering:</strong> Radio buttons for selecting rescue operation type.</li>
+      <li>📋 <strong>Interactive Data Table:</strong> Paginated, sortable table of rescue animals.</li>
+      <li>📈 <strong>Visualizations:</strong> Pie chart showing animal breed distribution.</li>
+      <li>🗺️ <strong>Geolocation Map:</strong> Dash Leaflet integration with markers per animal.</li>
+    </ul>
+
+    <h2>Tech Stack</h2>
+    <ul>
+      <li><strong>MongoDB:</strong> Efficient NoSQL storage and flexible data schema</li>
+      <li><strong>Pandas:</strong> Data cleaning and CSV → MongoDB transformation</li>
+      <li><strong>Dash + Plotly Express:</strong> UI layout and interactive graphs</li>
+      <li><strong>Dash Leaflet:</strong> Mapping animal coordinates with popups + tooltips</li>
+    </ul>
+
+    <h2>Code Snippets</h2>
+    <h3>📥 Data Loading</h3>
+    <pre><code>df = pd.read_csv("aac_shelter_outcomes.csv")
+data_dict = df.to_dict("records")
+collection.insert_many(data_dict)</code></pre>
+
+    <h3>🔁 Dynamic Dashboard Callback</h3>
+    <pre><code>@app.callback(
+  [Output('datatable-id', 'data'),
+   Output('graph-id', 'figure'),
+   Output('map-id', 'children')],
+  [Input('filter-type', 'value')]
+)
+def update_dashboard(filter_type):
+    if filter_type == 'reset':
+        data = df
+    else:
+        data = get_filtered_data(filter_type)
+    fig = px.pie(data, names='breed', title='Preferred Animals')
+    markers = [
+        dl.Marker(position=[row['location_lat'], row['location_long']],
+            children=[dl.Tooltip(row['breed']), dl.Popup(row['name'])])
+        for _, row in data.iterrows()
+    ]
+    return data.to_dict('records'), fig, markers</code></pre>
+
+    <h2>Challenges & Solutions</h2>
+    <ul>
+      <li><strong>Data Cleaning:</strong> Handled missing values and standardized location fields.</li>
+      <li><strong>MongoDB CRUD:</strong> Used <code>pymongo</code> to insert and manage data safely.</li>
+      <li><strong>Component Sync:</strong> Dash callbacks enabled real-time updates across all visualizations.</li>
+    </ul>
+    
+    <section>
+        <h2>Screenshot Highlights</h2>
+        <h3>Initial Dashboard View</h3>
+        <img src="images/CS 340 Module 7 Project 2 (initial_state).png" alt="Initial Dashboard View" />
+        <img src="images/CS 340 Module 7 Project 2 (initial_state_graphmap).png" alt="Initial Graph and Map" />
+  
+        <h3>Water Rescue View</h3>
+        <img src="images/CS 340 Module 7 Project 2 (water).png" alt="Water Rescue Dashboard" />
+        <img src="images/CS 340 Module 7 Project 2 (water_graphmap).png" alt="Water Rescue Map" />
+  
+        <h3>Mountain/Wilderness Rescue View</h3>
+        <img src="images/CS 340 Module 7 Project 2 (wild).png" alt="Wilderness Rescue Dashboard" />
+        <img src="images/CS 340 Module 7 Project 2 (wild_graphmap).png" alt="Wilderness Rescue Map" />
+  
+        <h3>Disaster/Individual Tracking View</h3>
+        <img src="images/CS 340 Module 7 Project 2 (disaster).png" alt="Disaster Rescue Dashboard" />
+        <img src="images/CS 340 Module 7 Project 2 (disaster_graphmap).png" alt="Disaster Rescue Map" />
+      </section>
+
+    <h2>Reflections & Takeaways</h2>
+    <p>
+      This project strengthened my full-stack development skills—blending backend database logic with front-end interactivity.
+      It showcased the power of reactive data pipelines, geographic mapping, and real-world filtering logic.
+    </p>
+    <p>
+      I gained valuable insights into handling flexible schemas, creating modular dashboards, and ensuring high usability for non-technical users.
+    </p>
+
+    <h2>Final Outcome</h2>
+    <p>
+      The Grazioso Salvare dashboard is a clean, scalable solution tailored for animal rescue professionals.
+      It integrates data science, database performance, and user experience design—making it one of my proudest web application projects.
+    </p>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>
