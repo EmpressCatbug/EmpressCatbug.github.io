@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Backend Services | Takeria Thompson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../script.js" defer></script>
+  <style>
+    .project-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .project-page h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .project-page h2 {
+      font-size: 2rem;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      color: #e9d5ff;
+    }
+
+    .project-page p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    ul {
+      color: #ddd;
+      margin-top: 10px;
+    }
+
+    .back-link {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      color: #c084fc;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
+    pre code {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px;
+      border-radius: 8px;
+      display: block;
+      white-space: pre-wrap;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="sparkle-container"></div>
+  <div class="project-page">
+    <h1 class="glow">CS 320 Backend Services Optimization</h1>
+    <a class="back-link" href="../index.html">← Back to Portfolio</a>
+
+    <h2>Overview</h2>
+    <p>
+      This project demonstrates my ability to develop, organize, and test backend services using Java and JUnit as part of CS 320.
+      Acting as a software engineer for Grand Strand Systems, I created modular service classes for a mobile application and applied comprehensive unit testing to ensure functionality and quality assurance.
+    </p>
+
+    <h2>Services Developed</h2>
+    <p>
+      I developed three independent services — Contact, Task, and Appointment — each with their own object model, service manager, and unit tests.
+      These backend components handled creation, updating, and deletion without any UI layer.
+    </p>
+    <ul>
+      <li><strong>Contact Service:</strong> ID, name, phone, address with validation</li>
+      <li><strong>Task Service:</strong> Task name and description with character limits</li>
+      <li><strong>Appointment Service:</strong> Date-time scheduling with conflict prevention</li>
+    </ul>
+
+    <h2>Unit Testing Strategy</h2>
+    <p>
+      I implemented a full suite of JUnit test cases to validate functionality and constraints. The tests included positive cases, exception handling, and edge validation (e.g., nulls, ID duplication).
+      Coverage exceeded 80%, ensuring code reliability and regression safety.
+    </p>
+
+    <h3>Example Test Snippet</h3>
+    <pre><code>
+@Test
+public void testAddContact() {
+    ContactService service = new ContactService();
+    Contact contact = new Contact("123", "Takeria", "5551234567", "Galaxy Blvd");
+    service.addContact(contact);
+    assertEquals("Takeria", service.getContact("123").getFirstName());
+}
+    </code></pre>
+
+    <h2>Software Design & Modularity</h2>
+    <p>
+      The services were structured using object-oriented principles. Each class was modular, independent, and easy to extend. 
+      I separated logic into reusable methods and grouped related functionality into their own services — ensuring scalability and easier maintenance.
+    </p>
+
+    <h2>Key Learnings & Reflection</h2>
+    <ul>
+      <li>🧪 Unit testing revealed subtle edge-case bugs and helped improve input validation</li>
+      <li>📊 Peer code reviews and automated testing helped reinforce security and best practices</li>
+      <li>🧱 Modular design improved maintainability and aligned with real-world engineering expectations</li>
+      <li>🧠 Future testing strategies will include integration and system testing for full-stack readiness</li>
+    </ul>
+
+    <h2>Final Outcome</h2>
+    <p>
+      This project helped me master the fundamentals of quality backend architecture and software testing.
+      I demonstrated not only how to build and organize backend services, but also how to ensure their functionality through rigorous unit testing.
+    </p>
+    <p>
+      These experiences will guide me in building robust, secure, and test-driven systems in future software engineering roles.
+    </p>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

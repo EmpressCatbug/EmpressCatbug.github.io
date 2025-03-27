@@ -1,272 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Takeria Thompson - ePortfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        h1, h2 {
-            margin: 0;
-            font-family: 'Georgia', serif;
-        }
-        nav {
-            margin: 10px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffeaa7; /* Light lavender color on hover */
-        }
-        section {
-            padding: 20px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #333;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        a {
-            color: #6c5ce7; /* Lavender link color */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .highlight {
-            background-color: #e8f6ff; /* Light blue background for highlights */
-            border-left: 5px solid #6c5ce7; /* Lavender left border */
-            padding: 10px;
-            margin: 10px 0;
-        }
-        iframe {
-            width: 100%;
-            max-width: 640px;
-            height: 480px;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Takeria Thompson | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div class="butterfly-cursor"></div>
+  <!-- Sparkle Effect -->
+  <div id="sparkle-container"></div>
 
-    <header>
-        <h1 class="typing">Welcome to Takeria's Portfolio</h1>
-        <h2>Web Designer | UX/UI Enthusiast | Software Developer</h2>
-        <nav>
-            <a href="#self-assessment">Self-Assessment</a>
-            <a href="#code-review">Informal Code Review</a>
-            <a href="#artifacts">Artifacts</a>
-            <a href="#enhancements">Enhancements</a>
-        </nav>
-    </header>
+  <!-- Galaxy Background (can be gradient or animated particles later) -->
+  <div id="background"></div>
 
-    <section id="self-assessment">
-    <h2>Professional Self-Assessment</h2>
-    <p>As I approach the culmination of my Bachelor of Science degree in Computer Science through the CS 499 Capstone course, I find myself reflecting on my journey and the wealth of knowledge I have gained along the way. This narrative encapsulates my experiences and how they align with the course outcomes, highlighting my growth in collaboration, effective communication, problem-solving, innovation, and security awareness.</p>
-    
-    <h3>Course Outcome 1: Building Collaborative Environments</h3>
-    <p>Throughout my academic and project experiences, I have actively employed strategies for building collaborative environments that support organizational decision-making in computer science. A significant enhancement involved a team project in which we developed a web-based application. By facilitating regular team meetings and using collaboration tools like GitHub and Slack, I ensured that everyone, regardless of their role, could contribute to discussions.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="glow">Takeria Thompson</h1>
+    <p class="typed-text"><span id="typing"></span><span class="cursor">|</span></p>
+  </section>
 
-    <p>This inclusive approach led to a 30% increase in our team's productivity and a 20% reduction in project turnaround time due to enhanced clarity and alignment on project goals. Stakeholder feedback indicated that our application effectively met user needs, illustrating how a collaborative environment can enhance decision-making and project outcomes.</p>
+  <!-- Projects -->
+<section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+  
+      <a href="projects/thermostat.html" class="project-card">
+        <h3>Smart Thermostat</h3>
+        <p>Embedded system for room temperature control with UART + I2C.</p>
+      </a>
+  
+      <a href="projects/pirate-maze.html" class="project-card">
+        <h3>Pirate Maze AI</h3>
+        <p>AI with TensorFlow & Keras navigating a procedural maze.</p>
+      </a>
+  
+      <a href="projects/news-summarizer.html" class="project-card">
+        <h3>News Summarizer</h3>
+        <p>Dockerized FastAPI app that crawls and summarizes news articles.</p>
+      </a>
 
-    <h3>Course Outcome 2: Professional-Quality Communications</h3>
-    <p>I have also focused on designing, developing, and delivering professional-quality communications tailored to diverse audiences. For my capstone project, I prepared a comprehensive technical report detailing the enhancements made to a previous software project. The report included clear visuals, structured content, and an executive summary for non-technical stakeholders.</p>
+      <a href="projects/code-review.html" class="project-card">
+        <h3>Code Review Showcase</h3>
+        <p>Live walkthrough video showcasing thoughtful and professional code review techniques.</p>
+      </a>
+      <a href="projects/3d-scene.html" class="project-card">
+       <h3>3D Scene Enhancement</h3>
+       <p>Transitioned from OpenGL to Blender. Modeled desk setup with lighting, textures, and animations.</p>
+     </a>
 
-    <p>Additionally, I delivered several presentations using tools like Microsoft PowerPoint, ensuring that my messaging was clear and engaging. Feedback from these presentations highlighted a 25% increase in audience comprehension, affirming my ability to adapt my communication style to different audiences and contexts.</p>
+     <a href="projects/backend.html" class="project-card">
+        <h3>Backend Services Optimization</h3>
+        <p>Developed and tested Java services with JUnit for a mobile app backend. Focus on QA, modularity, and maintainability.</p>
+      </a>
 
-    <h3>Course Outcome 3: Designing and Evaluating Computing Solutions</h3>
-    <p>In my journey to design and evaluate computing solutions, I tackled a real-world problem involving the optimization of a database system. Using algorithmic principles, I implemented a new indexing strategy that improved query response times by 40%. This project required careful consideration of trade-offs between speed and resource usage, demonstrating my ability to apply computer science practices effectively.</p>
+      <a href="projects/dashboard.html" class="project-card">
+        <h3>Animal Rescue Dashboard</h3>
+        <p>MongoDB + Dash-based dashboard for visualizing rescue data with maps, charts, and real-time filters.</p>
+      </a>
+      
+      
+    </div>
+  </section>
 
-    <p>Additionally, I enhanced my 3D scene project, initially created in CS 330: Computational Graphics and Visualization. This artifact, which replicates my personal desk setup, highlights my skills in 3D modeling, texture application, and scene navigation. Transitioning from OpenGL to Blender allowed me to apply high-resolution textures and realistic lighting, improving both visual complexity and interactivity. These enhancements were guided by my goals to apply principles of software engineering and develop user-friendly applications.</p>
+  <!-- About -->
+  <section class="section" id="about">
+    <h2>About Me</h2>
+<p>
+  I’m a creative software engineer who loves space, design, and turning cool ideas into code. 
+  This galaxy is just the beginning. 🌠
+</p>
+<p>
+  I recently graduated <strong>Magna Cum Laude</strong> with a <strong>3.7 GPA</strong>, earning a Bachelor of Science in Computer Science. 
+  Throughout my academic career, I explored everything from full-stack development and embedded systems to machine learning and 3D graphics.
+</p>
+<p>
+  My passion lies at the intersection of art and engineering — whether building responsive web applications, training intelligent agents, 
+  modeling immersive 3D scenes in Blender, or writing secure backend services. I approach every project with curiosity, precision, and creativity.
+</p>
+<p>
+  I believe that great software should not only work well, but look and feel great too. 
+  If you're looking for a developer who can think like an engineer, create like a designer, and dream like a stargazer — you're in the right orbit.
+</p>
 
-    <h3>Course Outcome 4: Innovative Techniques and Tools</h3>
-    <p>My professional growth has been characterized by a commitment to using innovative techniques and tools. One significant enhancement involved integrating machine learning algorithms into a data analysis project, which I completed as part of my coursework. I employed Python libraries such as scikit-learn to develop predictive models that identified customer behavior patterns.</p>
+    <!-- Avatar placeholder -->
+    <img src="website.avatar.png" alt="Takeria's Astronaut Avatar" id="avatar" />
+  </section>
 
-    <p>This integration added value by improving decision-making processes and highlighted my ability to implement industry-specific goals through innovative practices. The project yielded a 35% increase in campaign effectiveness, demonstrating the tangible benefits of embracing modern technologies.</p>
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:takeriat554@gmail.com">takeriat554@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/EmpressCatbug" target="_blank">EmpressCatbug</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/takeria-thompson/" target="_blank">Takeria Thompson</a></p>
+  </section>
 
-    <h3>Course Outcome 5: Developing a Security Mindset</h3>
-    <p>In today’s digital landscape, fostering a security mindset is crucial. I actively sought to anticipate adversarial exploits in software architecture by conducting comprehensive security assessments of my projects. For instance, I led a code review that identified potential vulnerabilities in an application I developed. By implementing best practices such as input validation and secure coding techniques, I reduced security flaws by 50%.</p>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Takeria Thompson | Crafted with stardust ✨</p>
+  </footer>
 
-    <p>Moreover, I initiated team training sessions on secure development practices, cultivating a culture of security awareness within my group. This proactive approach not only safeguarded our data but also aligned with industry standards for privacy and security.</p>
-
-    <h3>Conclusion</h3>
-    <p>In summary, my professional journey through the Computer Science program has been a transformative experience. I have consistently sought to align my work with course outcomes, achieving quantifiable results in collaboration, communication, problem-solving, innovation, and security. As I prepare for the next steps in my career, I am excited to leverage the skills and knowledge I have acquired to contribute meaningfully to the field of computer science and make a positive impact in my future endeavors.</p>
-</section>
-
-<section id="personal-projects">
-    <h2>Personal Project Narratives</h2>
-
-    <h3>1. 3D Scene Project Enhancement</h3>
-    <p>I enhanced a 3D scene project that replicates my personal desk setup, initially created in CS 330. This artifact includes a lavender corner desk and three monitors modeled using basic geometric shapes. The original project utilized OpenGL, but I transitioned to Blender to apply high-resolution textures, realistic lighting, and improved interactions. This enhancement not only highlighted my technical skills but also demonstrated my adaptability in using industry-standard tools. By refining my understanding of lighting and texture application, I was able to create a more immersive and visually appealing environment.</p>
-    <!-- Add the image here -->
-    <img src="cat1before.png" alt="3D Scene Project" style="width:100%; max-width:640px; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0, 0, 0, 0.2);">
-
-    <h3>2. Backend Services Optimization</h3>
-    <p>As part of my coursework in CS 320, I focused on optimizing backend services by enhancing data structure efficiency. Specifically, I improved hash maps for quicker lookups, which significantly reduced response times in our application. This experience allowed me to apply algorithmic principles and solidify my understanding of efficient data handling, leading to a 40% increase in processing speed.</p>
-
-    <h3>3. Database Project with MongoDB</h3>
-    <p>In my database course (CS 340), I worked on a project involving an Animal Rescue Database using MongoDB. My enhancements included experimenting with indexing and aggregation techniques to handle larger datasets efficiently. This project not only provided practical experience with NoSQL databases but also reinforced my understanding of data management principles and how to optimize database performance for real-world applications.</p>
-
-    <p>These projects represent key milestones in my journey, demonstrating my growth in various areas of computer science and aligning with the course outcomes. I look forward to further developing these skills as I transition into my professional career.</p>
-</section>
-
-
-    <section id="code-review">
-        <h2>Informal Code Review Video</h2>
-        <iframe src="https://www.youtube.com/embed/9CaSgKfrYw4" allowfullscreen></iframe>
-        <p>This video provides an overview of the existing functionality of my artifacts, highlights areas for improvement, and outlines planned enhancements. It serves as an introduction to the modifications I will be implementing.</p>
-    </section>
-
-    <section id="artifacts">
-        <h2>Narratives for Artifacts</h2>
-
-        <h3>Artifact 1: CS330 Final Project: 3D Scene and Design Decisions</h3>
-        <p><strong>Brief Description:</strong> This artifact is a 3D modeling project created using OpenGL during my CS 330 course: Computational Graphics and Visualization. It was developed in Fall 2023 as my final project, showcasing my ability to create a realistic representation of my desk setup.</p>
-
-        <p><strong>Justification for Inclusion:</strong> I selected this artifact for my ePortfolio because it exemplifies my skills in 3D modeling and graphics programming. Key components include the intricate geometry created in OpenGL and the application of textures and lighting techniques. The enhancements I plan to implement, such as transitioning to Blender for advanced modeling and animation, will significantly improve the artifact's realism and interactivity, aligning with industry-standard practices.</p>
-
-        <p><strong>Reflection on Enhancement Process:</strong> In enhancing this artifact, I learned about the complexities of transitioning between different software platforms. One challenge was adapting my existing OpenGL knowledge to Blender's interface and capabilities. I incorporated feedback from peers, which helped refine my approach to modeling and texturing. The artifact will be improved by showcasing high-resolution textures, realistic lighting setups, and added animations. The course outcomes I fully met include:</p>
-        <ul>
-            <li><strong>Design, develop, and deliver professional-quality oral, written, and visual communications:</strong> By producing high-quality visual models and documentation, I demonstrated the ability to effectively communicate technical concepts.</li>
-            <li><strong>Demonstrate an ability to use well-founded and innovative techniques:</strong> Transitioning to Blender showcases my ability to apply advanced techniques in 3D modeling.</li>
-        </ul>
-        <p>While I could further improve on delivering professional-quality communications, especially regarding the design process and decisions made.</p>
-        
-        <h3>Artifact 2: CS320 Backend Services</h3>
-        <p><strong>Brief Description:</strong> This artifact consists of backend services developed in Java for managing contacts, tasks, and appointments, created during my CS 320 course. The project was completed in Spring 2023 and focuses on utilizing data structures for effective data management.</p>
-
-        <p><strong>Justification for Inclusion:</strong> I chose this artifact because it showcases my understanding of algorithms and data structures. It highlights my implementation of the ContactService, TaskService, and AppointmentService, which utilize efficient data structures for CRUD operations. The planned enhancements will involve optimizing these services further by integrating more advanced algorithms and data structures, improving performance and user experience.</p>
-
-        <p><strong>Reflection on Enhancement Process:</strong> While enhancing this artifact, I learned the importance of selecting appropriate data structures for specific use cases. A challenge I faced was ensuring the efficiency of data retrieval and manipulation. I incorporated feedback through peer code reviews, which helped me refine my service designs. The improvements will include implementing hash maps for faster data access and advanced search algorithms. The course outcomes I partially met include:</p>
-        <ul>
-            <li><strong>Design and evaluate computing solutions:</strong> By optimizing the services, I demonstrated an understanding of algorithmic principles and their application to improve system efficiency.</li>
-            <li><strong>Employ strategies for building collaborative environments:</strong> I utilized peer feedback to improve my design and functionality.</li>
-        </ul>
-        <p>However, I feel that I could enhance my skills in testing and validation further.</p>
-
-        <h3>Artifact 3: CS340 Grazioso Salvare Animal Rescue Dashboard</h3>
-        <p><strong>Brief Description:</strong> This artifact is a web application dashboard developed for the Grazioso Salvare Animal Rescue, utilizing a MongoDB database to display and filter animal rescue data. It was created during my CS 340 course in Spring 2023, focusing on integrating backend services with a user-friendly interface.</p>
-
-        <p><strong>Justification for Inclusion:</strong> I included this project because it demonstrates my ability to work with databases and create dynamic web applications. Key features include CRUD operations for managing rescue data and real-time updates displayed on the dashboard. The planned enhancements will involve implementing advanced querying techniques, such as indexing and aggregation, to improve performance and provide deeper insights into the data, showcasing my data management skills.</p>
-
-        <p><strong>Reflection on Enhancement Process:</strong> Through the enhancement of this dashboard, I learned about the significance of database optimization in web applications. A challenge was balancing data retrieval speed with the complexity of queries. I utilized feedback from user testing to enhance the dashboard's functionality. The improvements will involve adding indexing for faster queries and implementing aggregation pipelines for detailed data analysis. The course outcomes I fully met include:</p>
-        <ul>
-            <li><strong>Demonstrate an ability to use well-founded and innovative techniques:</strong> Using MongoDB features to optimize data retrieval showcases my proficiency in database management.</li>
-            <li><strong>Design and evaluate computing solutions:</strong> Implementing aggregation and indexing reflects my ability to apply algorithmic principles to enhance performance.</li>
-        </ul>
-        <p>However, I could further improve on ensuring the scalability of the system as data grows.</p>
-    </section>
-
-    <section id="enhancements">
-        <h2>Enhancements Overview</h2>
-        
-        <h3>Category 1: Software Design and Engineering</h3>
-        <h4>Completed Enhancement for Transition from OpenGL to Blender</h4>
-        <p>To enhance my original OpenGL project, I transitioned to using Blender for more advanced 3D modeling and texturing. This shift allowed me to incorporate detailed and intricate geometry, significantly improving the realism and complexity of my desk setup scene. By applying high-resolution textures and advanced shading techniques, I enhanced the visual detail and overall quality of the project. Additionally, I implemented realistic lighting setups, including global illumination and reflections, to create a more immersive environment.</p>
-        
-        <p>To further demonstrate my technical skills and add interactivity to the scene, I incorporated basic animations, such as a video game hologram, and enhanced camera navigation with more sophisticated control algorithms. This enhancement not only showcased my creativity but also demonstrated my proficiency in using industry-standard tools and techniques in 3D graphics and visualization.</p>
-        <!-- Add the image here -->
-        <img src="cat1after.png" alt="3D Scene Project Enhancement in Blender" style="width:100%; max-width:800px; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0, 0, 0, 0.2); margin-top:20px;">
-        <h4>Skills Demonstrated and Course Alignment</h4>
-        <p>The enhancement of my original OpenGL project using Blender demonstrated several specific skills that aligned with the course outcomes:</p>
-        <ol>
-            <li><strong>Advanced 3D Modeling:</strong> Showcased my ability to create detailed and intricate geometry, aligning with proficiency in computational graphics techniques.</li>
-            <li><strong>Texturing and Lighting:</strong> Highlighted skills in texturing and lighting to enhance visual detail and realism in 3D scenes.</li>
-            <li><strong>Interactivity and Dynamic Environments:</strong> Demonstrated skills in creating interactive environments through animations and refined camera controls.</li>
-        </ol>
-
-        <h4>Conclusion</h4>
-        <p>By focusing on these enhancements, I improved the aesthetic and functional aspects of my project while showcasing my mastery of essential skills in computational graphics and visualization. This work aligned perfectly with the educational objectives of the course and prepared me for future challenges in the field.</p>
-
-        <h3>Category 2: Algorithms and Data Structures</h3>
-        <h4>Summary of Changes and Enhancements</h4>
-        <h4>1. Contact Functionality Enhancements</h4>
-        <p><strong>Contact Class:</strong> Introduced validation checks in the constructor to ensure data integrity, including unique IDs and phone number formatting.</p>
-        <p><strong>ContactService Class:</strong> Refactored to use a HashMap for efficient storage and management of contacts.</p>
-        <p><strong>ContactServiceTest Class:</strong> Enhanced unit tests to cover new functionalities, including searching and sorting contacts.</p>
-
-        <h4>2. Task Functionality Enhancements</h4>
-        <p><strong>Task Class:</strong> Added comprehensive validation in the constructor for task attributes.</p>
-        <p><strong>TaskService Class:</strong> Refactored to utilize a HashMap for efficient task management.</p>
-        <p><strong>TaskServiceTest Class:</strong> Expanded unit tests to cover searching and sorting functionalities.</p>
-
-        <h4>3. Appointment Functionality Enhancements</h4>
-        <p><strong>Appointment Class:</strong> Implemented validation checks for appointment attributes.</p>
-        <p><strong>AppointmentService Class:</strong> Utilized a HashMap for efficient storage and retrieval of appointments.</p>
-        <p><strong>AppointmentServiceTest Class:</strong> Enhanced unit tests to include tests for searching and sorting appointments.</p>
-
-        <h4>Alignment with Course Outcomes</h4>
-        <p>The enhancements align with course outcomes in collaborative environments, professional communication, and design and evaluation of computing solutions.</p>
-
-        <h3>Category 3: Databases</h3>
-        <h4>Summary of Work Done</h4>
-        <h4>1. Project Overview</h4>
-        <p>The project involved enhancing the Grazioso Salvare Animal Rescue Dashboard, which utilizes a MongoDB database for managing animal rescue data.</p>
-
-        <h4>2. Enhancements Implemented</h4>
-        <p><strong>Jupyter Notebook Updates:</strong> Added indexing for key database fields and implemented an aggregation pipeline.</p>
-        <p><strong>Python Script Updates:</strong> Created methods within the CRUD class for dynamic search capabilities.</p>
-        <!-- Add the images here -->
-        <img src="databases1.png" alt="Database Dashboard 1" style="width:100%; max-width:800px; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0, 0, 0, 0.2); margin-top:20px;">
-        <img src="databases 2.png" alt="Database Dashboard 2" style="width:100%; max-width:800px; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0, 0, 0, 0.2); margin-top:20px;">
-        
-        <h4>3. Testing</h4>
-        <p>All features were tested to ensure proper functionality and data integrity.</p>
-
-        <h4>4. Documentation</h4>
-        <p>Updated project documentation to reflect enhancements.</p>
-
-        <h4>Alignment with Course Outcomes</h4>
-        <p>These enhancements support collaborative decision-making, professional communications, and innovative techniques in data management.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Takeria Thompson. All rights reserved.</p>
-    </footer>
-    <script>
-        // Modal Functionality
-        const modal = document.getElementById('image-modal');
-        const modalImg = document.getElementById('modal-img');
-        const closeBtn = document.querySelector('.close');
-
-        document.querySelectorAll('.project-card img').forEach(img => {
-            img.addEventListener('click', () => {
-                modal.style.display = 'flex';
-                modalImg.src = img.src;
-            });
-        });
-
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-    </script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="particles.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
