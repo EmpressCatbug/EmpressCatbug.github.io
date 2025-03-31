@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="loader.css" />
 </head>
 <body>
+  <!-- Loading Screen -->
+<div id="loading-screen">
+  <div class="loading-text">
+    <h1 class="glow-text">Welcome</h1>
+    <button id="enter-button">Click to Enter</button>
+  </div>
+</div>
+
   <div class="loader-container">
     <div class="overlay">
       <h1 id="typed-welcome"></h1>
@@ -30,7 +38,7 @@
     function enterSite() {
       document.body.classList.add("fade-out");
       setTimeout(() => {
-        window.location.href = "index.html"; // Replace this if your homepage has a different filename
+        window.location.href = "home.html"; // Replace this if your homepage has a different filename
       }, 800);
     }
 
