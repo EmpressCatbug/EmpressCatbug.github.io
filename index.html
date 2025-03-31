@@ -3,116 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Takeria Thompson | Portfolio</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- AOS (Animate On Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <title>Welcome</title>
+  <link rel="stylesheet" href="loader.css" />
 </head>
-
 <body>
-  <div class="butterfly-cursor"></div>
-  <!-- Sparkle Effect -->
-  <div id="sparkle-container"></div>
-
-  <!-- Galaxy Background (can be gradient or animated particles later) -->
-  <div id="background"></div>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1 class="glow">Takeria Thompson</h1>
-    <p class="typed-text"><span id="typing"></span><span class="cursor">|</span></p>
-  </section>
-
-  <!-- Projects -->
-<section class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-  
-      <a href="projects/thermostat.html" class="project-card">
-        <h3>Smart Thermostat</h3>
-        <p>Embedded system for room temperature control with UART + I2C.</p>
-      </a>
-  
-      <a href="projects/pirate-maze.html" class="project-card">
-        <h3>Pirate Maze AI</h3>
-        <p>AI with TensorFlow & Keras navigating a procedural maze.</p>
-      </a>
-  
-      <a href="projects/news-summarizer.html" class="project-card">
-        <h3>News Summarizer</h3>
-        <p>Dockerized FastAPI app that crawls and summarizes news articles.</p>
-      </a>
-
-      <a href="projects/code-review.html" class="project-card">
-        <h3>Code Review Showcase</h3>
-        <p>Live walkthrough video showcasing thoughtful and professional code review techniques.</p>
-      </a>
-      <a href="projects/3d-scene.html" class="project-card">
-       <h3>3D Scene Enhancement</h3>
-       <p>Transitioned from OpenGL to Blender. Modeled desk setup with lighting, textures, and animations.</p>
-     </a>
-
-     <a href="projects/backend.html" class="project-card">
-        <h3>Backend Services Optimization</h3>
-        <p>Developed and tested Java services with JUnit for a mobile app backend. Focus on QA, modularity, and maintainability.</p>
-      </a>
-
-      <a href="projects/dashboard.html" class="project-card">
-        <h3>Animal Rescue Dashboard</h3>
-        <p>MongoDB + Dash-based dashboard for visualizing rescue data with maps, charts, and real-time filters.</p>
-      </a>
-      
-      
+  <div class="loader-container">
+    <div class="overlay">
+      <h1 id="typed-welcome"></h1>
+      <button onclick="enterSite()">Click to Enter</button>
     </div>
-  </section>
+  </div>
 
-  <!-- About -->
-  <section class="section" id="about">
-    <h2>About Me</h2>
-<p>
-  I’m a creative software engineer who loves space, design, and turning cool ideas into code. 
-  This galaxy is just the beginning. 🌠
-</p>
-<p>
-  I recently graduated <strong>Magna Cum Laude</strong> with a <strong>3.7 GPA</strong>, earning a Bachelor of Science in Computer Science. 
-  Throughout my academic career, I explored everything from full-stack development and embedded systems to machine learning and 3D graphics.
-</p>
-<p>
-  My passion lies at the intersection of art and engineering — whether building responsive web applications, training intelligent agents, 
-  modeling immersive 3D scenes in Blender, or writing secure backend services. I approach every project with curiosity, precision, and creativity.
-</p>
-<p>
-  I believe that great software should not only work well, but look and feel great too. 
-  If you're looking for a developer who can think like an engineer, create like a designer, and dream like a stargazer — you're in the right orbit.
-</p>
+  <script>
+    const text = "Welcome";
+    let i = 0;
+    const target = document.getElementById("typed-welcome");
 
-    <!-- Avatar placeholder -->
-    <img src="website.avatar.png" alt="Takeria's Astronaut Avatar" id="avatar" />
-  </section>
+    function typeWelcome() {
+      if (i < text.length) {
+        target.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWelcome, 150);
+      }
+    }
 
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:takeriat554@gmail.com">takeriat554@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/EmpressCatbug" target="_blank">EmpressCatbug</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/takeria-thompson/" target="_blank">Takeria Thompson</a></p>
-  </section>
+    function enterSite() {
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "index.html"; // Replace this if your homepage has a different filename
+      }, 800);
+    }
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Takeria Thompson | Crafted with stardust ✨</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="script.js"></script>
-  <script src="particles.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+    window.onload = typeWelcome;
+  </script>
 </body>
 </html>
