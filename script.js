@@ -61,3 +61,7 @@ const roles = [
     });
   });
   
+  // Enter button hides the loading screen and redirects to home.html
+document.getElementById("enter-button").addEventListener("click", function () {
+  window.location.href = "home.html"; // Redirect to your main site
+});
