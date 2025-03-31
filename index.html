@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="loader-container">
@@ -12,21 +12,14 @@
       <source src="assets/backgrounds/nebula1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-
     <div class="overlay">
       <h1 id="typed-welcome" class="glow-text"></h1>
       <button id="enter-button" onclick="enterSite()">Click to Enter</button>
     </div>
   </div>
-
-  <!-- Sparkles + Cursor -->
   <div id="sparkle-container"></div>
   <div class="butterfly-cursor"></div>
-
-  <!-- Main Cursor + Sparkle Script -->
   <script src="script.js"></script>
-
-  <!-- Welcome Text Typing + Page Transition -->
   <script>
     const text = "Welcome";
     let i = 0;

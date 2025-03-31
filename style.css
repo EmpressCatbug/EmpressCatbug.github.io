@@ -227,26 +227,20 @@
   z-index: -1;
 }
 
-/* Loader Container Setup */
+/* Loader Container */
 .loader-container {
+  position: relative;
   width: 100vw;
   height: 100vh;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  overflow: hidden;
 }
 
-/* Overlay (centered content inside loader) */
+/* Overlay Content */
 .overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 10;
+  z-index: 1;
 }
 
 /* Glowing Welcome Text */
