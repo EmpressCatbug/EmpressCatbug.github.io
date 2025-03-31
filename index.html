@@ -7,13 +7,12 @@
   <link rel="stylesheet" href="loader.css" />
 </head>
 <body>
-  <!-- Loading Screen -->
-<div id="loading-screen">
-  <div class="loading-text">
-    <h1 class="glow-text">Welcome</h1>
-    <button id="enter-button">Click to Enter</button>
+  <div class="loader-container">
+    <div class="overlay">
+      <h1 id="typed-welcome"></h1>
+      <button onclick="enterSite()">Click to Enter</button>
+    </div>
   </div>
-</div>
 
   <script>
     const text = "Welcome";
