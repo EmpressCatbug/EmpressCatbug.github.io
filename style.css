@@ -261,6 +261,9 @@
   cursor: pointer;
   box-shadow: 0 0 12px #d8b4fe;
   transition: background 0.3s ease;
+  margin-top: 10px;
+  text-align: center;
+  display: block;
 }
 
 #enter-button:hover {
