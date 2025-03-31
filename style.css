@@ -216,40 +216,40 @@
     }
   }
   
- /* Loader Video Background */
+ /* Loader Fullscreen Video Background */
 #background-video {
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
 }
 
-/* Loader Container & Overlay Centering */
+/* Loader Container Setup */
 .loader-container {
-  position: relative;
   width: 100vw;
   height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
-/* Overlay Text & Button Centering */
+/* Overlay (centered content inside loader) */
 .overlay {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 10;
 }
 
-/* Welcome Text */
+/* Glowing Welcome Text */
 .glow-text {
   font-family: 'Orbitron', sans-serif;
   font-size: 4rem;
@@ -259,7 +259,7 @@
   margin-bottom: 20px;
 }
 
-/* Button Style */
+/* Click to Enter Button */
 #enter-button {
   padding: 12px 28px;
   font-size: 1rem;
