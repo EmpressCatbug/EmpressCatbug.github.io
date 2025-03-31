@@ -5,32 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Loading Screen -->
-  <div id="loading-screen">
-    <video autoplay muted loop id="bg-video">
-      <source src="assets/backgrounds/nebula1.mp4" type="video/mp4" />
+  <div class="loader-container">
+    <video autoplay muted loop id="background-video">
+      <source src="assets/backgrounds/nebula1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <div class="loading-text">
-      <h1 class="glow-text">Welcome</h1>
-      <button id="enter-button">Click to Enter</button>
+
+    <div class="overlay">
+      <h1 id="typed-welcome" class="glow-text"></h1>
+      <button id="enter-button" onclick="enterSite()">Click to Enter</button>
     </div>
   </div>
 
+  <!-- Sparkles + Cursor -->
+  <div id="sparkle-container"></div>
+  <div class="butterfly-cursor"></div>
+
+  <!-- Main Cursor + Sparkle Script -->
+  <script src="script.js"></script>
+
+  <!-- Welcome Text Typing + Page Transition -->
   <script>
-    document.getElementById("enter-button").addEventListener("click", function () {
-      window.location.href = "home.html"; // Redirect to your main page
-    });
+    const text = "Welcome";
+    let i = 0;
+    const target = document.getElementById("typed-welcome");
+
+    function typeWelcome() {
+      if (i < text.length) {
+        target.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWelcome, 150);
+      }
+    }
+
+    function enterSite() {
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 800);
+    }
+
+    window.onload = typeWelcome;
   </script>
-  <!-- Sparkle and Butterfly Cursor -->
-<div id="sparkle-container"></div>
-<div class="butterfly-cursor"></div>
-
-<!-- JavaScript -->
-<script src="script.js"></script>
-
+<!-- Sparkle and Butterfly Cursor -->
+ <div id="sparkle-container"></div>
+ <div class="butterfly-cursor"></div>
+ 
+ <!-- JavaScript -->
+ <script src="script.js"></script>
 </body>
 </html>
