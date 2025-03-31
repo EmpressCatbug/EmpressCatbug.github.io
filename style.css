@@ -225,9 +225,8 @@
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-  pointer-events: none;
-  opacity: 1;
 }
+
 
 /* Loader Container */
 .loader-container {
