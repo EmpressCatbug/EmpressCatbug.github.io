@@ -16,6 +16,12 @@
     overflow-x: hidden;
     cursor: none;
   }
+
+  /* Override for Welcome Page */
+body.welcome-page {
+  background: none;
+  animation: none;
+}
   
   /* Animated galaxy gradient background */
   @keyframes galaxyGradient {
