@@ -59,9 +59,64 @@ const roles = [
   
       setTimeout(() => sparkle.remove(), 500);
     });
+    
+    // Initialize music controls
+    initMusicControls();
   });
   
-  // Enter button hides the loading screen and redirects to home.html
-document.getElementById("enter-button").addEventListener("click", function () {
-  window.location.href = "home.html"; // Redirect to your main site
-});
+  function initMusicControls() {
+    const audio = document.getElementById('background-music');
+    const musicToggle = document.getElementById('music-toggle');
+    const volumeSlider = document.getElementById('volume-slider');
+    const playIcon = musicToggle.querySelector('.play-icon');
+    const pauseIcon = musicToggle.querySelector('.pause-icon');
+    
+    // Load saved preferences
+    const savedVolume = localStorage.getItem('musicVolume') || 50;
+    const savedPlaying = localStorage.getItem('musicPlaying') === 'true';
+    const savedTime = parseFloat(localStorage.getItem('musicTime') || 0);
+    
+    volumeSlider.value = savedVolume;
+    audio.volume = savedVolume / 100;
+    
+    // Resume from saved time
+    if (savedTime > 0) {
+      audio.currentTime = savedTime;
+    }
+    
+    if (savedPlaying) {
+      audio.play().catch(() => {
+        // Auto-play might be blocked by browser
+        console.log('Auto-play blocked by browser');
+      });
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'inline';
+    }
+    
+    // Toggle play/pause
+    musicToggle.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'inline';
+        localStorage.setItem('musicPlaying', 'true');
+      } else {
+        audio.pause();
+        playIcon.style.display = 'inline';
+        pauseIcon.style.display = 'none';
+        localStorage.setItem('musicPlaying', 'false');
+      }
+    });
+    
+    // Volume control
+    volumeSlider.addEventListener('input', (e) => {
+      audio.volume = e.target.value / 100;
+      localStorage.setItem('musicVolume', e.target.value);
+    });
+    
+    // Save music time before page unload
+    window.addEventListener('beforeunload', () => {
+      localStorage.setItem('musicTime', audio.currentTime);
+    });
+  }
+  
