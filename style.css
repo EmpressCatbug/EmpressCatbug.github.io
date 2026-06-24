@@ -284,3 +284,33 @@
 #enter-button:hover {
   background-color: #a855f7;
 }
+
+/* Floating Music Toggle */
+.music-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(10, 10, 30, 0.75);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: 0 0 18px rgba(216, 180, 254, 0.65);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 26px rgba(216, 180, 254, 0.9);
+}
+
+/* Welcome Page Fade Out */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
