@@ -54,7 +54,7 @@
     console.log("Music will resume on the next page.");
   });
 
-  document.body.classList.add("fade-out");
+ document.querySelector(".overlay").classList.add("fade-out");
 
   setTimeout(() => {
     localStorage.setItem("musicTime", music.currentTime);
