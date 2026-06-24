@@ -25,6 +25,10 @@
     </div>
   </div>
 
+<audio id="bgMusic" preload="auto">
+  <source src="assets/Claude Debussy Claire De Lune added reverb.mp3" type="audio/mpeg">
+</audio>
+  
   <!-- Scripts -->
   <script src="script.js"></script>
   <script>
@@ -41,11 +45,22 @@
     }
 
     function enterSite() {
-      document.body.classList.add("fade-out");
-      setTimeout(() => {
-        window.location.href = "home.html";
-      }, 800);
-    }
+  const music = document.getElementById("bgMusic");
+
+  localStorage.setItem("musicEnabled", "true");
+  music.volume = 0.25;
+
+  music.play().catch(() => {
+    console.log("Music will resume on the next page.");
+  });
+
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+    window.location.href = "home.html";
+  }, 800);
+}
 
     window.onload = typeWelcome;
   </script>
