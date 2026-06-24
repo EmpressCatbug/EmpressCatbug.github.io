@@ -329,5 +329,7 @@
 /* Welcome Page Fade Out */
 .fade-out {
   opacity: 0;
-  transition: opacity 4s ease-in-out;
+  transform: scale(0.96);
+  transition: opacity 4s ease-in-out, transform 3s ease-in-out;
+  pointer-events: none;
 }
