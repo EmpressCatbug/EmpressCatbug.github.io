@@ -330,6 +330,6 @@
 .fade-out {
   opacity: 0;
   transform: scale(0.96);
-  transition: opacity 4s ease-in-out, transform 3s ease-in-out;
+  transition: opacity 4s ease-in-out, transform 4s ease-in-out;
   pointer-events: none;
 }
