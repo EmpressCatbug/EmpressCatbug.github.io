@@ -309,6 +309,23 @@
   box-shadow: 0 0 26px rgba(216, 180, 254, 0.9);
 }
 
+.music-toggle {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.music-toggle.playing {
+  animation: moonPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes moonPulse {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(216, 180, 254, 0.65);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(233, 213, 255, 1);
+  }
+}
+
 /* Welcome Page Fade Out */
 .fade-out {
   opacity: 0;
