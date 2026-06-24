@@ -38,13 +38,15 @@ if (toggle && music) {
 
             music.play();
             localStorage.setItem("musicEnabled", "true");
-            toggle.textContent = "♪";
+            toggle.textContent = "☾";
+            toggle.classList.add("playing");
 
         } else {
 
             music.pause();
             localStorage.setItem("musicEnabled", "false");
-            toggle.textContent = "🔇";
+            toggle.textContent = "☽";
+            toggle.classList.remove("playing");
 
         }
 
