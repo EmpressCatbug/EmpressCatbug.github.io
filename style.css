@@ -505,123 +505,452 @@ body {
 #background {
   position: fixed;
   inset: 0;
-
   overflow: hidden;
 
   pointer-events: none;
-
   z-index: 0;
 
   background:
     radial-gradient(
-      circle at 50% 35%,
-      rgba(126, 34, 206, 0.18) 0%,
-      rgba(91, 43, 120, 0.08) 28%,
-      transparent 58%
+      ellipse at 50% 40%,
+      rgba(74, 20, 115, 0.28) 0%,
+      rgba(32, 4, 55, 0.12) 42%,
+      transparent 70%
     ),
     linear-gradient(
-      160deg,
-      #140020 0%,
-      #28103d 42%,
-      #3d1755 70%,
-      #241033 100%
+      180deg,
+      #090015 0%,
+      #150021 30%,
+      #220535 64%,
+      #100019 100%
     );
 }
 
-/* Large atmospheric nebula shapes */
+
+/* -------------------------
+   Nebula clouds
+   ------------------------- */
+
 .nebula {
   position: absolute;
 
   border-radius: 50%;
+  pointer-events: none;
 
-  filter: blur(90px);
+  filter: blur(75px);
 
-  opacity: 0.42;
-
-  transform: translateZ(0);
+  will-change: transform;
 }
 
-.nebula-one {
-  width: 520px;
-  height: 520px;
 
-  top: -160px;
-  left: -120px;
+/* Bright violet cloud entering from upper-left */
+.nebula-one {
+  width: 760px;
+  height: 680px;
+
+  top: -220px;
+  left: -330px;
+
+  opacity: 0.78;
 
   background:
     radial-gradient(
-      circle,
-      rgba(192, 132, 252, 0.35) 0%,
-      rgba(147, 51, 234, 0.16) 45%,
+      ellipse at center,
+      rgba(216, 180, 254, 0.52) 0%,
+      rgba(168, 85, 247, 0.34) 22%,
+      rgba(126, 34, 206, 0.18) 48%,
       transparent 72%
     );
 
-  animation: nebulaDriftOne 24s ease-in-out infinite alternate;
+  animation: nebulaFloatOne 28s ease-in-out infinite alternate;
 }
 
+
+/* Large cloud on right side */
 .nebula-two {
-  width: 680px;
-  height: 680px;
+  width: 880px;
+  height: 820px;
 
-  top: 22%;
-  right: -260px;
+  top: 12%;
+  right: -430px;
+
+  opacity: 0.72;
 
   background:
     radial-gradient(
-      circle,
-      rgba(216, 180, 254, 0.26) 0%,
-      rgba(126, 34, 206, 0.13) 48%,
-      transparent 74%
+      ellipse at center,
+      rgba(233, 213, 255, 0.42) 0%,
+      rgba(192, 132, 252, 0.31) 24%,
+      rgba(126, 34, 206, 0.18) 50%,
+      transparent 73%
     );
 
-  animation: nebulaDriftTwo 30s ease-in-out infinite alternate;
+  animation: nebulaFloatTwo 34s ease-in-out infinite alternate;
 }
 
+
+/* Lower-center violet cloud */
 .nebula-three {
-  width: 600px;
-  height: 600px;
+  width: 980px;
+  height: 620px;
 
-  bottom: -280px;
-  left: 30%;
+  bottom: -380px;
+  left: 18%;
+
+  opacity: 0.72;
 
   background:
     radial-gradient(
-      circle,
-      rgba(168, 85, 247, 0.22) 0%,
-      rgba(88, 28, 135, 0.12) 46%,
-      transparent 75%
+      ellipse at center,
+      rgba(192, 132, 252, 0.40) 0%,
+      rgba(147, 51, 234, 0.25) 30%,
+      rgba(88, 28, 135, 0.16) 52%,
+      transparent 76%
     );
 
-  animation: nebulaDriftThree 27s ease-in-out infinite alternate;
+  animation: nebulaFloatThree 31s ease-in-out infinite alternate;
 }
 
-@keyframes nebulaDriftOne {
+
+/* Additional soft glow for depth */
+.nebula-four {
+  width: 700px;
+  height: 500px;
+
+  top: 48%;
+  left: -280px;
+
+  opacity: 0.38;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(217, 70, 239, 0.28) 0%,
+      rgba(147, 51, 234, 0.18) 36%,
+      transparent 72%
+    );
+
+  animation: nebulaFloatFour 36s ease-in-out infinite alternate;
+}
+
+
+@keyframes nebulaFloatOne {
   from {
     transform: translate3d(0, 0, 0) scale(1);
   }
 
   to {
-    transform: translate3d(70px, 45px, 0) scale(1.08);
+    transform: translate3d(90px, 60px, 0) scale(1.08);
   }
 }
 
-@keyframes nebulaDriftTwo {
+
+@keyframes nebulaFloatTwo {
   from {
     transform: translate3d(0, 0, 0) scale(1);
   }
 
   to {
-    transform: translate3d(-90px, 40px, 0) scale(1.06);
+    transform: translate3d(-110px, 55px, 0) scale(1.07);
   }
 }
 
-@keyframes nebulaDriftThree {
+
+@keyframes nebulaFloatThree {
   from {
     transform: translate3d(0, 0, 0) scale(1);
   }
 
   to {
-    transform: translate3d(55px, -60px, 0) scale(1.1);
+    transform: translate3d(75px, -70px, 0) scale(1.09);
+  }
+}
+
+
+@keyframes nebulaFloatFour {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(80px, -45px, 0) scale(1.06);
+  }
+}
+
+
+/* -------------------------
+   Irregular distant stars
+
+   These are deliberately placed
+   individually in the gradient,
+   so they do NOT form a grid.
+   ------------------------- */
+
+.celestial-stars {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.8;
+
+  background-image:
+
+    radial-gradient(circle at 7% 13%,
+      rgba(255,255,255,0.75) 0 1px,
+      transparent 1.8px),
+
+    radial-gradient(circle at 14% 72%,
+      rgba(233,213,255,0.55) 0 1px,
+      transparent 1.7px),
+
+    radial-gradient(circle at 19% 29%,
+      rgba(255,255,255,0.7) 0 1.3px,
+      transparent 2px),
+
+    radial-gradient(circle at 23% 88%,
+      rgba(192,132,252,0.65) 0 1px,
+      transparent 1.8px),
+
+    radial-gradient(circle at 31% 17%,
+      rgba(255,255,255,0.48) 0 0.8px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 36% 63%,
+      rgba(233,213,255,0.75) 0 1px,
+      transparent 1.8px),
+
+    radial-gradient(circle at 42% 9%,
+      rgba(255,255,255,0.7) 0 1.2px,
+      transparent 2px),
+
+    radial-gradient(circle at 47% 76%,
+      rgba(192,132,252,0.55) 0 1px,
+      transparent 1.7px),
+
+    radial-gradient(circle at 53% 26%,
+      rgba(255,255,255,0.58) 0 0.9px,
+      transparent 1.6px),
+
+    radial-gradient(circle at 58% 91%,
+      rgba(233,213,255,0.68) 0 1px,
+      transparent 1.8px),
+
+    radial-gradient(circle at 64% 14%,
+      rgba(255,255,255,0.8) 0 1.3px,
+      transparent 2px),
+
+    radial-gradient(circle at 69% 54%,
+      rgba(192,132,252,0.62) 0 1px,
+      transparent 1.8px),
+
+    radial-gradient(circle at 73% 82%,
+      rgba(255,255,255,0.52) 0 0.9px,
+      transparent 1.7px),
+
+    radial-gradient(circle at 78% 33%,
+      rgba(233,213,255,0.8) 0 1.2px,
+      transparent 2px),
+
+    radial-gradient(circle at 84% 68%,
+      rgba(255,255,255,0.72) 0 1px,
+      transparent 1.8px),
+
+    radial-gradient(circle at 89% 17%,
+      rgba(192,132,252,0.7) 0 1px,
+      transparent 1.8px),
+
+    radial-gradient(circle at 93% 47%,
+      rgba(255,255,255,0.58) 0 1px,
+      transparent 1.7px),
+
+    radial-gradient(circle at 96% 84%,
+      rgba(233,213,255,0.75) 0 1.2px,
+      transparent 2px),
+
+    radial-gradient(circle at 11% 45%,
+      rgba(255,255,255,0.5) 0 0.8px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 27% 52%,
+      rgba(233,213,255,0.66) 0 1px,
+      transparent 1.7px),
+
+    radial-gradient(circle at 39% 37%,
+      rgba(255,255,255,0.72) 0 1px,
+      transparent 1.8px),
+
+    radial-gradient(circle at 62% 43%,
+      rgba(233,213,255,0.58) 0 0.9px,
+      transparent 1.6px),
+
+    radial-gradient(circle at 71% 11%,
+      rgba(255,255,255,0.68) 0 1px,
+      transparent 1.7px),
+
+    radial-gradient(circle at 86% 91%,
+      rgba(192,132,252,0.55) 0 1px,
+      transparent 1.8px);
+
+  animation: starsBreathe 7s ease-in-out infinite alternate;
+}
+
+
+@keyframes starsBreathe {
+  from {
+    opacity: 0.52;
+  }
+
+  to {
+    opacity: 0.88;
+  }
+}
+
+
+/* -------------------------
+   Animated shooting stars
+   ------------------------- */
+
+.shooting-stars {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+.shooting-star {
+  position: absolute;
+
+  width: 150px;
+  height: 2px;
+
+  opacity: 0;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      rgba(216, 180, 254, 0.35),
+      rgba(255, 255, 255, 1)
+    );
+
+  filter:
+    drop-shadow(0 0 5px rgba(216, 180, 254, 0.85))
+    drop-shadow(0 0 12px rgba(147, 51, 234, 0.65));
+
+  transform: rotate(-35deg);
+
+  will-change: transform, opacity;
+}
+
+
+.shooting-star::after {
+  content: "";
+
+  position: absolute;
+
+  right: -2px;
+  top: 50%;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  transform: translateY(-50%);
+
+  box-shadow:
+    0 0 6px #ffffff,
+    0 0 12px #d8b4fe,
+    0 0 20px #9333ea;
+}
+
+
+/* Individual shooting-star starting positions */
+.shooting-star-1 {
+  top: 13%;
+  left: 14%;
+
+  animation: shootAcross 8s ease-in infinite;
+}
+
+
+.shooting-star-2 {
+  top: 32%;
+  left: 64%;
+
+  animation: shootAcross 10s ease-in 3.5s infinite;
+}
+
+
+.shooting-star-3 {
+  top: 62%;
+  left: 7%;
+
+  animation: shootAcross 11s ease-in 6s infinite;
+}
+
+
+.shooting-star-4 {
+  top: 18%;
+  left: 80%;
+
+  animation: shootAcross 13s ease-in 8s infinite;
+}
+
+
+.shooting-star-5 {
+  top: 77%;
+  left: 48%;
+
+  animation: shootAcross 12s ease-in 10s infinite;
+}
+
+
+@keyframes shootAcross {
+  0% {
+    opacity: 0;
+
+    transform:
+      translate3d(0, 0, 0)
+      rotate(-35deg)
+      scaleX(0.3);
+  }
+
+  4% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 1;
+
+    transform:
+      translate3d(230px, 165px, 0)
+      rotate(-35deg)
+      scaleX(1);
+  }
+
+  18% {
+    opacity: 0;
+
+    transform:
+      translate3d(390px, 280px, 0)
+      rotate(-35deg)
+      scaleX(0.25);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate3d(390px, 280px, 0)
+      rotate(-35deg)
+      scaleX(0.25);
   }
 }
 
@@ -739,7 +1068,13 @@ body {
 
 /* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .nebula {
+  .nebula,
+  .celestial-stars,
+  .shooting-star {
     animation: none;
+  }
+
+  .shooting-star {
+    display: none;
   }
 }
