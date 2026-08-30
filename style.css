@@ -190,15 +190,127 @@
     0 0 14px rgba(192, 132, 252, 0.16);
 }
 
-  /* Hero Section */
-  .hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  /* =========================
+   Hero Section
+   ========================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 130px 24px 80px;
+
+  text-align: center;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 760px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Small celestial detail above the name */
+.hero-symbol {
+  margin-bottom: 20px;
+
+  color: #d8b4fe;
+  font-size: 1.15rem;
+
+  text-shadow:
+    0 0 8px rgba(216, 180, 254, 0.9),
+    0 0 20px rgba(147, 51, 234, 0.7);
+
+  animation: heroStarPulse 3s ease-in-out infinite;
+}
+
+@keyframes heroStarPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.9);
   }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Short introduction beneath typing animation */
+.hero-intro {
+  max-width: 580px;
+
+  margin-top: 26px;
+
+  color: rgba(243, 232, 255, 0.78);
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Explore link */
+.hero-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 34px;
+  padding: 11px 18px;
+
+  color: #e9d5ff;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  border: 1px solid rgba(216, 180, 254, 0.25);
+  border-radius: 999px;
+
+  background: rgba(147, 51, 234, 0.08);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hero-explore:hover {
+  color: #ffffff;
+
+  background: rgba(147, 51, 234, 0.18);
+  border-color: rgba(216, 180, 254, 0.45);
+
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.14);
+
+  transform: translateY(-2px);
+}
+
+.hero-arrow {
+  display: inline-block;
+
+  color: #d8b4fe;
+
+  animation: heroArrowFloat 1.8s ease-in-out infinite;
+}
+
+@keyframes heroArrowFloat {
+  0%,
+  100% {
+    transform: translateY(-2px);
+  }
+
+  50% {
+    transform: translateY(3px);
+  }
+}
   
   /* Projects */
   .projects-grid {
@@ -308,6 +420,19 @@
     #avatar {
       width: 120px;
       height: 120px;
+    }
+          .hero {
+      padding: 150px 20px 70px;
+    }
+
+    .hero-intro {
+      max-width: 420px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .hero-explore {
+      margin-top: 28px;
     }
   }
   
