@@ -755,11 +755,6 @@ body {
   }
 }
 
-  to {
-    transform: translate3d(55px, -55px, 0);
-  }
-}
-
 /* Background Video Styling */
 #background-video {
   position: fixed;
