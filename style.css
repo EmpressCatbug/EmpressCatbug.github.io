@@ -8,14 +8,12 @@
   html, body {
     font-family: 'Inter', sans-serif;
     color: #fff;
-    background: linear-gradient(160deg, #1a002b, #5b2b78, #caa8f5);
-    background-size: 200% 200%;
-    animation: galaxyGradient 20s ease infinite;
+    background: #140020;
     min-height: 100vh;
     scroll-behavior: smooth;
     overflow-x: hidden;
     cursor: none;
-  }
+}
 
   /* Override for Welcome Page */
   body.welcome-page {
@@ -487,7 +485,194 @@
       opacity: 0;
     }
   }
-  
+
+/* =========================
+   Post-Welcome Celestial Background
+   ========================= */
+
+#background {
+  position: fixed;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(126, 34, 206, 0.18) 0%,
+      rgba(91, 43, 120, 0.08) 28%,
+      transparent 58%
+    ),
+    linear-gradient(
+      160deg,
+      #140020 0%,
+      #28103d 42%,
+      #3d1755 70%,
+      #241033 100%
+    );
+}
+
+/* Large atmospheric nebula shapes */
+.nebula {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  opacity: 0.42;
+
+  transform: translateZ(0);
+}
+
+.nebula-one {
+  width: 520px;
+  height: 520px;
+
+  top: -160px;
+  left: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(192, 132, 252, 0.35) 0%,
+      rgba(147, 51, 234, 0.16) 45%,
+      transparent 72%
+    );
+
+  animation: nebulaDriftOne 24s ease-in-out infinite alternate;
+}
+
+.nebula-two {
+  width: 680px;
+  height: 680px;
+
+  top: 22%;
+  right: -260px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(216, 180, 254, 0.26) 0%,
+      rgba(126, 34, 206, 0.13) 48%,
+      transparent 74%
+    );
+
+  animation: nebulaDriftTwo 30s ease-in-out infinite alternate;
+}
+
+.nebula-three {
+  width: 600px;
+  height: 600px;
+
+  bottom: -280px;
+  left: 30%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168, 85, 247, 0.22) 0%,
+      rgba(88, 28, 135, 0.12) 46%,
+      transparent 75%
+    );
+
+  animation: nebulaDriftThree 27s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaDriftOne {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(70px, 45px, 0) scale(1.08);
+  }
+}
+
+@keyframes nebulaDriftTwo {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-90px, 40px, 0) scale(1.06);
+  }
+}
+
+@keyframes nebulaDriftThree {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(55px, -60px, 0) scale(1.1);
+  }
+}
+
+/* Star layers */
+.star-field {
+  position: absolute;
+  inset: 0;
+
+  background-repeat: repeat;
+
+  opacity: 0.65;
+}
+
+.star-field-small {
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.7) 1px,
+      transparent 1px
+    );
+
+  background-size: 46px 46px;
+
+  animation: starDriftSmall 60s linear infinite;
+}
+
+.star-field-medium {
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(233, 213, 255, 0.85) 1.4px,
+      transparent 1.4px
+    );
+
+  background-size: 110px 110px;
+
+  background-position: 35px 55px;
+
+  opacity: 0.35;
+
+  animation: starDriftMedium 90s linear infinite;
+}
+
+@keyframes starDriftSmall {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-46px, 46px, 0);
+  }
+}
+
+@keyframes starDriftMedium {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(55px, -55px, 0);
+  }
+}
+
 /* Background Video Styling */
 #background-video {
   position: fixed;
@@ -598,4 +783,12 @@
   transform: scale(0.96);
   transition: opacity 4s ease-in-out, transform 4s ease-in-out;
   pointer-events: none;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .nebula,
+  .star-field {
+    animation: none;
+  }
 }
