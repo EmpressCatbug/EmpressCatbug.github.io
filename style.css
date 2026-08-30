@@ -15,6 +15,10 @@
     cursor: none;
 }
 
+body {
+  position: relative;
+}
+
   /* Override for Welcome Page */
   body.welcome-page {
   background: none;
@@ -66,6 +70,9 @@
   
   /* Sections */
   .section {
+      position: relative;
+      z-index: 1;
+      
     padding: 80px 20px;
     text-align: center;
     max-width: 1000px;
@@ -193,6 +200,9 @@
    ========================= */
 
 .hero {
+    position: relative;
+    z-index: 1;
+    
   min-height: 100vh;
 
   display: flex;
@@ -363,6 +373,8 @@
     color: #f0abfc;
   }
   footer {
+      position: relative;
+      z-index: 1;
     padding: 30px;
     text-align: center;
     font-size: 0.9rem;
@@ -498,7 +510,7 @@
 
   pointer-events: none;
 
-  z-index: -1;
+  z-index: 0;
 
   background:
     radial-gradient(
