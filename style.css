@@ -625,60 +625,135 @@ body {
   }
 }
 
-/* Star layers */
-.star-field {
+/* Natural scattered stars */
+.natural-stars {
   position: absolute;
   inset: 0;
+  pointer-events: none;
+}
 
-  background-repeat: repeat;
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
 
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  box-shadow:
+    0 0 4px rgba(233, 213, 255, 0.6);
+
+  opacity: 0.7;
+
+  animation: subtleTwinkle 4s ease-in-out infinite;
+}
+
+/* Irregular positions */
+.star-1 {
+  top: 12%;
+  left: 9%;
+}
+
+.star-2 {
+  top: 21%;
+  left: 28%;
+  width: 1px;
+  height: 1px;
+  opacity: 0.5;
+  animation-delay: 1.2s;
+}
+
+.star-3 {
+  top: 15%;
+  left: 67%;
+  width: 3px;
+  height: 3px;
   opacity: 0.65;
+  animation-delay: 2s;
 }
 
-.star-field-small {
-  background-image:
-    radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.7) 1px,
-      transparent 1px
-    );
-
-  background-size: 46px 46px;
-
-  animation: starDriftSmall 60s linear infinite;
+.star-4 {
+  top: 34%;
+  left: 84%;
+  animation-delay: 0.7s;
 }
 
-.star-field-medium {
-  background-image:
-    radial-gradient(
-      circle,
-      rgba(233, 213, 255, 0.85) 1.4px,
-      transparent 1.4px
-    );
-
-  background-size: 110px 110px;
-
-  background-position: 35px 55px;
-
-  opacity: 0.35;
-
-  animation: starDriftMedium 90s linear infinite;
+.star-5 {
+  top: 43%;
+  left: 14%;
+  width: 1px;
+  height: 1px;
+  opacity: 0.45;
+  animation-delay: 2.8s;
 }
 
-@keyframes starDriftSmall {
-  from {
-    transform: translate3d(0, 0, 0);
+.star-6 {
+  top: 58%;
+  left: 37%;
+  animation-delay: 1.6s;
+}
+
+.star-7 {
+  top: 66%;
+  left: 73%;
+  width: 1px;
+  height: 1px;
+  opacity: 0.5;
+  animation-delay: 3.1s;
+}
+
+.star-8 {
+  top: 77%;
+  left: 19%;
+  width: 3px;
+  height: 3px;
+  opacity: 0.55;
+  animation-delay: 0.4s;
+}
+
+.star-9 {
+  top: 82%;
+  left: 56%;
+  animation-delay: 2.3s;
+}
+
+.star-10 {
+  top: 70%;
+  left: 91%;
+  width: 1px;
+  height: 1px;
+  opacity: 0.4;
+  animation-delay: 1s;
+}
+
+.star-11 {
+  top: 29%;
+  left: 52%;
+  width: 1px;
+  height: 1px;
+  opacity: 0.55;
+  animation-delay: 3.4s;
+}
+
+.star-12 {
+  top: 89%;
+  left: 82%;
+  animation-delay: 1.9s;
+}
+
+@keyframes subtleTwinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
   }
 
-  to {
-    transform: translate3d(-46px, 46px, 0);
+  50% {
+    opacity: 0.85;
+    transform: scale(1.15);
   }
 }
-
-@keyframes starDriftMedium {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
 
   to {
     transform: translate3d(55px, -55px, 0);
@@ -800,7 +875,7 @@ body {
 /* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
   .nebula,
-  .star-field {
+  .star {
     animation: none;
   }
 }
