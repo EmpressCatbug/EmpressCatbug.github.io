@@ -2,110 +2,883 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Animal Rescue Dashboard | Takeria Thompson</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="../style.css" />
-  <script src="../script.js" defer></script>
+
   <style>
-    .project-page {
-      max-width: 900px;
+    .case-study-page {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 90px 24px 120px;
     }
 
-    .project-page h1 {
-      font-size: 2.8rem;
-      text-align: center;
-      margin-bottom: 20px;
+    .case-study-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 70px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      color: rgba(216, 180, 254, 0.68);
+      transition:
+        color 0.25s ease,
+        gap 0.25s ease;
     }
 
-    .project-page h2 {
-      font-size: 2rem;
-      margin-top: 50px;
-      margin-bottom: 10px;
-      color: #e9d5ff;
+    .case-study-back:hover {
+      gap: 15px;
+      color: #ffffff;
     }
 
-    .project-page p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-top: 10px;
-      color: #ddd;
+    .case-study-hero {
+      max-width: 920px;
+      margin-bottom: 85px;
     }
 
-    ul {
-      color: #ddd;
-      margin-top: 10px;
-      padding-left: 20px;
-    }
-
-    pre code {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 10px;
-      border-radius: 8px;
+    .case-study-eyebrow {
       display: block;
-      white-space: pre-wrap;
-      margin-top: 10px;
-    }
-
-    .back-link {
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-      display: inline-block;
+      margin-bottom: 18px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
       color: #c084fc;
     }
 
-    .back-link:hover {
-      color: #fff;
+    .case-study-hero h1 {
+      margin: 0 0 26px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1;
+      color: #f3e8ff;
+      text-shadow: 0 0 24px rgba(147, 51, 234, 0.18);
     }
 
-    img {
+    .case-study-lead {
+      max-width: 820px;
+      margin-bottom: 0;
+      font-size: 1.08rem;
+      line-height: 1.9;
+      color: rgba(233, 213, 255, 0.76);
+    }
+
+    .case-study-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 38px;
+    }
+
+    .case-study-tech span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: rgba(216, 180, 254, 0.66);
+    }
+
+    .case-study-tech span:not(:last-child)::after {
+      content: " ·";
+      color: rgba(192, 132, 252, 0.4);
+    }
+
+    .project-status {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 48px;
+      border-top: 1px solid rgba(216, 180, 254, 0.16);
+      border-bottom: 1px solid rgba(216, 180, 254, 0.16);
+    }
+
+    .project-status-item {
+      padding: 24px 22px;
+    }
+
+    .project-status-item:not(:last-child) {
+      border-right: 1px solid rgba(216, 180, 254, 0.12);
+    }
+
+    .project-status-item span {
       display: block;
-      margin: 20px auto;
-      border-radius: 12px;
-      max-width: 100%;
-      box-shadow: 0 0 15px rgba(186, 127, 255, 0.2);
+      margin-bottom: 8px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      color: rgba(192, 132, 252, 0.62);
+    }
+
+    .project-status-item strong {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: rgba(243, 232, 255, 0.88);
+    }
+
+    .case-study-section {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 70px;
+      padding: 68px 0;
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
+    }
+
+    .case-study-section-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      color: rgba(192, 132, 252, 0.72);
+    }
+
+    .case-study-content {
+      max-width: 760px;
+    }
+
+    .case-study-content h2 {
+      margin: 0 0 22px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      line-height: 1.25;
+      color: #f3e8ff;
+    }
+
+    .case-study-content h3 {
+      margin: 34px 0 12px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.07em;
+      color: #d8b4fe;
+    }
+
+    .case-study-content p {
+      margin: 0 0 20px;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(233, 213, 255, 0.72);
+    }
+
+    .case-study-content strong {
+      color: rgba(243, 232, 255, 0.92);
+    }
+
+    .case-study-quote {
+      margin: 34px 0;
+      padding: 26px 0 26px 28px;
+      border-left: 2px solid rgba(192, 132, 252, 0.48);
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: rgba(243, 232, 255, 0.84);
+    }
+
+    .engineering-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px 36px;
+      margin-top: 35px;
+    }
+
+    .engineering-point {
+      padding-top: 20px;
+      border-top: 1px solid rgba(216, 180, 254, 0.12);
+    }
+
+    .engineering-point h3 {
+      margin: 0 0 10px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.07em;
+      color: #d8b4fe;
+    }
+
+    .engineering-point p {
+      margin: 0;
+      font-size: 0.91rem;
+      line-height: 1.75;
+      color: rgba(233, 213, 255, 0.64);
+    }
+
+    .architecture-flow {
+      margin: 38px 0 26px;
+      padding: 26px 28px;
+      border: 1px solid rgba(216, 180, 254, 0.15);
+      background: rgba(33, 10, 55, 0.08);
+    }
+
+    .architecture-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      position: relative;
+      padding: 9px 0;
+    }
+
+    .architecture-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 35px;
+      width: 1px;
+      height: calc(100% - 18px);
+      background: rgba(192, 132, 252, 0.22);
+    }
+
+    .architecture-dot {
+      width: 17px;
+      height: 17px;
+      flex: 0 0 17px;
+      margin-top: 3px;
+      border: 1px solid rgba(216, 180, 254, 0.62);
+      border-radius: 50%;
+      background: rgba(147, 51, 234, 0.15);
+      box-shadow: 0 0 14px rgba(168, 85, 247, 0.2);
+    }
+
+    .architecture-step strong {
+      display: block;
+      margin-bottom: 3px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: rgba(243, 232, 255, 0.9);
+    }
+
+    .architecture-step span {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: rgba(233, 213, 255, 0.55);
+    }
+
+    .code-window {
+      overflow-x: auto;
+      margin: 32px 0;
+      border: 1px solid rgba(216, 180, 254, 0.14);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 7, 34, 0.72),
+          rgba(42, 12, 67, 0.34)
+        );
+    }
+
+    .code-window-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(216, 180, 254, 0.11);
+    }
+
+    .code-window-header span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.57rem;
+      letter-spacing: 0.08em;
+      color: rgba(216, 180, 254, 0.5);
+    }
+
+    .code-window pre {
+      margin: 0;
+      padding: 22px 24px;
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: rgba(233, 213, 255, 0.8);
+      white-space: pre;
+    }
+
+    .screenshot-group {
+      margin: 40px 0 0;
+    }
+
+    .screenshot-group + .screenshot-group {
+      margin-top: 55px;
+    }
+
+    .screenshot-group-title {
+      margin-bottom: 18px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: #d8b4fe;
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .screenshot-card {
+      overflow: hidden;
+      border: 1px solid rgba(216, 180, 254, 0.15);
+      background: rgba(21, 7, 35, 0.35);
+    }
+
+    .screenshot-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    .screenshot-caption {
+      padding: 14px 16px 17px;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: rgba(233, 213, 255, 0.5);
+    }
+
+    .result-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 34px;
+      margin-top: 32px;
+    }
+
+    .result-item {
+      position: relative;
+      padding: 17px 0 17px 22px;
+      border-top: 1px solid rgba(216, 180, 254, 0.11);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(233, 213, 255, 0.65);
+    }
+
+    .result-item::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: rgba(192, 132, 252, 0.66);
+    }
+
+    .case-study-end {
+      padding-top: 50px;
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
+      text-align: center;
+    }
+
+    .case-study-end span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.13em;
+      color: rgba(192, 132, 252, 0.54);
+    }
+
+    @media (max-width: 768px) {
+      .case-study-page {
+        padding: 60px 20px 90px;
+      }
+
+      .case-study-back {
+        margin-bottom: 50px;
+      }
+
+      .case-study-hero {
+        margin-bottom: 70px;
+      }
+
+      .case-study-hero h1 {
+        font-size: 3rem;
+      }
+
+      .case-study-lead {
+        font-size: 0.96rem;
+        line-height: 1.8;
+      }
+
+      .project-status,
+      .engineering-list,
+      .screenshot-grid,
+      .result-list {
+        grid-template-columns: 1fr;
+      }
+
+      .project-status-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(216, 180, 254, 0.12);
+      }
+
+      .case-study-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 50px 0;
+      }
+
+      .code-window pre {
+        font-size: 0.74rem;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <div id="sparkle-container"></div>
-  <div class="project-page">
-    <h1 class="glow">Grazioso Salvare Animal Rescue Dashboard</h1>
-    <a class="back-link" href="../home.html">← Back to Portfolio</a>
+  <div class="butterfly-cursor"></div>
 
-    <h2>Overview</h2>
-    <p>
-      This interactive dashboard was developed for Grazioso Salvare, an animal rescue organization specializing in Water Rescue,
-      Mountain/Wilderness Rescue, and Disaster/Individual Tracking. Built with <strong>MongoDB</strong> and <strong>Dash</strong>,
-      the application allows users to visualize and manage animal data in real-time, making it easier to assess operations and support rescue efforts.
-    </p>
+  <main class="case-study-page">
 
-    <h2>Core Features</h2>
-    <ul>
-      <li>📊 <strong>Dynamic Filtering:</strong> Radio buttons for selecting rescue operation type.</li>
-      <li>📋 <strong>Interactive Data Table:</strong> Paginated, sortable table of rescue animals.</li>
-      <li>📈 <strong>Visualizations:</strong> Pie chart showing animal breed distribution.</li>
-      <li>🗺️ <strong>Geolocation Map:</strong> Dash Leaflet integration with markers per animal.</li>
-    </ul>
+    <a href="../projects.html" class="case-study-back">
+      ← Back to Projects
+    </a>
 
-    <h2>Tech Stack</h2>
-    <ul>
-      <li><strong>MongoDB:</strong> Efficient NoSQL storage and flexible data schema</li>
-      <li><strong>Pandas:</strong> Data cleaning and CSV → MongoDB transformation</li>
-      <li><strong>Dash + Plotly Express:</strong> UI layout and interactive graphs</li>
-      <li><strong>Dash Leaflet:</strong> Mapping animal coordinates with popups + tooltips</li>
-    </ul>
+    <header class="case-study-hero">
 
-    <h2>Code Snippets</h2>
-    <h3>📥 Data Loading</h3>
-    <pre><code>df = pd.read_csv("aac_shelter_outcomes.csv")
+      <span class="case-study-eyebrow">
+        DATA / DATABASES / INTERACTIVE DASHBOARD
+      </span>
+
+      <h1>Animal Rescue Dashboard</h1>
+
+      <p class="case-study-lead">
+        An interactive data dashboard built for the fictional animal rescue
+        organization Grazioso Salvare, combining MongoDB-backed animal records,
+        dynamic filtering, visual analytics, and geographic mapping to support
+        rescue-specific decision making.
+      </p>
+
+      <div class="case-study-tech">
+        <span>Python</span>
+        <span>MongoDB</span>
+        <span>PyMongo</span>
+        <span>Pandas</span>
+        <span>Dash</span>
+        <span>Plotly Express</span>
+        <span>Dash Leaflet</span>
+        <span>Data Visualization</span>
+      </div>
+
+      <div class="project-status">
+
+        <div class="project-status-item">
+          <span>ORGANIZATION</span>
+          <strong>Grazioso Salvare</strong>
+        </div>
+
+        <div class="project-status-item">
+          <span>DATA LAYER</span>
+          <strong>MongoDB / PyMongo</strong>
+        </div>
+
+        <div class="project-status-item">
+          <span>INTERFACE</span>
+          <strong>Dash + Plotly + Leaflet</strong>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- 01 / Overview -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        01 / OVERVIEW
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Turning shelter data into an operational dashboard.
+        </h2>
+
+        <p>
+          This application was developed for Grazioso Salvare, an animal rescue
+          organization focused on identifying animals suited for
+          <strong>Water Rescue</strong>,
+          <strong>Mountain or Wilderness Rescue</strong>, and
+          <strong>Disaster or Individual Tracking</strong>.
+        </p>
+
+        <p>
+          Rather than presenting shelter records as a static dataset, the
+          dashboard turns those records into an interactive interface where
+          users can filter animals according to rescue requirements and inspect
+          the resulting data through several synchronized views.
+        </p>
+
+        <div class="case-study-quote">
+          The core design problem was not simply displaying data. It was making
+          the same underlying dataset useful through filtering, tabular
+          exploration, visualization, and geography at the same time.
+        </div>
+
+        <p>
+          MongoDB provides the data-storage layer, while Python, Pandas, Dash,
+          Plotly Express, and Dash Leaflet form the application and
+          visualization layers.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- 02 / Rescue Context -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        02 / RESCUE CONTEXT
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Designing the interface around real filtering goals.
+        </h2>
+
+        <p>
+          The dashboard is organized around three rescue categories, each
+          representing a different operational need.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>WATER RESCUE</h3>
+            <p>
+              Filters the available animal records according to characteristics
+              relevant to water-rescue work.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>MOUNTAIN / WILDERNESS</h3>
+            <p>
+              Produces a dataset targeted toward animals suited for
+              wilderness-oriented rescue operations.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>DISASTER / TRACKING</h3>
+            <p>
+              Supports exploration of animals associated with
+              disaster-response or individual-tracking requirements.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>RESET</h3>
+            <p>
+              Restores the unfiltered dataset so users can return to the full
+              collection without reloading the application.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 03 / Architecture -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        03 / ARCHITECTURE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Connecting persisted data to multiple interactive views.
+        </h2>
+
+        <p>
+          The application follows a simple data pipeline where shelter records
+          move from source data into MongoDB and are then transformed for use
+          by the dashboard.
+        </p>
+
+        <div class="architecture-flow">
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>SHELTER DATASET</strong>
+              <span>
+                Animal records begin as structured shelter outcome data.
+              </span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>PANDAS</strong>
+              <span>
+                Python prepares records for transformation and application use.
+              </span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>MONGODB</strong>
+              <span>
+                Animal records are stored in a flexible NoSQL collection.
+              </span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>DASH CALLBACK</strong>
+              <span>
+                User-selected filters determine which records should be shown.
+              </span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>TABLE + CHART + MAP</strong>
+              <span>
+                The filtered dataset drives all major dashboard components.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 04 / Data Layer -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        04 / DATA LAYER
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Moving structured shelter records into MongoDB.
+        </h2>
+
+        <p>
+          Pandas was used to read the animal shelter dataset and transform its
+          rows into dictionary-style records that could be inserted into
+          MongoDB.
+        </p>
+
+        <div class="code-window">
+
+          <div class="code-window-header">
+            <span>DATA LOADING</span>
+            <span>PYTHON / PANDAS</span>
+          </div>
+
+          <pre><code>df = pd.read_csv("aac_shelter_outcomes.csv")
+
 data_dict = df.to_dict("records")
+
 collection.insert_many(data_dict)</code></pre>
 
-    <h3>🔁 Dynamic Dashboard Callback</h3>
-    <pre><code>@app.callback(
+        </div>
+
+        <p>
+          This approach provided a clear transition from tabular CSV data to
+          document-based database records.
+        </p>
+
+        <p>
+          The project also required working with missing values and
+          standardizing location information so downstream dashboard
+          components could operate on reliable data.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- 05 / MongoDB -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        05 / MONGODB
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Using a flexible document model for animal records.
+        </h2>
+
+        <p>
+          MongoDB served as the primary persistence layer for the rescue
+          records. Its document model provided a practical fit for animal data
+          containing attributes such as breed, name, rescue-related
+          characteristics, and location coordinates.
+        </p>
+
+        <p>
+          PyMongo provided the connection between the Python application and
+          MongoDB, allowing the project to work with the dataset through
+          database operations rather than treating the CSV file as the final
+          application data source.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>CREATE</h3>
+            <p>
+              Import animal records into the MongoDB collection.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>READ</h3>
+            <p>
+              Retrieve records used by the dashboard and rescue filters.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>UPDATE</h3>
+            <p>
+              Work with stored records through database-backed operations.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>DELETE</h3>
+            <p>
+              Support the full set of CRUD concepts required for managing
+              persistent records.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 06 / Dashboard -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        06 / DASHBOARD
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Giving users several ways to understand the same data.
+        </h2>
+
+        <p>
+          The dashboard presents animal information through multiple
+          coordinated components rather than relying on a single visualization.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>RESCUE FILTERS</h3>
+            <p>
+              Radio controls let users switch between rescue categories or
+              reset the dashboard.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>DATA TABLE</h3>
+            <p>
+              A paginated and sortable table supports detailed inspection of
+              individual animal records.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>PIE CHART</h3>
+            <p>
+              Breed distribution is summarized visually for the active result
+              set.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>GEOLOCATION MAP</h3>
+            <p>
+              Animal coordinates are translated into map markers with
+              contextual information.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 07 / Reactive Updates -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        07 / REACTIVITY
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Synchronizing multiple outputs from one user action.
+        </h2>
+
+        <p>
+          Dash callbacks form the connection between user interaction and
+          dashboard state.
+        </p>
+
+        <p>
+          When a user selects a rescue category, the callback determines which
+          dataset should be active and uses that result to rebuild the table,
+          chart, and map.
+        </p>
+
+        <div class="code-window">
+
+          <div class="code-window-header">
+            <span>DASHBOARD CALLBACK</span>
+            <span>DASH</span>
+          </div>
+
+          <pre><code>@app.callback(
   [Output('datatable-id', 'data'),
    Output('graph-id', 'figure'),
    Output('map-id', 'children')],
@@ -116,60 +889,596 @@ def update_dashboard(filter_type):
         data = df
     else:
         data = get_filtered_data(filter_type)
-    fig = px.pie(data, names='breed', title='Preferred Animals')
+
+    fig = px.pie(
+        data,
+        names='breed',
+        title='Preferred Animals'
+    )
+
     markers = [
-        dl.Marker(position=[row['location_lat'], row['location_long']],
-            children=[dl.Tooltip(row['breed']), dl.Popup(row['name'])])
+        dl.Marker(
+            position=[
+                row['location_lat'],
+                row['location_long']
+            ],
+            children=[
+                dl.Tooltip(row['breed']),
+                dl.Popup(row['name'])
+            ]
+        )
         for _, row in data.iterrows()
     ]
+
     return data.to_dict('records'), fig, markers</code></pre>
 
-    <h2>Challenges & Solutions</h2>
-    <ul>
-      <li><strong>Data Cleaning:</strong> Handled missing values and standardized location fields.</li>
-      <li><strong>MongoDB CRUD:</strong> Used <code>pymongo</code> to insert and manage data safely.</li>
-      <li><strong>Component Sync:</strong> Dash callbacks enabled real-time updates across all visualizations.</li>
-    </ul>
-    
-    <section>
-        <h2>Screenshot Highlights</h2>
-        <h3>Initial Dashboard View</h3>
-        <img src="images/CS 340 Module 7 Project 2 (initial_state).png" alt="Initial Dashboard View" />
-        <img src="images/CS 340 Module 7 Project 2 (initial_state_graphmap).png" alt="Initial Graph and Map" />
-  
-        <h3>Water Rescue View</h3>
-        <img src="images/CS 340 Module 7 Project 2 (water).png" alt="Water Rescue Dashboard" />
-        <img src="images/CS 340 Module 7 Project 2 (water_graphmap).png" alt="Water Rescue Map" />
-  
-        <h3>Mountain/Wilderness Rescue View</h3>
-        <img src="images/CS 340 Module 7 Project 2 (wild).png" alt="Wilderness Rescue Dashboard" />
-        <img src="images/CS 340 Module 7 Project 2 (wild_graphmap).png" alt="Wilderness Rescue Map" />
-  
-        <h3>Disaster/Individual Tracking View</h3>
-        <img src="images/CS 340 Module 7 Project 2 (disaster).png" alt="Disaster Rescue Dashboard" />
-        <img src="images/CS 340 Module 7 Project 2 (disaster_graphmap).png" alt="Disaster Rescue Map" />
-      </section>
+        </div>
 
-    <h2>Reflections & Takeaways</h2>
-    <p>
-      This project strengthened my full-stack development skills—blending backend database logic with front-end interactivity.
-      It showcased the power of reactive data pipelines, geographic mapping, and real-world filtering logic.
-    </p>
-    <p>
-      I gained valuable insights into handling flexible schemas, creating modular dashboards, and ensuring high usability for non-technical users.
-    </p>
+        <p>
+          The important architectural idea is that the three visual components
+          do not maintain independent filter states. They are all derived from
+          the same filtered dataset.
+        </p>
 
-    <h2>Final Outcome</h2>
-    <p>
-      The Grazioso Salvare dashboard is a clean, scalable solution tailored for animal rescue professionals.
-      It integrates data science, database performance, and user experience design—making it one of my proudest web application projects.
-    </p>
-  </div>
-  <!-- Sparkle + Butterfly Cursor -->
-  <div id="sparkle-container"></div>
-  <div class="butterfly-cursor"></div>
+      </div>
 
-  <!-- Scripts -->
+    </section>
+
+
+    <!-- 08 / Data Table -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        08 / TABLE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Preserving access to the underlying records.
+        </h2>
+
+        <p>
+          Charts provide summaries, but operational users may still need the
+          actual records behind those summaries.
+        </p>
+
+        <p>
+          The interactive data table provides that detailed view while
+          supporting pagination and sorting. This lets the dashboard balance
+          high-level visual analysis with record-level inspection.
+        </p>
+
+        <div class="case-study-quote">
+          A useful dashboard should not force users to choose between seeing
+          patterns and seeing the data that produced them.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 09 / Visualization -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        09 / VISUALIZATION
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Summarizing breed distribution within filtered results.
+        </h2>
+
+        <p>
+          Plotly Express is used to create a pie chart from the currently active
+          dataset.
+        </p>
+
+        <p>
+          Because the chart is generated from filtered records rather than a
+          static copy of the original data, its distribution changes when the
+          user selects a different rescue category.
+        </p>
+
+        <p>
+          That makes the visualization useful as a comparative tool: the user
+          can see how the breed composition differs across operational rescue
+          requirements.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- 10 / Mapping -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        10 / MAPPING
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Adding geography as another dimension of the dataset.
+        </h2>
+
+        <p>
+          Dash Leaflet translates latitude and longitude values into geographic
+          markers so users can inspect where filtered animal records are
+          located.
+        </p>
+
+        <p>
+          Each generated marker includes contextual information through
+          tooltips and popups, including details such as breed and animal name.
+        </p>
+
+        <div class="architecture-flow">
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>FILTER RECORDS</strong>
+              <span>
+                Select only animals relevant to the current rescue mode.
+              </span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>READ COORDINATES</strong>
+              <span>
+                Use stored latitude and longitude values for each row.
+              </span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>CREATE MARKERS</strong>
+              <span>
+                Convert each valid location into a Leaflet map marker.
+              </span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>ATTACH CONTEXT</strong>
+              <span>
+                Add tooltips and popups so markers remain informative.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 11 / Challenge -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        11 / CHALLENGE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Keeping the dataset clean enough for every component to trust it.
+        </h2>
+
+        <p>
+          One challenge was that several downstream features depended on
+          consistent data.
+        </p>
+
+        <p>
+          Missing values or inconsistent location information could affect the
+          table, visualization, or map differently. Cleaning and standardizing
+          the data therefore became an important part of making the overall
+          interface reliable.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>MISSING VALUES</h3>
+            <p>
+              Incomplete data needed to be handled before it reached
+              visualization logic.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>LOCATION FIELDS</h3>
+            <p>
+              Geographic values needed sufficient consistency for map markers.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>FILTER OUTPUT</h3>
+            <p>
+              Rescue filters needed to produce predictable subsets of the
+              dataset.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>COMPONENT SYNC</h3>
+            <p>
+              Every visual component needed to represent the same active
+              filter state.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 12 / Screenshots -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        12 / INTERFACE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Seeing the dashboard change across rescue modes.
+        </h2>
+
+        <p>
+          These views show the interface in its default state and after
+          applying each rescue-specific filter.
+        </p>
+
+
+        <div class="screenshot-group">
+
+          <div class="screenshot-group-title">
+            INITIAL DASHBOARD
+          </div>
+
+          <div class="screenshot-grid">
+
+            <div class="screenshot-card">
+              <img
+                src="images/CS 340 Module 7 Project 2 (initial_state).png"
+                alt="Initial animal rescue dashboard data table"
+              />
+              <div class="screenshot-caption">
+                Initial dashboard state showing the broader animal dataset.
+              </div>
+            </div>
+
+            <div class="screenshot-card">
+              <img
+                src="images/CS 340 Module 7 Project 2 (initial_state_graphmap).png"
+                alt="Initial animal rescue dashboard graph and map"
+              />
+              <div class="screenshot-caption">
+                Initial visualization and geographic map before rescue-specific
+                filtering.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="screenshot-group">
+
+          <div class="screenshot-group-title">
+            WATER RESCUE
+          </div>
+
+          <div class="screenshot-grid">
+
+            <div class="screenshot-card">
+              <img
+                src="images/CS 340 Module 7 Project 2 (water).png"
+                alt="Water Rescue filtered animal dashboard"
+              />
+              <div class="screenshot-caption">
+                Animal records after applying the Water Rescue filter.
+              </div>
+            </div>
+
+            <div class="screenshot-card">
+              <img
+                src="images/CS 340 Module 7 Project 2 (water_graphmap).png"
+                alt="Water Rescue dashboard graph and map"
+              />
+              <div class="screenshot-caption">
+                Breed distribution and geographic results for Water Rescue.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="screenshot-group">
+
+          <div class="screenshot-group-title">
+            MOUNTAIN / WILDERNESS RESCUE
+          </div>
+
+          <div class="screenshot-grid">
+
+            <div class="screenshot-card">
+              <img
+                src="images/CS 340 Module 7 Project 2 (wild).png"
+                alt="Mountain and Wilderness Rescue filtered animal dashboard"
+              />
+              <div class="screenshot-caption">
+                Animal records after applying the Mountain/Wilderness filter.
+              </div>
+            </div>
+
+            <div class="screenshot-card">
+              <img
+                src="images/CS 340 Module 7 Project 2 (wild_graphmap).png"
+                alt="Mountain and Wilderness Rescue dashboard graph and map"
+              />
+              <div class="screenshot-caption">
+                Visualization and geographic results for wilderness-oriented
+                rescue operations.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="screenshot-group">
+
+          <div class="screenshot-group-title">
+            DISASTER / INDIVIDUAL TRACKING
+          </div>
+
+          <div class="screenshot-grid">
+
+            <div class="screenshot-card">
+              <img
+                src="images/CS 340 Module 7 Project 2 (disaster).png"
+                alt="Disaster and Individual Tracking filtered animal dashboard"
+              />
+              <div class="screenshot-caption">
+                Animal records after applying the Disaster/Individual Tracking
+                filter.
+              </div>
+            </div>
+
+            <div class="screenshot-card">
+              <img
+                src="images/CS 340 Module 7 Project 2 (disaster_graphmap).png"
+                alt="Disaster and Individual Tracking dashboard graph and map"
+              />
+              <div class="screenshot-caption">
+                Visualization and geographic results for disaster or tracking
+                operations.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 13 / UX -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        13 / UX
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Designing data tools for users who should not need to understand the database.
+        </h2>
+
+        <p>
+          One of the important lessons from this project was that the technical
+          structure of a data application should remain largely invisible to
+          the person using it.
+        </p>
+
+        <p>
+          A user should not need to understand MongoDB queries, Pandas
+          transformations, or callback mechanics to answer a practical
+          question about the rescue dataset.
+        </p>
+
+        <div class="case-study-quote">
+          The interface becomes useful when complex data operations are reduced
+          to understandable actions: choose a rescue type, inspect the records,
+          compare the distribution, and explore the locations.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 14 / Reflection -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        14 / REFLECTION
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Connecting database development, data processing, and interface design.
+        </h2>
+
+        <p>
+          This project strengthened my understanding of how data moves through
+          an application from storage to presentation.
+        </p>
+
+        <p>
+          MongoDB provided persistence, Pandas supported data transformation,
+          Dash connected user interaction to application state, Plotly
+          summarized the active data visually, and Leaflet added geographic
+          context.
+        </p>
+
+        <p>
+          Working across those layers reinforced the importance of keeping the
+          data consistent throughout the application. A filter was not complete
+          simply because the table changed; every dependent visualization had
+          to update from the same source of truth.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- 15 / Result -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        15 / RESULT
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          A complete data-driven interface built around operational questions.
+        </h2>
+
+        <p>
+          The finished dashboard combines persistence, querying, transformation,
+          visualization, mapping, and interactive UI behavior into one
+          application.
+        </p>
+
+        <div class="result-list">
+
+          <div class="result-item">
+            Imported shelter outcome data into MongoDB.
+          </div>
+
+          <div class="result-item">
+            Used Pandas to prepare and transform application data.
+          </div>
+
+          <div class="result-item">
+            Worked with MongoDB through PyMongo.
+          </div>
+
+          <div class="result-item">
+            Applied CRUD concepts to persistent animal records.
+          </div>
+
+          <div class="result-item">
+            Built an interactive Dash application.
+          </div>
+
+          <div class="result-item">
+            Added rescue-specific filtering controls.
+          </div>
+
+          <div class="result-item">
+            Created a sortable and paginated data table.
+          </div>
+
+          <div class="result-item">
+            Visualized breed distribution with Plotly Express.
+          </div>
+
+          <div class="result-item">
+            Mapped animal locations using Dash Leaflet.
+          </div>
+
+          <div class="result-item">
+            Synchronized multiple UI components through callbacks.
+          </div>
+
+          <div class="result-item">
+            Addressed missing and inconsistent data.
+          </div>
+
+          <div class="result-item">
+            Designed the dashboard with non-technical users in mind.
+          </div>
+
+        </div>
+
+        <p style="margin-top: 34px;">
+          The project gave me practical experience building an application in
+          which database decisions, data quality, backend logic, visualization,
+          and user experience all affect one another.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="case-study-end">
+      <span>ANIMAL RESCUE DASHBOARD / DATA • MAPPING • INTERACTION</span>
+    </div>
+
+  </main>
+
+
+  <audio id="background-music" loop>
+    <source
+      src="../assets/Claude Debussy Claire De Lune added reverb.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
+
+  <button
+    class="music-toggle"
+    id="music-toggle"
+    type="button"
+    aria-label="Toggle background music"
+  >
+    ☾
+  </button>
+
+  <script src="../music.js"></script>
   <script src="../script.js"></script>
+
 </body>
 </html>
