@@ -517,7 +517,7 @@ body {
       rgba(7, 0, 18, 0.18),
       rgba(7, 0, 18, 0.22)
     ),
-    url('assets/nebula-background.jpg');
+    url('assets/backgrounds/nebula-background.jpg');
 
   background-size: cover;
   background-position: center center;
