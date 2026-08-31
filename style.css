@@ -512,249 +512,56 @@ body {
 
   z-index: 0;
 
-  background:
-    radial-gradient(
-      ellipse at 50% 45%,
-      rgba(68, 20, 105, 0.24) 0%,
-      rgba(25, 3, 45, 0.08) 48%,
-      transparent 72%
-    ),
+  background-image:
     linear-gradient(
-      180deg,
-      #07000f 0%,
-      #100019 30%,
-      #1c032b 64%,
-      #0a0012 100%
-    );
+      rgba(7, 0, 18, 0.18),
+      rgba(7, 0, 18, 0.22)
+    ),
+    url('assets/nebula-background.jpg');
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 
-/* =========================
-   Textured SVG Nebula
-   ========================= */
+/* Darkens the center slightly so the hero
+   remains readable over the nebula artwork */
+#background::before {
+  content: "";
 
-.nebula-texture {
-  position: absolute;
-
-  width: 115%;
-  height: 115%;
-
-  top: -7.5%;
-  left: -7.5%;
-
-  opacity: 0.72;
-
-  mix-blend-mode: screen;
-
-  filter:
-    saturate(1.4)
-    contrast(1.15);
-
-  animation: nebulaTextureFloat 26s ease-in-out infinite alternate;
-
-  pointer-events: none;
-}
-
-
-.svg-nebula {
-  fill: #8b35d1;
-}
-
-
-.svg-nebula-left {
-  opacity: 0.72;
-}
-
-
-.svg-nebula-right {
-  opacity: 0.64;
-}
-
-
-.svg-nebula-bottom {
-  opacity: 0.52;
-}
-
-
-@keyframes nebulaTextureFloat {
-
-  from {
-    transform:
-      translate3d(-10px, -5px, 0)
-      scale(1.02);
-  }
-
-  to {
-    transform:
-      translate3d(22px, 14px, 0)
-      scale(1.06);
-  }
-
-}
-
-
-/* =========================
-   Nebula Lighting
-   ========================= */
-
-.nebula-glow {
-  position: absolute;
-
-  border-radius: 50%;
-
-  filter: blur(90px);
-
-  mix-blend-mode: screen;
-
-  pointer-events: none;
-}
-
-
-.nebula-glow-left {
-  width: 620px;
-  height: 780px;
-
-  left: -310px;
-  top: 5%;
-
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(233, 213, 255, 0.48) 0%,
-      rgba(192, 132, 252, 0.30) 22%,
-      rgba(126, 34, 206, 0.16) 48%,
-      transparent 74%
-    );
-
-  animation: nebulaGlowLeft 20s ease-in-out infinite alternate;
-}
-
-
-.nebula-glow-right {
-  width: 700px;
-  height: 800px;
-
-  right: -360px;
-  top: 18%;
-
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(216, 180, 254, 0.44) 0%,
-      rgba(168, 85, 247, 0.29) 24%,
-      rgba(107, 33, 168, 0.16) 50%,
-      transparent 74%
-    );
-
-  animation: nebulaGlowRight 24s ease-in-out infinite alternate;
-}
-
-
-.nebula-glow-bottom {
-  width: 900px;
-  height: 500px;
-
-  left: 50%;
-  bottom: -320px;
-
-  transform: translateX(-50%);
-
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(192, 132, 252, 0.37) 0%,
-      rgba(147, 51, 234, 0.22) 34%,
-      transparent 72%
-    );
-}
-
-
-@keyframes nebulaGlowLeft {
-
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(55px, 30px, 0);
-  }
-
-}
-
-
-@keyframes nebulaGlowRight {
-
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-60px, 35px, 0);
-  }
-
-}
-
-
-/* =========================
-   Natural Star Field
-   ========================= */
-
-.celestial-stars {
   position: absolute;
   inset: 0;
 
-  opacity: 0.72;
+  pointer-events: none;
 
-  background-image:
-
-    radial-gradient(circle at 4% 11%, #ffffff 0 1px, transparent 1.6px),
-    radial-gradient(circle at 8% 68%, #d8b4fe 0 1px, transparent 1.8px),
-    radial-gradient(circle at 13% 27%, #ffffff 0 1.2px, transparent 1.9px),
-    radial-gradient(circle at 17% 84%, #c084fc 0 1px, transparent 1.7px),
-
-    radial-gradient(circle at 22% 9%, #ffffff 0 0.8px, transparent 1.5px),
-    radial-gradient(circle at 26% 46%, #e9d5ff 0 1px, transparent 1.8px),
-    radial-gradient(circle at 30% 73%, #ffffff 0 1.3px, transparent 2px),
-
-    radial-gradient(circle at 35% 20%, #d8b4fe 0 1px, transparent 1.8px),
-    radial-gradient(circle at 39% 91%, #ffffff 0 1px, transparent 1.7px),
-
-    radial-gradient(circle at 44% 36%, #ffffff 0 0.8px, transparent 1.5px),
-    radial-gradient(circle at 48% 68%, #c084fc 0 1.1px, transparent 1.8px),
-
-    radial-gradient(circle at 53% 13%, #ffffff 0 1px, transparent 1.7px),
-    radial-gradient(circle at 57% 83%, #e9d5ff 0 1.3px, transparent 2px),
-
-    radial-gradient(circle at 61% 31%, #ffffff 0 0.9px, transparent 1.6px),
-    radial-gradient(circle at 65% 61%, #d8b4fe 0 1px, transparent 1.8px),
-
-    radial-gradient(circle at 70% 8%, #ffffff 0 1.2px, transparent 1.9px),
-    radial-gradient(circle at 73% 78%, #c084fc 0 1px, transparent 1.7px),
-
-    radial-gradient(circle at 78% 24%, #ffffff 0 0.9px, transparent 1.6px),
-    radial-gradient(circle at 81% 54%, #e9d5ff 0 1px, transparent 1.8px),
-
-    radial-gradient(circle at 86% 89%, #ffffff 0 1.3px, transparent 2px),
-    radial-gradient(circle at 90% 17%, #d8b4fe 0 1px, transparent 1.8px),
-
-    radial-gradient(circle at 94% 69%, #ffffff 0 1px, transparent 1.7px),
-    radial-gradient(circle at 97% 37%, #c084fc 0 1.1px, transparent 1.8px);
-
-
-  animation: starGlow 6s ease-in-out infinite alternate;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(7, 0, 18, 0.38) 0%,
+      rgba(7, 0, 18, 0.20) 32%,
+      rgba(7, 0, 18, 0.04) 60%,
+      transparent 78%
+    );
 }
 
 
-@keyframes starGlow {
+/* Adds a subtle violet atmospheric wash */
+#background::after {
+  content: "";
 
-  from {
-    opacity: 0.48;
-  }
+  position: absolute;
+  inset: 0;
 
-  to {
-    opacity: 0.8;
-  }
+  pointer-events: none;
 
+  background:
+    linear-gradient(
+      180deg,
+      rgba(38, 9, 68, 0.06) 0%,
+      rgba(73, 20, 110, 0.08) 55%,
+      rgba(20, 3, 40, 0.16) 100%
+    );
 }
 
 
@@ -768,6 +575,8 @@ body {
 
   overflow: hidden;
 
+  z-index: 2;
+
   pointer-events: none;
 }
 
@@ -775,7 +584,7 @@ body {
 .shooting-star {
   position: absolute;
 
-  width: 140px;
+  width: 150px;
   height: 2px;
 
   border-radius: 999px;
@@ -783,31 +592,31 @@ body {
   opacity: 0;
 
   /*
-     Head is on the LEFT.
-     Tail fades toward the RIGHT.
-     This makes the meteor travel
-     diagonally downward-left.
+     Bright head on LEFT,
+     fading tail on RIGHT.
   */
   background:
     linear-gradient(
       90deg,
       rgba(255, 255, 255, 1) 0%,
-      rgba(216, 180, 254, 0.8) 8%,
-      rgba(192, 132, 252, 0.32) 40%,
+      rgba(233, 213, 255, 0.95) 5%,
+      rgba(192, 132, 252, 0.62) 20%,
+      rgba(147, 51, 234, 0.24) 55%,
       transparent 100%
     );
 
   filter:
-    drop-shadow(0 0 4px rgba(255,255,255,0.9))
-    drop-shadow(0 0 9px rgba(192,132,252,0.8));
+    drop-shadow(0 0 4px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 8px rgba(216, 180, 254, 0.85))
+    drop-shadow(0 0 14px rgba(147, 51, 234, 0.65));
 
-  transform: rotate(-32deg);
+  transform: rotate(-35deg);
 
   will-change: transform, opacity;
 }
 
 
-/* Bright meteor head */
+/* Bright head of the shooting star */
 .shooting-star::before {
   content: "";
 
@@ -821,103 +630,114 @@ body {
 
   border-radius: 50%;
 
-  background: white;
+  background: #ffffff;
 
   transform: translateY(-50%);
 
   box-shadow:
-    0 0 6px white,
-    0 0 12px #d8b4fe,
-    0 0 20px #9333ea;
+    0 0 5px #ffffff,
+    0 0 10px #d8b4fe,
+    0 0 18px #9333ea;
 }
 
 
-/* Starting locations */
+/* =========================
+   Individual Star Positions
+   ========================= */
 
 .shooting-star-1 {
-  top: 8%;
-  left: 78%;
+  top: 10%;
+  left: 82%;
 
   animation:
-    shootingStarFall 8s ease-in 1s infinite;
+    meteorFall 9s ease-in 1s infinite;
 }
 
 
 .shooting-star-2 {
-  top: 25%;
-  left: 93%;
+  top: 27%;
+  left: 96%;
 
   animation:
-    shootingStarFall 11s ease-in 4.5s infinite;
+    meteorFall 12s ease-in 4.5s infinite;
 }
 
 
 .shooting-star-3 {
-  top: 45%;
-  left: 72%;
+  top: 52%;
+  left: 77%;
 
   animation:
-    shootingStarFall 13s ease-in 7s infinite;
+    meteorFall 14s ease-in 7.5s infinite;
 }
 
 
 .shooting-star-4 {
-  top: 14%;
-  left: 55%;
+  top: 17%;
+  left: 63%;
 
   animation:
-    shootingStarFall 10s ease-in 9s infinite;
+    meteorFall 11s ease-in 10s infinite;
 }
 
 
 .shooting-star-5 {
-  top: 62%;
-  left: 88%;
+  top: 70%;
+  left: 92%;
 
   animation:
-    shootingStarFall 14s ease-in 11s infinite;
+    meteorFall 15s ease-in 12.5s infinite;
 }
 
 
-/*
-   IMPORTANT:
-   Negative X = moves LEFT.
-   Positive Y = moves DOWN.
-*/
-@keyframes shootingStarFall {
+/* =========================
+   Shooting Star Animation
+
+   X is NEGATIVE = move left
+   Y is POSITIVE = move down
+
+   Result: ↙
+   ========================= */
+
+@keyframes meteorFall {
 
   0% {
     opacity: 0;
 
     transform:
       translate3d(0, 0, 0)
-      rotate(-32deg)
-      scaleX(0.3);
+      rotate(-35deg)
+      scaleX(0.25);
   }
 
 
-  3% {
+  2% {
+    opacity: 0;
+  }
+
+
+  5% {
     opacity: 1;
   }
 
 
-  9% {
+  11% {
     opacity: 1;
 
     transform:
-      translate3d(-180px, 130px, 0)
-      rotate(-32deg)
+      translate3d(-180px, 135px, 0)
+      rotate(-35deg)
       scaleX(1);
   }
 
 
-  15% {
+  17% {
     opacity: 0;
 
     transform:
-      translate3d(-360px, 260px, 0)
-      rotate(-32deg)
-      scaleX(0.25);
+      translate3d(-380px, 285px, 0)
+      rotate(-35deg)
+      scaleX(0.35);
   }
 
 
@@ -925,9 +745,9 @@ body {
     opacity: 0;
 
     transform:
-      translate3d(-360px, 260px, 0)
-      rotate(-32deg)
-      scaleX(0.25);
+      translate3d(-380px, 285px, 0)
+      rotate(-35deg)
+      scaleX(0.35);
   }
 
 }
@@ -1047,15 +867,9 @@ body {
 /* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
 
-  .nebula-texture,
-  .nebula-glow,
-  .celestial-stars,
-  .shooting-star {
-    animation: none;
-  }
-
   .shooting-star {
     display: none;
+    animation: none;
   }
 
 }
