@@ -2,132 +2,1701 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Backend Services | Takeria Thompson</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Backend Services Optimization | Takeria Thompson</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="../style.css" />
-  <script src="../script.js" defer></script>
+
   <style>
-    .project-page {
-      max-width: 900px;
+    /* =========================================================
+       Backend Services Case Study
+       ========================================================= */
+
+    .case-study-page {
+      position: relative;
+      z-index: 1;
+
+      width: 100%;
+      max-width: 1160px;
+
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 90px 24px 120px;
     }
 
-    .project-page h1 {
-      font-size: 2.8rem;
-      text-align: center;
-      margin-bottom: 20px;
+    /* =========================================================
+       Back Navigation
+       ========================================================= */
+
+    .case-study-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 70px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+
+      color: rgba(216, 180, 254, 0.68);
+
+      transition:
+        color 0.25s ease,
+        gap 0.25s ease;
     }
 
-    .project-page h2 {
-      font-size: 2rem;
-      margin-top: 50px;
-      margin-bottom: 10px;
-      color: #e9d5ff;
+    .case-study-back:hover {
+      gap: 15px;
+      color: #ffffff;
     }
 
-    .project-page p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-top: 10px;
-      color: #ddd;
+    /* =========================================================
+       Hero
+       ========================================================= */
+
+    .case-study-hero {
+      max-width: 920px;
+      margin-bottom: 85px;
     }
 
-    ul {
-      color: #ddd;
-      margin-top: 10px;
-    }
+    .case-study-eyebrow {
+      display: block;
+      margin-bottom: 18px;
 
-    .back-link {
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-      display: inline-block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+
       color: #c084fc;
     }
 
-    .back-link:hover {
-      color: #fff;
+    .case-study-hero h1 {
+      margin: 0 0 26px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1;
+
+      color: #f3e8ff;
+
+      text-shadow:
+        0 0 24px rgba(147, 51, 234, 0.18);
     }
 
-    pre code {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 10px;
-      border-radius: 8px;
+    .case-study-lead {
+      max-width: 820px;
+      margin-bottom: 0;
+
+      font-size: 1.08rem;
+      line-height: 1.9;
+
+      color: rgba(233, 213, 255, 0.76);
+    }
+
+    /* =========================================================
+       Technology Strip
+       ========================================================= */
+
+    .case-study-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+
+      margin-top: 38px;
+    }
+
+    .case-study-tech span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+
+      color: rgba(216, 180, 254, 0.66);
+    }
+
+    .case-study-tech span:not(:last-child)::after {
+      content: " ·";
+      color: rgba(192, 132, 252, 0.40);
+    }
+
+    /* =========================================================
+       Project Facts
+       ========================================================= */
+
+    .project-status {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+
+      margin-top: 48px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.16);
+      border-bottom: 1px solid rgba(216, 180, 254, 0.16);
+    }
+
+    .project-status-item {
+      padding: 24px 22px;
+    }
+
+    .project-status-item:not(:last-child) {
+      border-right: 1px solid rgba(216, 180, 254, 0.12);
+    }
+
+    .project-status-item span {
       display: block;
-      white-space: pre-wrap;
-      margin-top: 10px;
+
+      margin-bottom: 8px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+
+      color: rgba(192, 132, 252, 0.62);
+    }
+
+    .project-status-item strong {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.5;
+
+      color: rgba(243, 232, 255, 0.88);
+    }
+
+    /* =========================================================
+       Main Sections
+       ========================================================= */
+
+    .case-study-section {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 70px;
+
+      padding: 68px 0;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
+    }
+
+    .case-study-section-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+
+      color: rgba(192, 132, 252, 0.72);
+    }
+
+    .case-study-content {
+      max-width: 760px;
+    }
+
+    .case-study-content h2 {
+      margin: 0 0 22px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      line-height: 1.25;
+
+      color: #f3e8ff;
+    }
+
+    .case-study-content h3 {
+      margin: 34px 0 12px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
+
+    .case-study-content p {
+      margin: 0 0 20px;
+
+      font-size: 1rem;
+      line-height: 1.85;
+
+      color: rgba(233, 213, 255, 0.72);
+    }
+
+    .case-study-content strong {
+      color: rgba(243, 232, 255, 0.92);
+    }
+
+    /* =========================================================
+       Highlight Quote
+       ========================================================= */
+
+    .case-study-quote {
+      margin: 34px 0;
+      padding: 26px 0 26px 28px;
+
+      border-left: 2px solid rgba(192, 132, 252, 0.48);
+
+      font-size: 1.08rem;
+      line-height: 1.8;
+
+      color: rgba(243, 232, 255, 0.84);
+    }
+
+    /* =========================================================
+       Engineering Grid
+       ========================================================= */
+
+    .engineering-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px 36px;
+
+      margin-top: 35px;
+    }
+
+    .engineering-point {
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.12);
+    }
+
+    .engineering-point h3 {
+      margin: 0 0 10px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
+
+    .engineering-point p {
+      margin: 0;
+
+      font-size: 0.91rem;
+      line-height: 1.75;
+
+      color: rgba(233, 213, 255, 0.64);
+    }
+
+    /* =========================================================
+       Service Architecture
+       ========================================================= */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+
+      margin: 38px 0;
+    }
+
+    .service-card {
+      padding: 26px 22px;
+
+      border: 1px solid rgba(216, 180, 254, 0.15);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(43, 13, 68, 0.16),
+          rgba(18, 6, 31, 0.06)
+        );
+    }
+
+    .service-number {
+      display: block;
+
+      margin-bottom: 18px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+
+      color: rgba(192, 132, 252, 0.5);
+    }
+
+    .service-card h3 {
+      margin: 0 0 12px;
+
+      font-size: 0.78rem;
+    }
+
+    .service-card p {
+      margin: 0;
+
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       Architecture Flow
+       ========================================================= */
+
+    .architecture-flow {
+      margin: 38px 0 26px;
+      padding: 26px 28px;
+
+      border: 1px solid rgba(216, 180, 254, 0.15);
+
+      background: rgba(33, 10, 55, 0.08);
+    }
+
+    .architecture-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+
+      position: relative;
+
+      padding: 9px 0;
+    }
+
+    .architecture-step:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+      left: 8px;
+      top: 35px;
+
+      width: 1px;
+      height: calc(100% - 18px);
+
+      background: rgba(192, 132, 252, 0.22);
+    }
+
+    .architecture-dot {
+      width: 17px;
+      height: 17px;
+
+      flex: 0 0 17px;
+
+      margin-top: 3px;
+
+      border: 1px solid rgba(216, 180, 254, 0.62);
+      border-radius: 50%;
+
+      background: rgba(147, 51, 234, 0.15);
+
+      box-shadow:
+        0 0 14px rgba(168, 85, 247, 0.2);
+    }
+
+    .architecture-step strong {
+      display: block;
+
+      margin-bottom: 3px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+
+      color: rgba(243, 232, 255, 0.9);
+    }
+
+    .architecture-step span {
+      font-size: 0.82rem;
+      line-height: 1.6;
+
+      color: rgba(233, 213, 255, 0.55);
+    }
+
+    /* =========================================================
+       Code Window
+       ========================================================= */
+
+    .code-window {
+      overflow-x: auto;
+
+      margin: 32px 0;
+
+      border: 1px solid rgba(216, 180, 254, 0.14);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 7, 34, 0.72),
+          rgba(42, 12, 67, 0.34)
+        );
+    }
+
+    .code-window-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 12px 16px;
+
+      border-bottom: 1px solid rgba(216, 180, 254, 0.11);
+    }
+
+    .code-window-header span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.57rem;
+      letter-spacing: 0.08em;
+
+      color: rgba(216, 180, 254, 0.5);
+    }
+
+    .code-window pre {
+      margin: 0;
+      padding: 22px 24px;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 0.82rem;
+      line-height: 1.7;
+
+      color: rgba(233, 213, 255, 0.8);
+
+      white-space: pre;
+    }
+
+    /* =========================================================
+       Test Matrix
+       ========================================================= */
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+
+      margin: 35px 0;
+
+      border: 1px solid rgba(216, 180, 254, 0.14);
+    }
+
+    .test-item {
+      padding: 24px;
+
+      background: rgba(31, 10, 51, 0.05);
+    }
+
+    .test-item:nth-child(odd) {
+      border-right: 1px solid rgba(216, 180, 254, 0.1);
+    }
+
+    .test-item:nth-child(-n + 4) {
+      border-bottom: 1px solid rgba(216, 180, 254, 0.1);
+    }
+
+    .test-item strong {
+      display: block;
+
+      margin-bottom: 9px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.69rem;
+      letter-spacing: 0.05em;
+
+      color: #d8b4fe;
+    }
+
+    .test-item span {
+      font-size: 0.85rem;
+      line-height: 1.65;
+
+      color: rgba(233, 213, 255, 0.58);
+    }
+
+    /* =========================================================
+       Comparison
+       ========================================================= */
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+
+      margin: 34px 0;
+    }
+
+    .comparison-column {
+      padding: 25px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.18);
+    }
+
+    .comparison-column h3 {
+      margin: 0 0 18px;
+
+      font-size: 0.68rem;
+    }
+
+    .comparison-column p {
+      margin-bottom: 9px;
+
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       Result
+       ========================================================= */
+
+    .result-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 34px;
+
+      margin-top: 32px;
+    }
+
+    .result-item {
+      position: relative;
+
+      padding: 17px 0 17px 22px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.11);
+
+      font-size: 0.9rem;
+      line-height: 1.7;
+
+      color: rgba(233, 213, 255, 0.65);
+    }
+
+    .result-item::before {
+      content: "✦";
+
+      position: absolute;
+      left: 0;
+
+      color: rgba(192, 132, 252, 0.66);
+    }
+
+    /* =========================================================
+       End
+       ========================================================= */
+
+    .case-study-end {
+      padding-top: 50px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
+
+      text-align: center;
+    }
+
+    .case-study-end span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.13em;
+
+      color: rgba(192, 132, 252, 0.54);
+    }
+
+    /* =========================================================
+       Mobile
+       ========================================================= */
+
+    @media (max-width: 850px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .case-study-page {
+        padding: 60px 20px 90px;
+      }
+
+      .case-study-back {
+        margin-bottom: 50px;
+      }
+
+      .case-study-hero {
+        margin-bottom: 70px;
+      }
+
+      .case-study-hero h1 {
+        font-size: 3rem;
+      }
+
+      .case-study-lead {
+        font-size: 0.96rem;
+        line-height: 1.8;
+      }
+
+      .project-status,
+      .engineering-list,
+      .test-grid,
+      .comparison-grid,
+      .result-list {
+        grid-template-columns: 1fr;
+      }
+
+      .project-status-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(216, 180, 254, 0.12);
+      }
+
+      .case-study-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+
+        padding: 50px 0;
+      }
+
+      .test-item,
+      .test-item:nth-child(odd),
+      .test-item:nth-child(-n + 4) {
+        border-right: none;
+        border-bottom: 1px solid rgba(216, 180, 254, 0.1);
+      }
+
+      .test-item:last-child {
+        border-bottom: none;
+      }
+
+      .code-window pre {
+        font-size: 0.74rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div id="sparkle-container"></div>
-  <div class="project-page">
-    <h1 class="glow">CS 320 Backend Services Optimization</h1>
-    <a class="back-link" href="../home.html">← Back to Portfolio</a>
 
-    <h2>Overview</h2>
-    <p>
-      This project demonstrates my ability to develop, organize, and test backend services using Java and JUnit as part of CS 320.
-      Acting as a software engineer for Grand Strand Systems, I created modular service classes for a mobile application and applied comprehensive unit testing to ensure functionality and quality assurance.
-    </p>
-
-    <h2>Services Developed</h2>
-    <p>
-      I developed three independent services — Contact, Task, and Appointment — each with their own object model, service manager, and unit tests.
-      These backend components handled creation, updating, and deletion without any UI layer.
-    </p>
-    <ul>
-      <li><strong>Contact Service:</strong> ID, name, phone, address with validation</li>
-      <li><strong>Task Service:</strong> Task name and description with character limits</li>
-      <li><strong>Appointment Service:</strong> Date-time scheduling with conflict prevention</li>
-    </ul>
-
-    <h2>Unit Testing Strategy</h2>
-    <p>
-      I implemented a full suite of JUnit test cases to validate functionality and constraints. The tests included positive cases, exception handling, and edge validation (e.g., nulls, ID duplication).
-      Coverage exceeded 80%, ensuring code reliability and regression safety.
-    </p>
-
-    <h3>Example Test Snippet</h3>
-    <pre><code>
-@Test
-public void testAddContact() {
-    ContactService service = new ContactService();
-    Contact contact = new Contact("123", "Takeria", "5551234567", "Galaxy Blvd");
-    service.addContact(contact);
-    assertEquals("Takeria", service.getContact("123").getFirstName());
-}
-    </code></pre>
-
-    <h2>Software Design & Modularity</h2>
-    <p>
-      The services were structured using object-oriented principles. Each class was modular, independent, and easy to extend. 
-      I separated logic into reusable methods and grouped related functionality into their own services — ensuring scalability and easier maintenance.
-    </p>
-
-    <h2>Key Learnings & Reflection</h2>
-    <ul>
-      <li>🧪 Unit testing revealed subtle edge-case bugs and helped improve input validation</li>
-      <li>📊 Peer code reviews and automated testing helped reinforce security and best practices</li>
-      <li>🧱 Modular design improved maintainability and aligned with real-world engineering expectations</li>
-      <li>🧠 Future testing strategies will include integration and system testing for full-stack readiness</li>
-    </ul>
-
-    <h2>Final Outcome</h2>
-    <p>
-      This project helped me master the fundamentals of quality backend architecture and software testing.
-      I demonstrated not only how to build and organize backend services, but also how to ensure their functionality through rigorous unit testing.
-    </p>
-    <p>
-      These experiences will guide me in building robust, secure, and test-driven systems in future software engineering roles.
-    </p>
-  </div>
-  <!-- Sparkle + Butterfly Cursor -->
+  <!-- Existing Portfolio Effects -->
   <div id="sparkle-container"></div>
   <div class="butterfly-cursor"></div>
 
-  <!-- Scripts -->
+  <main class="case-study-page">
+
+    <!-- =====================================================
+         Back
+         ===================================================== -->
+
+    <a
+      href="../projects.html"
+      class="case-study-back"
+    >
+      ← Back to Projects
+    </a>
+
+
+    <!-- =====================================================
+         Hero
+         ===================================================== -->
+
+    <header class="case-study-hero">
+
+      <span class="case-study-eyebrow">
+        BACKEND / SOFTWARE TESTING
+      </span>
+
+      <h1>Backend Services Optimization</h1>
+
+      <p class="case-study-lead">
+        A Java backend engineering project focused on designing modular service
+        components, enforcing application constraints, and using JUnit testing
+        to verify correctness across expected behavior, invalid input, and
+        edge cases.
+      </p>
+
+      <div class="case-study-tech">
+        <span>Java</span>
+        <span>JUnit</span>
+        <span>Object-Oriented Design</span>
+        <span>Unit Testing</span>
+        <span>Input Validation</span>
+        <span>Backend Services</span>
+      </div>
+
+      <div class="project-status">
+
+        <div class="project-status-item">
+          <span>ORIGIN</span>
+          <strong>CS 320 Software Testing</strong>
+        </div>
+
+        <div class="project-status-item">
+          <span>ARCHITECTURE</span>
+          <strong>Independent Service Modules</strong>
+        </div>
+
+        <div class="project-status-item">
+          <span>QUALITY TARGET</span>
+          <strong>80%+ Test Coverage</strong>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         01 / Overview
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        01 / OVERVIEW
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Building backend behavior before building an interface.
+        </h2>
+
+        <p>
+          This project was developed as part of CS 320 and placed me in the
+          role of a software engineer working for the fictional company
+          Grand Strand Systems.
+        </p>
+
+        <p>
+          The assignment focused entirely on backend application behavior.
+          Rather than building a user interface, I created service classes
+          responsible for managing three application domains:
+          <strong>contacts, tasks, and appointments.</strong>
+        </p>
+
+        <div class="case-study-quote">
+          The project treated correctness as something that should be designed,
+          validated, and tested—not assumed because the code compiles.
+        </div>
+
+        <p>
+          Each domain had its own object representation, service manager,
+          validation constraints, and JUnit tests. This made the project an
+          exercise in both software construction and quality assurance.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         02 / Architecture
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        02 / ARCHITECTURE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Separating data models from service behavior.
+        </h2>
+
+        <p>
+          The application was organized around independent domain services.
+          Each domain represented its own data and exposed operations through a
+          corresponding service class.
+        </p>
+
+        <div class="service-grid">
+
+          <div class="service-card">
+            <span class="service-number">01</span>
+            <h3>CONTACT SERVICE</h3>
+            <p>
+              Manages contact records and enforces constraints around
+              identifiers, names, phone information, and addresses.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-number">02</span>
+            <h3>TASK SERVICE</h3>
+            <p>
+              Manages tasks while validating required fields such as task names
+              and descriptions against defined limits.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-number">03</span>
+            <h3>APPOINTMENT SERVICE</h3>
+            <p>
+              Manages appointment scheduling and validates appointment
+              information, including date-related constraints.
+            </p>
+          </div>
+
+        </div>
+
+        <p>
+          Keeping these responsibilities independent meant changes to one
+          service could be reasoned about without mixing unrelated contact,
+          task, or appointment behavior.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         03 / Contact Service
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        03 / CONTACTS
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Managing contact data through controlled service operations.
+        </h2>
+
+        <p>
+          The Contact service provides backend operations for creating,
+          retrieving, updating, and deleting contact records.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>IDENTIFIER</h3>
+            <p>
+              Contacts are distinguished through an ID so the service can
+              reliably locate and manage individual records.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>NAME DATA</h3>
+            <p>
+              Contact information is validated before it becomes accepted
+              application state.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>PHONE</h3>
+            <p>
+              Phone information is subject to expected format and length
+              constraints.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>ADDRESS</h3>
+            <p>
+              Address information is handled as part of the validated contact
+              model.
+            </p>
+          </div>
+
+        </div>
+
+        <p>
+          The service also needed to account for conditions such as duplicate
+          identifiers and invalid or null field values instead of allowing
+          incorrect data to enter the system.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         04 / Task Service
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        04 / TASKS
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Enforcing constraints around task data.
+        </h2>
+
+        <p>
+          The Task service follows the same modular approach while managing a
+          different set of application requirements.
+        </p>
+
+        <p>
+          Task records include identifying information, a task name, and a
+          description. The name and description are validated against defined
+          character limits so that invalid objects cannot silently become part
+          of the application state.
+        </p>
+
+        <div class="architecture-flow">
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>REQUEST TASK OPERATION</strong>
+              <span>Create, update, locate, or delete a task.</span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>CHECK CONSTRAINTS</strong>
+              <span>
+                Validate identifiers and required task properties.
+              </span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>APPLY SERVICE LOGIC</strong>
+              <span>
+                Perform the requested operation only when state is valid.
+              </span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>VERIFY THROUGH TESTS</strong>
+              <span>
+                Confirm both accepted and rejected behavior with JUnit.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         05 / Appointment Service
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        05 / APPOINTMENTS
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Applying validation to scheduling behavior.
+        </h2>
+
+        <p>
+          The Appointment service manages scheduling information through its
+          own domain model and service operations.
+        </p>
+
+        <p>
+          Appointment data introduces constraints that differ from contacts
+          and tasks because dates and scheduling rules must also be considered.
+          This required validation around the state of appointment objects
+          before the service accepted them.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>IDENTITY</h3>
+            <p>
+              Appointment records require a stable identifier for reliable
+              management.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>DATE / TIME</h3>
+            <p>
+              Scheduling information is validated rather than accepted
+              blindly.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>DESCRIPTION</h3>
+            <p>
+              Appointment information is kept within its expected application
+              constraints.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>CONFLICT AWARENESS</h3>
+            <p>
+              Scheduling logic considers the validity of appointment state
+              instead of treating every request as automatically acceptable.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         06 / Validation
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        06 / VALIDATION
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Preventing invalid state before it spreads.
+        </h2>
+
+        <p>
+          Validation was a central part of the project. The objective was not
+          only to test whether valid objects worked, but also to make sure
+          invalid data was rejected consistently.
+        </p>
+
+        <div class="test-grid">
+
+          <div class="test-item">
+            <strong>NULL VALUES</strong>
+            <span>
+              Verify required data cannot be omitted where the model does not
+              permit it.
+            </span>
+          </div>
+
+          <div class="test-item">
+            <strong>DUPLICATE IDS</strong>
+            <span>
+              Ensure records that require unique identifiers cannot overwrite
+              or duplicate existing entries unexpectedly.
+            </span>
+          </div>
+
+          <div class="test-item">
+            <strong>LENGTH LIMITS</strong>
+            <span>
+              Confirm fields remain within the constraints defined for each
+              service.
+            </span>
+          </div>
+
+          <div class="test-item">
+            <strong>DATE RULES</strong>
+            <span>
+              Validate scheduling information against the requirements of the
+              appointment model.
+            </span>
+          </div>
+
+          <div class="test-item">
+            <strong>VALID INPUT</strong>
+            <span>
+              Verify compliant objects are accepted and remain retrievable.
+            </span>
+          </div>
+
+          <div class="test-item">
+            <strong>INVALID INPUT</strong>
+            <span>
+              Verify violations produce predictable failure instead of silently
+              corrupting application state.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         07 / Unit Testing
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        07 / TESTING
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Testing behavior from both directions.
+        </h2>
+
+        <p>
+          I created JUnit tests for the individual service classes and their
+          object constraints. The suite included both positive and negative
+          test cases.
+        </p>
+
+        <div class="comparison-grid">
+
+          <div class="comparison-column">
+            <h3>POSITIVE TESTING</h3>
+            <p>Valid objects can be created.</p>
+            <p>Records can be added successfully.</p>
+            <p>Expected values can be retrieved.</p>
+            <p>Supported updates behave correctly.</p>
+          </div>
+
+          <div class="comparison-column">
+            <h3>NEGATIVE TESTING</h3>
+            <p>Invalid values are rejected.</p>
+            <p>Duplicate identifiers are detected.</p>
+            <p>Null constraints are enforced.</p>
+            <p>Boundary violations produce expected failures.</p>
+          </div>
+
+        </div>
+
+        <p>
+          This distinction matters because a test suite that only confirms
+          successful behavior says very little about what happens when the
+          application receives bad data.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         08 / Test Example
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        08 / EXAMPLE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Verifying that service operations produce retrievable state.
+        </h2>
+
+        <p>
+          One basic unit-test pattern creates a service, adds a valid domain
+          object, retrieves that object again, and verifies that the expected
+          data was preserved.
+        </p>
+
+        <div class="code-window">
+
+          <div class="code-window-header">
+            <span>CONTACT SERVICE TEST</span>
+            <span>JUNIT</span>
+          </div>
+
+          <pre><code>@Test
+public void testAddContact() {
+    ContactService service = new ContactService();
+
+    Contact contact = new Contact(
+        "123",
+        "Takeria",
+        "5551234567",
+        "Galaxy Blvd"
+    );
+
+    service.addContact(contact);
+
+    assertEquals(
+        "Takeria",
+        service.getContact("123").getFirstName()
+    );
+}</code></pre>
+
+        </div>
+
+        <p>
+          A test like this verifies more than object construction. It checks
+          the interaction between the domain object and the service responsible
+          for storing and retrieving it.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         09 / Coverage
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        09 / COVERAGE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Using coverage as a signal—not as the entire definition of quality.
+        </h2>
+
+        <p>
+          The test suite exceeded 80% coverage, giving broad automated
+          verification across the backend components.
+        </p>
+
+        <p>
+          Coverage helped reveal whether important code paths had been
+          exercised, but the more meaningful goal was ensuring that tests
+          represented application requirements and edge conditions.
+        </p>
+
+        <div class="case-study-quote">
+          High coverage is useful only when the tests exercise behavior that
+          actually matters.
+        </div>
+
+        <p>
+          A line of code being executed during a test does not automatically
+          prove that its behavior is correct. This project reinforced the
+          difference between measuring test activity and designing meaningful
+          test cases.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         10 / Object-Oriented Design
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        10 / DESIGN
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Applying object-oriented boundaries to backend responsibilities.
+        </h2>
+
+        <p>
+          The services were structured using object-oriented design principles.
+          Each domain had a focused model and service instead of placing all
+          application behavior into one large class.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>ENCAPSULATION</h3>
+            <p>
+              Domain data and the rules surrounding it remain grouped together
+              instead of being manipulated arbitrarily throughout the
+              application.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>SEPARATION</h3>
+            <p>
+              Contact, Task, and Appointment behavior remain independent.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>REUSABILITY</h3>
+            <p>
+              Related behavior is organized into methods that can be reused
+              rather than duplicated.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>EXTENSIBILITY</h3>
+            <p>
+              Modular classes provide clearer places to introduce future
+              behavior.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         11 / Maintainability
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        11 / MAINTAINABILITY
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Designing services that are easier to change safely.
+        </h2>
+
+        <p>
+          Modular service design made the code easier to test and reason about
+          because each component had a limited responsibility.
+        </p>
+
+        <div class="comparison-grid">
+
+          <div class="comparison-column">
+            <h3>TIGHTLY MIXED LOGIC</h3>
+            <p>Multiple domains depend on one large class.</p>
+            <p>Changes affect unrelated behavior.</p>
+            <p>Tests require more setup.</p>
+            <p>Failures are harder to isolate.</p>
+          </div>
+
+          <div class="comparison-column">
+            <h3>MODULAR SERVICES</h3>
+            <p>Each domain owns its behavior.</p>
+            <p>Changes have a clearer scope.</p>
+            <p>Tests can target one service at a time.</p>
+            <p>Defects are easier to locate.</p>
+          </div>
+
+        </div>
+
+        <p>
+          This structure also creates a cleaner path for future additions such
+          as persistence, APIs, or a user interface because the core
+          application behavior already exists independently.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         12 / Quality Assurance
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        12 / QUALITY
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Treating testing as part of development rather than a final check.
+        </h2>
+
+        <p>
+          Unit testing exposed edge cases that were easy to overlook when
+          thinking only about the expected flow of the application.
+        </p>
+
+        <p>
+          Null values, duplicated identifiers, length limits, and other
+          constraints forced the implementation to define exactly what valid
+          application state should look like.
+        </p>
+
+        <p>
+          Automated testing then created a repeatable way to verify those
+          decisions whenever the implementation changed.
+        </p>
+
+        <div class="architecture-flow">
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>DEFINE REQUIREMENT</strong>
+              <span>Determine what valid behavior should be.</span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>IMPLEMENT CONSTRAINT</strong>
+              <span>Express the requirement in application code.</span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>WRITE TEST</strong>
+              <span>Verify the behavior automatically.</span>
+            </div>
+          </div>
+
+          <div class="architecture-step">
+            <div class="architecture-dot"></div>
+            <div>
+              <strong>RUN REGRESSION CHECK</strong>
+              <span>
+                Confirm later changes have not broken existing behavior.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         13 / Reflection
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        13 / REFLECTION
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Learning to build software that can prove its own behavior.
+        </h2>
+
+        <p>
+          The most important lesson from this project was that backend quality
+          depends on more than implementing the happy path.
+        </p>
+
+        <p>
+          Writing unit tests made requirements more concrete. Instead of saying
+          that an identifier should be unique or that a field should reject an
+          invalid value, the test suite provided an executable demonstration of
+          that rule.
+        </p>
+
+        <p>
+          The project also reinforced how modularity supports testing. Smaller,
+          focused service classes are easier to instantiate, isolate, test, and
+          reason about than systems where responsibilities are tightly mixed.
+        </p>
+
+        <div class="case-study-quote">
+          Testing changed from something that verifies finished code into a
+          tool for defining what correct software should do.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         14 / Future Testing
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        14 / NEXT STEP
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Extending beyond isolated unit behavior.
+        </h2>
+
+        <p>
+          This project focused primarily on unit testing because its backend
+          services were deliberately isolated from a user interface or larger
+          production system.
+        </p>
+
+        <p>
+          A natural next stage would be to add higher levels of testing as the
+          architecture grows.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>UNIT TESTS</h3>
+            <p>
+              Continue validating individual classes and methods in isolation.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>INTEGRATION TESTS</h3>
+            <p>
+              Verify that services interact correctly with persistence,
+              external boundaries, or other application components.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>SYSTEM TESTING</h3>
+            <p>
+              Validate complete application behavior once a larger application
+              exists around the services.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>REGRESSION TESTING</h3>
+            <p>
+              Preserve existing behavior as new requirements and features are
+              introduced.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         15 / Result
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        15 / RESULT
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          A tested foundation for reliable backend development.
+        </h2>
+
+        <p>
+          The final project demonstrated how backend service design and
+          automated testing support each other. The services provided focused
+          application behavior while the JUnit suite verified that those
+          behaviors remained within their defined constraints.
+        </p>
+
+        <div class="result-list">
+
+          <div class="result-item">
+            Built backend services in Java.
+          </div>
+
+          <div class="result-item">
+            Separated Contact, Task, and Appointment domains.
+          </div>
+
+          <div class="result-item">
+            Implemented creation, update, retrieval, and deletion behavior.
+          </div>
+
+          <div class="result-item">
+            Applied object-oriented design principles.
+          </div>
+
+          <div class="result-item">
+            Enforced data validation and application constraints.
+          </div>
+
+          <div class="result-item">
+            Tested valid and invalid execution paths.
+          </div>
+
+          <div class="result-item">
+            Used JUnit for repeatable automated verification.
+          </div>
+
+          <div class="result-item">
+            Exceeded 80% test coverage.
+          </div>
+
+          <div class="result-item">
+            Used testing to uncover edge-case defects.
+          </div>
+
+          <div class="result-item">
+            Strengthened maintainability through modular service design.
+          </div>
+
+        </div>
+
+        <p style="margin-top: 34px;">
+          The project gave me a stronger foundation in writing backend software
+          that is not only functional, but structured so that its behavior can
+          be verified, maintained, and extended with confidence.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="case-study-end">
+      <span>BACKEND SERVICES / DESIGN • VALIDATION • TESTING</span>
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       Background Music
+       Same shared setup used by the other portfolio pages
+       ===================================================== -->
+
+  <audio id="background-music" loop>
+    <source
+      src="../assets/Claude Debussy Claire De Lune added reverb.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
+
+  <button
+    class="music-toggle"
+    id="music-toggle"
+    type="button"
+    aria-label="Toggle background music"
+  >
+    ☾
+  </button>
+
+
+  <!-- Existing Portfolio Scripts -->
+  <script src="../music.js"></script>
   <script src="../script.js"></script>
+
 </body>
 </html>
