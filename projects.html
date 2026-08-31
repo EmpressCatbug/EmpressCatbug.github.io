@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Projects | Takeria Thompson</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+
+  <!-- Butterfly Cursor -->
+  <div class="butterfly-cursor"></div>
+
+  <!-- Butterfly Sparkle Trail -->
+  <div id="sparkle-container"></div>
+
+
+  <!-- Celestial Background -->
+  <div id="background" aria-hidden="true">
+
+    <div class="shooting-stars">
+      <span class="shooting-star shooting-star-1"></span>
+      <span class="shooting-star shooting-star-2"></span>
+      <span class="shooting-star shooting-star-3"></span>
+      <span class="shooting-star shooting-star-4"></span>
+      <span class="shooting-star shooting-star-5"></span>
+    </div>
+
+  </div>
+
+
+  <!-- Main Navigation -->
+  <nav class="site-nav" aria-label="Main navigation">
+
+    <a
+      href="home.html"
+      class="nav-brand"
+      aria-label="Takeria Thompson home"
+    >
+      <span class="nav-star">✦</span>
+      <span class="nav-name">Takeria Thompson</span>
+    </a>
+
+
+    <div class="nav-links">
+
+      <a href="home.html" class="nav-link">
+        Home
+      </a>
+
+      <a href="home.html#about" class="nav-link">
+        About
+      </a>
+
+      <a href="experience.html" class="nav-link">
+        Experience
+      </a>
+
+      <a href="projects.html" class="nav-link active">
+        Projects
+      </a>
+
+      <a href="home.html#schedule" class="nav-link nav-schedule">
+        Schedule a Call
+      </a>
+
+      <a href="home.html#contact" class="nav-link">
+        Contact
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Projects Page -->
+  <main class="projects-page">
+
+    <!-- Projects Introduction -->
+    <section class="projects-intro">
+
+      <span class="section-eyebrow">
+        03 / PROJECTS
+      </span>
+
+      <h1>
+        Building ideas into working systems.
+      </h1>
+
+      <p>
+        A collection of projects exploring software engineering,
+        artificial intelligence, embedded systems, backend development,
+        data, and interactive digital experiences.
+      </p>
+
+    </section>
+
+
+    <!-- Featured Work -->
+    <section class="projects-showcase">
+
+      <!--
+        Project entries will be added here one at a time.
+        We will begin with Smart Thermostat.
+      -->
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <p>
+      &copy; 2025 Takeria Thompson | Crafted with stardust ✨
+    </p>
+
+  </footer>
+
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop preload="auto">
+
+    <source
+      src="assets/Claude Debussy Claire De Lune added reverb.mp3"
+      type="audio/mpeg"
+    >
+
+  </audio>
+
+
+  <button
+    id="musicToggle"
+    class="music-toggle playing"
+    aria-label="Toggle background music"
+  >
+    ☾
+  </button>
+
+
+  <!-- Existing Site Scripts -->
+  <script src="music.js"></script>
+  <script src="script.js"></script>
+  <script src="particles.js"></script>
+
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>
