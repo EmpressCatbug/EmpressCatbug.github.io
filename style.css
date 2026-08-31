@@ -541,8 +541,9 @@ body {
       rgba(7, 0, 18, 0.38) 0%,
       rgba(7, 0, 18, 0.20) 32%,
       rgba(7, 0, 18, 0.04) 60%,
-      transparent 78%
+      transparent 82%
     );
+    z-index:1;
 }
 
 
