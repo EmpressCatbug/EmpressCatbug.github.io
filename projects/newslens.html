@@ -7,97 +7,81 @@
   <title>NewsLens | Takeria Thompson</title>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
   <link rel="stylesheet" href="../style.css" />
 
   <style>
-
-    /* =========================
+    /* =========================================================
        NewsLens Case Study
-       ========================= */
+       ========================================================= */
 
     .case-study-page {
       position: relative;
       z-index: 1;
 
       width: 100%;
-      max-width: 1120px;
+      max-width: 1160px;
 
       margin: 0 auto;
-
-      padding:
-        90px 24px
-        120px;
+      padding: 90px 24px 120px;
     }
 
-
-    /* Back navigation */
+    /* =========================================================
+       Back Navigation
+       ========================================================= */
 
     .case-study-back {
       display: inline-flex;
       align-items: center;
-
       gap: 10px;
 
       margin-bottom: 70px;
 
       font-family: 'Orbitron', sans-serif;
-
       font-size: 0.68rem;
       letter-spacing: 0.1em;
+      text-decoration: none;
 
-      color:
-        rgba(216, 180, 254, 0.68);
+      color: rgba(216, 180, 254, 0.68);
 
       transition:
         color 0.25s ease,
         gap 0.25s ease;
     }
 
-
     .case-study-back:hover {
       gap: 15px;
-
       color: #ffffff;
     }
 
-
-    /* =========================
+    /* =========================================================
        Hero
-       ========================= */
+       ========================================================= */
 
     .case-study-hero {
-      max-width: 900px;
-
-      margin-bottom: 90px;
+      max-width: 920px;
+      margin-bottom: 85px;
     }
-
 
     .case-study-eyebrow {
       display: block;
-
       margin-bottom: 18px;
 
       font-family: 'Orbitron', sans-serif;
-
       font-size: 0.68rem;
       letter-spacing: 0.16em;
 
       color: #c084fc;
     }
 
-
     .case-study-hero h1 {
-      margin-bottom: 26px;
+      margin: 0 0 26px;
 
       font-family: 'Orbitron', sans-serif;
-
-      font-size:
-        clamp(3rem, 7vw, 6rem);
-
+      font-size: clamp(3rem, 7vw, 6rem);
       line-height: 1;
 
       color: #f3e8ff;
@@ -106,208 +90,313 @@
         0 0 24px rgba(147, 51, 234, 0.18);
     }
 
-
     .case-study-lead {
-      max-width: 760px;
+      max-width: 820px;
+      margin-bottom: 0;
 
       font-size: 1.08rem;
       line-height: 1.9;
 
-      color:
-        rgba(233, 213, 255, 0.76);
+      color: rgba(233, 213, 255, 0.76);
     }
 
-
-    /* Technology strip */
+    /* =========================================================
+       Technology Strip
+       ========================================================= */
 
     .case-study-tech {
       display: flex;
       flex-wrap: wrap;
-
-      gap:
-        10px 18px;
+      gap: 10px 18px;
 
       margin-top: 38px;
     }
 
-
     .case-study-tech span {
       font-family: 'Orbitron', sans-serif;
-
       font-size: 0.62rem;
       letter-spacing: 0.08em;
 
-      color:
-        rgba(216, 180, 254, 0.66);
+      color: rgba(216, 180, 254, 0.66);
     }
-
 
     .case-study-tech span:not(:last-child)::after {
       content: " ·";
-
-      color:
-        rgba(192, 132, 252, 0.40);
+      color: rgba(192, 132, 252, 0.40);
     }
 
+    /* =========================================================
+       Project Status
+       ========================================================= */
 
-    /* =========================
-       Case Study Sections
-       ========================= */
+    .project-status {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+
+      margin-top: 48px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.16);
+      border-bottom: 1px solid rgba(216, 180, 254, 0.16);
+    }
+
+    .project-status-item {
+      padding: 24px 22px;
+    }
+
+    .project-status-item:not(:last-child) {
+      border-right: 1px solid rgba(216, 180, 254, 0.12);
+    }
+
+    .project-status-item span {
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+
+      color: rgba(192, 132, 252, 0.62);
+    }
+
+    .project-status-item strong {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.5;
+
+      color: rgba(243, 232, 255, 0.88);
+    }
+
+    /* =========================================================
+       Main Sections
+       ========================================================= */
 
     .case-study-section {
       display: grid;
-
-      grid-template-columns:
-        210px
-        minmax(0, 1fr);
-
+      grid-template-columns: 210px minmax(0, 1fr);
       gap: 70px;
 
-      padding:
-        65px 0;
+      padding: 68px 0;
 
-      border-top:
-        1px solid rgba(216, 180, 254, 0.15);
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
     }
-
 
     .case-study-section-label {
       font-family: 'Orbitron', sans-serif;
-
       font-size: 0.64rem;
       letter-spacing: 0.14em;
 
-      color:
-        rgba(192, 132, 252, 0.72);
+      color: rgba(192, 132, 252, 0.72);
     }
-
 
     .case-study-content {
-      max-width: 720px;
+      max-width: 760px;
     }
 
-
     .case-study-content h2 {
-      margin-bottom: 22px;
+      margin: 0 0 22px;
 
       font-family: 'Orbitron', sans-serif;
-
-      font-size:
-        clamp(1.6rem, 3vw, 2.35rem);
-
-      line-height: 1.2;
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      line-height: 1.25;
 
       color: #f3e8ff;
     }
 
+    .case-study-content h3 {
+      margin: 34px 0 12px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
 
     .case-study-content p {
-      margin-bottom: 20px;
+      margin: 0 0 20px;
 
       font-size: 1rem;
       line-height: 1.85;
 
-      color:
-        rgba(233, 213, 255, 0.72);
+      color: rgba(233, 213, 255, 0.72);
     }
 
+    .case-study-content strong {
+      color: rgba(243, 232, 255, 0.92);
+    }
 
-    /* =========================
-       Architecture
-       ========================= */
+    /* =========================================================
+       Highlight Quote
+       ========================================================= */
+
+    .case-study-quote {
+      margin: 34px 0;
+      padding: 26px 0 26px 28px;
+
+      border-left: 2px solid rgba(192, 132, 252, 0.48);
+
+      font-size: 1.08rem;
+      line-height: 1.8;
+
+      color: rgba(243, 232, 255, 0.84);
+    }
+
+    /* =========================================================
+       Architecture Flow
+       ========================================================= */
 
     .architecture-flow {
       display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
 
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      align-items: center;
-
-      gap: 18px;
-
-      margin:
-        38px 0
-        28px;
+      margin: 38px 0 32px;
     }
 
-
     .architecture-node {
-      min-height: 125px;
+      min-height: 112px;
 
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
 
-      gap: 10px;
+      gap: 9px;
 
-      padding: 20px;
+      padding: 18px;
 
-      border:
-        1px solid rgba(216, 180, 254, 0.16);
+      border: 1px solid rgba(216, 180, 254, 0.16);
 
       background:
-        rgba(42, 10, 70, 0.08);
+        linear-gradient(
+          145deg,
+          rgba(63, 23, 90, 0.12),
+          rgba(22, 7, 42, 0.04)
+        );
 
       text-align: center;
     }
 
-
     .architecture-node strong {
       font-family: 'Orbitron', sans-serif;
-
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
+      font-size: 0.68rem;
+      letter-spacing: 0.07em;
 
       color: #e9d5ff;
     }
 
-
     .architecture-node span {
-      font-size: 0.76rem;
+      font-size: 0.73rem;
+      line-height: 1.5;
 
-      color:
-        rgba(233, 213, 255, 0.52);
+      color: rgba(233, 213, 255, 0.52);
     }
 
+    .architecture-node-wide {
+      grid-column: span 2;
+    }
 
-    /* =========================
-       Engineering Points
-       ========================= */
+    /* =========================================================
+       Pipeline
+       ========================================================= */
+
+    .pipeline {
+      margin: 38px 0 26px;
+      padding: 26px 28px;
+
+      border: 1px solid rgba(216, 180, 254, 0.15);
+
+      background: rgba(33, 10, 55, 0.08);
+    }
+
+    .pipeline-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+
+      position: relative;
+
+      padding: 9px 0;
+    }
+
+    .pipeline-step:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+      left: 8px;
+      top: 35px;
+
+      width: 1px;
+      height: calc(100% - 18px);
+
+      background: rgba(192, 132, 252, 0.22);
+    }
+
+    .pipeline-dot {
+      width: 17px;
+      height: 17px;
+
+      flex: 0 0 17px;
+
+      margin-top: 3px;
+
+      border: 1px solid rgba(216, 180, 254, 0.62);
+      border-radius: 50%;
+
+      background: rgba(147, 51, 234, 0.15);
+
+      box-shadow:
+        0 0 14px rgba(168, 85, 247, 0.2);
+    }
+
+    .pipeline-step strong {
+      display: block;
+
+      margin-bottom: 3px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+
+      color: rgba(243, 232, 255, 0.9);
+    }
+
+    .pipeline-step span {
+      font-size: 0.82rem;
+      line-height: 1.6;
+
+      color: rgba(233, 213, 255, 0.55);
+    }
+
+    /* =========================================================
+       Engineering Grid
+       ========================================================= */
 
     .engineering-list {
       display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap:
-        28px 36px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px 36px;
 
       margin-top: 35px;
     }
 
-
     .engineering-point {
       padding-top: 20px;
 
-      border-top:
-        1px solid rgba(216, 180, 254, 0.12);
+      border-top: 1px solid rgba(216, 180, 254, 0.12);
     }
 
-
     .engineering-point h3 {
-      margin-bottom: 10px;
+      margin: 0 0 10px;
 
       font-family: 'Orbitron', sans-serif;
-
       font-size: 0.75rem;
       letter-spacing: 0.07em;
 
       color: #d8b4fe;
     }
-
 
     .engineering-point p {
       margin: 0;
@@ -315,31 +404,215 @@
       font-size: 0.91rem;
       line-height: 1.75;
 
-      color:
-        rgba(233, 213, 255, 0.64);
+      color: rgba(233, 213, 255, 0.64);
     }
 
+    /* =========================================================
+       Code / Technical Examples
+       ========================================================= */
 
-    /* =========================
-       GitHub CTA
-       ========================= */
+    .code-window {
+      overflow-x: auto;
+
+      margin: 32px 0;
+
+      border: 1px solid rgba(216, 180, 254, 0.14);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 7, 34, 0.72),
+          rgba(42, 12, 67, 0.34)
+        );
+    }
+
+    .code-window-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 12px 16px;
+
+      border-bottom: 1px solid rgba(216, 180, 254, 0.11);
+    }
+
+    .code-window-header span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.57rem;
+      letter-spacing: 0.08em;
+
+      color: rgba(216, 180, 254, 0.5);
+    }
+
+    .code-window pre {
+      margin: 0;
+      padding: 22px 24px;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 0.82rem;
+      line-height: 1.7;
+
+      color: rgba(233, 213, 255, 0.8);
+
+      white-space: pre;
+    }
+
+    .technical-note {
+      margin: -12px 0 28px;
+
+      font-size: 0.77rem !important;
+      font-style: italic;
+
+      color: rgba(216, 180, 254, 0.45) !important;
+    }
+
+    /* =========================================================
+       API Endpoints
+       ========================================================= */
+
+    .endpoint-list {
+      margin: 32px 0;
+    }
+
+    .endpoint {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr);
+      gap: 18px;
+
+      padding: 17px 0;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.11);
+    }
+
+    .endpoint:last-child {
+      border-bottom: 1px solid rgba(216, 180, 254, 0.11);
+    }
+
+    .endpoint-method {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.64rem;
+      letter-spacing: 0.05em;
+
+      color: #c084fc;
+    }
+
+    .endpoint-path {
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+      font-size: 0.82rem;
+
+      color: rgba(243, 232, 255, 0.76);
+    }
+
+    /* =========================================================
+       Comparison
+       ========================================================= */
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+
+      margin: 34px 0;
+    }
+
+    .comparison-column {
+      padding: 25px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.18);
+    }
+
+    .comparison-column h3 {
+      margin: 0 0 18px;
+
+      font-size: 0.68rem;
+    }
+
+    .comparison-column p {
+      margin-bottom: 9px;
+
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       Current / Future Status
+       ========================================================= */
+
+    .status-board {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+
+      margin-top: 36px;
+    }
+
+    .status-column {
+      padding-top: 22px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
+    }
+
+    .status-column h3 {
+      margin: 0 0 16px;
+
+      font-size: 0.71rem;
+    }
+
+    .status-item {
+      position: relative;
+
+      margin-bottom: 11px;
+      padding-left: 19px;
+
+      font-size: 0.88rem;
+      line-height: 1.6;
+
+      color: rgba(233, 213, 255, 0.63);
+    }
+
+    .status-item::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      color: rgba(192, 132, 252, 0.72);
+    }
+
+    .status-complete .status-item::before {
+      content: "✓";
+    }
+
+    .status-future .status-item::before {
+      content: "○";
+    }
+
+    /* =========================================================
+       Repository CTA
+       ========================================================= */
 
     .case-study-github {
       display: inline-flex;
       align-items: center;
-
       gap: 13px;
 
-      margin-top: 22px;
+      margin-top: 24px;
       padding-bottom: 7px;
 
-      border-bottom:
-        1px solid rgba(216, 180, 254, 0.34);
+      border-bottom: 1px solid rgba(216, 180, 254, 0.34);
 
       font-family: 'Orbitron', sans-serif;
-
       font-size: 0.7rem;
       letter-spacing: 0.08em;
+      text-decoration: none;
 
       color: #e9d5ff;
 
@@ -349,79 +622,105 @@
         border-color 0.25s ease;
     }
 
-
     .case-study-github:hover {
       gap: 18px;
-
       color: #ffffff;
 
-      border-color:
-        rgba(216, 180, 254, 0.72);
+      border-color: rgba(216, 180, 254, 0.72);
     }
 
+    /* =========================================================
+       Footer Note
+       ========================================================= */
 
-    /* =========================
+    .case-study-end {
+      padding-top: 50px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
+
+      text-align: center;
+    }
+
+    .case-study-end span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.13em;
+
+      color: rgba(192, 132, 252, 0.54);
+    }
+
+    /* =========================================================
        Mobile
-       ========================= */
+       ========================================================= */
+
+    @media (max-width: 900px) {
+      .architecture-flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
     @media (max-width: 768px) {
-
       .case-study-page {
-        padding:
-          60px 20px
-          90px;
+        padding: 60px 20px 90px;
       }
-
 
       .case-study-back {
         margin-bottom: 50px;
       }
 
-
       .case-study-hero {
         margin-bottom: 70px;
       }
-
 
       .case-study-hero h1 {
         font-size: 3rem;
       }
 
-
       .case-study-lead {
         font-size: 0.96rem;
-
         line-height: 1.8;
       }
 
+      .project-status {
+        grid-template-columns: 1fr;
+      }
+
+      .project-status-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(216, 180, 254, 0.12);
+      }
 
       .case-study-section {
         grid-template-columns: 1fr;
-
         gap: 25px;
 
-        padding:
-          50px 0;
+        padding: 50px 0;
       }
-
 
       .architecture-flow {
         grid-template-columns: 1fr;
       }
 
-
-      .engineering-list {
-        grid-template-columns: 1fr;
-
-        gap: 22px;
+      .architecture-node-wide {
+        grid-column: auto;
       }
 
+      .engineering-list,
+      .comparison-grid,
+      .status-board {
+        grid-template-columns: 1fr;
+      }
+
+      .endpoint {
+        grid-template-columns: 70px minmax(0, 1fr);
+      }
+
+      .code-window pre {
+        font-size: 0.74rem;
+      }
     }
-
   </style>
-
 </head>
-
 
 <body>
 
@@ -429,11 +728,12 @@
   <div id="sparkle-container"></div>
   <div class="butterfly-cursor"></div>
 
-
   <main class="case-study-page">
 
+    <!-- =====================================================
+         Back
+         ===================================================== -->
 
-    <!-- Back -->
     <a
       href="../projects.html"
       class="case-study-back"
@@ -442,42 +742,63 @@
     </a>
 
 
-    <!-- =========================
+    <!-- =====================================================
          Hero
-         ========================= -->
+         ===================================================== -->
 
     <header class="case-study-hero">
 
       <span class="case-study-eyebrow">
-        FEATURED PROJECT / FULL STACK
+        FEATURED PROJECT / FULL-STACK SOFTWARE ENGINEERING
       </span>
 
-      <h1>
-        NewsLens
-      </h1>
+      <h1>NewsLens</h1>
 
       <p class="case-study-lead">
-        A full-stack news aggregation application designed to retrieve,
-        normalize, and present current news through a clean and
-        accessible interface.
+        A full-stack news aggregation and analysis application built to
+        transform external news data into an application-owned system for
+        discovery, persistence, saved stories, internal article experiences,
+        and future AI-assisted context.
       </p>
-
 
       <div class="case-study-tech">
         <span>React</span>
         <span>TypeScript</span>
         <span>Node.js</span>
+        <span>Express</span>
+        <span>MongoDB</span>
+        <span>Mongoose</span>
+        <span>TanStack Query</span>
+        <span>React Router</span>
+        <span>Zod</span>
         <span>REST APIs</span>
-        <span>News Aggregation</span>
+      </div>
+
+      <div class="project-status">
+
+        <div class="project-status-item">
+          <span>STATUS</span>
+          <strong>Active Development</strong>
+        </div>
+
+        <div class="project-status-item">
+          <span>ARCHITECTURE</span>
+          <strong>React + Express + MongoDB</strong>
+        </div>
+
+        <div class="project-status-item">
+          <span>DEPLOYMENT GOAL</span>
+          <strong>$0 Portfolio Demonstration</strong>
+        </div>
+
       </div>
 
     </header>
 
 
-
-    <!-- =========================
-         Overview
-         ========================= -->
+    <!-- =====================================================
+         01 / Overview
+         ===================================================== -->
 
     <section class="case-study-section">
 
@@ -485,24 +806,38 @@
         01 / OVERVIEW
       </div>
 
-
       <div class="case-study-content">
 
         <h2>
-          Making current news easier to explore.
+          More than a feed of external links.
         </h2>
 
         <p>
-          NewsLens was built as a full-stack application for retrieving
-          and presenting current news stories in a structured,
-          user-friendly experience.
+          NewsLens began with a simple idea: make current news easier to
+          explore. The project has since developed into a larger
+          software-engineering exercise focused on building clear boundaries
+          between external services, application logic, persistence, API
+          design, frontend data management, and presentation.
         </p>
 
         <p>
-          Rather than coupling the interface directly to the structure
-          returned by an external news provider, the application uses
-          its own article model. Provider data is transformed into that
-          consistent format before being delivered to the frontend.
+          Instead of allowing the frontend to call a third-party news API
+          directly, NewsLens owns the flow of its data. Articles move through
+          a backend provider adapter, are converted into a consistent internal
+          format, persisted in MongoDB, exposed through the application's own
+          REST API, and consumed by the React frontend.
+        </p>
+
+        <div class="case-study-quote">
+          Global news, with context.
+        </div>
+
+        <p>
+          That architectural decision allows NewsLens to support features that
+          would be difficult to build reliably on top of a frontend-only API
+          integration, including internal Story pages, persistent saved
+          stories, AI summary caching, historical retrieval, and eventually
+          user-specific libraries and event-based news analysis.
         </p>
 
       </div>
@@ -510,10 +845,9 @@
     </section>
 
 
-
-    <!-- =========================
-         Architecture
-         ========================= -->
+    <!-- =====================================================
+         02 / System Architecture
+         ===================================================== -->
 
     <section class="case-study-section">
 
@@ -521,48 +855,175 @@
         02 / ARCHITECTURE
       </div>
 
+      <div class="case-study-content">
+
+        <h2>
+          A layered pipeline from external provider to interface.
+        </h2>
+
+        <p>
+          NewsLens is organized as an npm workspace monorepo containing a
+          React client and a Node/Express server. The server owns provider
+          communication, business logic, validation, persistence, and API
+          responses while the frontend is responsible for the user
+          experience.
+        </p>
+
+        <div class="pipeline">
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>EXTERNAL NEWS PROVIDER</strong>
+              <span>Supplies current article data.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>PROVIDER ADAPTER</strong>
+              <span>
+                Handles authentication, provider requests, response parsing,
+                and normalization.
+              </span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>NEWS SERVICE</strong>
+              <span>
+                Coordinates provider retrieval, persistence, and
+                application behavior.
+              </span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>REPOSITORY LAYER</strong>
+              <span>
+                Isolates database operations from HTTP and service logic.
+              </span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>MONGODB ATLAS</strong>
+              <span>
+                Persists articles and saved-story state.
+              </span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>EXPRESS REST API</strong>
+              <span>
+                Exposes application-controlled resources to the client.
+              </span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>TANSTACK QUERY</strong>
+              <span>
+                Manages server state, caching, mutations, loading, and errors.
+              </span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>REACT UI</strong>
+              <span>
+                Presents feeds, Story pages, and the saved library.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <p>
+          The result is a system in which each layer has a defined
+          responsibility rather than allowing networking, database access,
+          provider behavior, and presentation to accumulate inside the same
+          components or route handlers.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         03 / Provider Abstraction
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        03 / PROVIDERS
+      </div>
 
       <div class="case-study-content">
 
         <h2>
-          Separating the interface from the data source.
+          Treating external vendors as replaceable implementations.
         </h2>
 
         <p>
-          NewsLens is organized as a client and server application.
-          The frontend is responsible for presenting the news
-          experience, while the backend communicates with the external
-          news provider and converts incoming article data into the
-          format expected by the application.
+          NewsLens does not make the rest of the application depend directly
+          on NewsAPI.ai. Instead, the backend defines a news-provider
+          abstraction and places provider-specific behavior behind that
+          boundary.
         </p>
-
 
         <div class="architecture-flow">
 
           <div class="architecture-node">
+            <strong>NEWS SERVICE</strong>
+            <span>Application orchestration</span>
+          </div>
+
+          <div class="architecture-node">
             <strong>NEWS PROVIDER</strong>
-            <span>External article data</span>
+            <span>Shared provider contract</span>
           </div>
 
-
           <div class="architecture-node">
-            <strong>NEWSLENS SERVER</strong>
-            <span>Retrieval + normalization</span>
+            <strong>NEWSAPI.AI</strong>
+            <span>Current implementation</span>
           </div>
 
-
           <div class="architecture-node">
-            <strong>REACT CLIENT</strong>
-            <span>Presentation + interaction</span>
+            <strong>FUTURE SOURCE</strong>
+            <span>RSS or another provider</span>
           </div>
 
         </div>
 
+        <p>
+          This became especially important when the deployment requirement
+          changed to a strict zero-cost demonstration target. A provider can
+          work well technically during development while still becoming a poor
+          long-term fit because of pricing, quota limits, or service changes.
+        </p>
 
         <p>
-          This separation makes the application easier to maintain and
-          reduces how much the user interface needs to know about the
-          implementation details of the external provider.
+          By depending on a provider interface rather than one vendor's API,
+          NewsLens can replace or supplement its ingestion strategy without
+          rewriting its persistence layer, API routes, Story pages, saved
+          system, or frontend architecture.
         </p>
 
       </div>
@@ -570,132 +1031,261 @@
     </section>
 
 
-
-    <!-- =========================
-         Engineering
-         ========================= -->
-
-    <section class="case-study-section">
-
-      <div class="case-study-section-label">
-        03 / ENGINEERING
-      </div>
-
-
-      <div class="case-study-content">
-
-        <h2>
-          Building the data pipeline and experience.
-        </h2>
-
-
-        <div class="engineering-list">
-
-
-          <div class="engineering-point">
-
-            <h3>
-              ARTICLE NORMALIZATION
-            </h3>
-
-            <p>
-              External article responses are mapped into a consistent
-              internal article structure so the frontend can work with
-              predictable data.
-            </p>
-
-          </div>
-
-
-          <div class="engineering-point">
-
-            <h3>
-              API INTEGRATION
-            </h3>
-
-            <p>
-              The server handles communication with the external news
-              service and exposes the information needed by the client.
-            </p>
-
-          </div>
-
-
-          <div class="engineering-point">
-
-            <h3>
-              RESPONSIVE INTERFACE
-            </h3>
-
-            <p>
-              Article cards, imagery, publication information, and
-              navigation are presented through a modern React
-              interface designed for news discovery.
-            </p>
-
-          </div>
-
-
-          <div class="engineering-point">
-
-            <h3>
-              APPLICATION STATE
-            </h3>
-
-            <p>
-              The interface accounts for the different states involved
-              in retrieving external content, including successful
-              responses and API availability.
-            </p>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         Challenge
-         ========================= -->
+    <!-- =====================================================
+         04 / Article Normalization
+         ===================================================== -->
 
     <section class="case-study-section">
 
       <div class="case-study-section-label">
-        04 / CHALLENGE
+        04 / NORMALIZATION
       </div>
-
 
       <div class="case-study-content">
 
         <h2>
-          Turning provider data into application data.
+          External data becomes NewsLens data.
         </h2>
 
         <p>
-          One of the important engineering challenges was integrating
-          an external news service without allowing the provider's
-          response format to dictate the structure of the entire
+          One of the central architectural boundaries in NewsLens is article
+          normalization. External APIs have their own response structures,
+          naming conventions, optional fields, and source metadata. Those
+          implementation details should not dictate the rest of the
           application.
         </p>
 
         <p>
-          NewsLens addresses this through a normalization layer on the
-          server. Article information such as the title, description,
-          body, image, publication date, source, and destination URL
-          can be transformed into the application's expected model
-          before reaching the interface.
+          The provider therefore maps external responses into an internal
+          article representation before that data travels deeper into the
+          system.
+        </p>
+
+        <div class="code-window">
+
+          <div class="code-window-header">
+            <span>NEWSLENS ARTICLE SHAPE</span>
+            <span>TYPE CONCEPT</span>
+          </div>
+
+          <pre><code>Article
+├── id
+├── title
+├── description
+├── body
+├── imageUrl
+├── publishedAt
+├── url
+└── source
+    ├── id
+    ├── name
+    └── country</code></pre>
+
+        </div>
+
+        <p class="technical-note">
+          Architectural representation based on the NewsLens article contract.
         </p>
 
         <p>
-          During development, the API integration also required
-          diagnosing authentication responses and confirming that
-          credentials and provider requests were being handled
-          correctly before article retrieval could work as expected.
+          Once normalization is complete, the frontend and internal services
+          can work against the NewsLens representation rather than knowing how
+          NewsAPI.ai structures its payload.
+        </p>
+
+        <div class="comparison-grid">
+
+          <div class="comparison-column">
+            <h3>WITHOUT NORMALIZATION</h3>
+            <p>Provider response structure leaks across the application.</p>
+            <p>UI logic becomes dependent on a third-party API.</p>
+            <p>Changing providers creates widespread refactoring.</p>
+          </div>
+
+          <div class="comparison-column">
+            <h3>WITH NORMALIZATION</h3>
+            <p>Provider-specific translation happens at one boundary.</p>
+            <p>Application code works with predictable article data.</p>
+            <p>External implementations remain replaceable.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         05 / Persistence
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        05 / PERSISTENCE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Persisting articles instead of treating them as disposable API responses.
+        </h2>
+
+        <p>
+          Retrieved articles are stored in MongoDB Atlas. Persistence changes
+          NewsLens from a temporary API viewer into an application that can
+          build additional functionality around the same stories.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>INTERNAL STORY PAGES</h3>
+            <p>
+              Persisted articles can be retrieved later through NewsLens'
+              internal article routes instead of depending on the original
+              provider response remaining available.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>SAVED STORIES</h3>
+            <p>
+              A saved library can reference persistent article records and
+              survive browser refreshes.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>AI SUMMARY CACHE</h3>
+            <p>
+              Future generated context can be stored alongside an article
+              rather than regenerated every time a story is opened.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>FUTURE ANALYSIS</h3>
+            <p>
+              Persistence creates a foundation for related-story grouping,
+              event analysis, historical retrieval, and personalization.
+            </p>
+          </div>
+
+        </div>
+
+        <h3>BULK UPSERTS</h3>
+
+        <p>
+          Articles are identified through a provider article ID. Instead of
+          blindly inserting every provider result each time the feed refreshes,
+          NewsLens uses upsert-style persistence so existing records can be
+          updated while new records are inserted.
+        </p>
+
+        <div class="pipeline">
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>PROVIDER ARTICLE ARRIVES</strong>
+              <span>Normalized provider content enters persistence.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>CHECK PROVIDER ARTICLE ID</strong>
+              <span>Determine whether the article already exists.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>UPDATE OR INSERT</strong>
+              <span>Avoid creating duplicate documents on refresh.</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         06 / Backend Engineering
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        06 / BACKEND
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Keeping HTTP, business logic, and database access separate.
+        </h2>
+
+        <p>
+          The backend is built with Node.js, Express, TypeScript, MongoDB,
+          Mongoose, and Zod. It is intentionally divided into layers so that
+          route handlers do not become responsible for every part of a
+          request.
+        </p>
+
+        <div class="architecture-flow">
+
+          <div class="architecture-node">
+            <strong>ROUTE</strong>
+            <span>HTTP boundary</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>VALIDATION</strong>
+            <span>Request checking</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>SERVICE</strong>
+            <span>Application behavior</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>REPOSITORY</strong>
+            <span>Persistence operations</span>
+          </div>
+
+        </div>
+
+        <h3>REPOSITORY LAYER</h3>
+
+        <p>
+          Database implementation details are kept out of Express route
+          handlers. Article lookup and persistence are handled through the
+          article repository while saved-story persistence is handled through
+          its own repository.
+        </p>
+
+        <p>
+          This means an HTTP route can express an application intention such
+          as <strong>"retrieve this article"</strong> without also containing
+          the exact Mongoose query required to retrieve it.
+        </p>
+
+        <h3>SERVICE LAYER</h3>
+
+        <p>
+          The service layer coordinates behavior that spans multiple
+          dependencies. Retrieving top news, for example, involves requesting
+          data through the provider, normalizing it, persisting it, and
+          returning an application-owned response.
         </p>
 
       </div>
@@ -703,38 +1293,891 @@
     </section>
 
 
-
-    <!-- =========================
-         Result
-         ========================= -->
+    <!-- =====================================================
+         07 / API Design
+         ===================================================== -->
 
     <section class="case-study-section">
 
       <div class="case-study-section-label">
-        05 / RESULT
+        07 / API
       </div>
-
 
       <div class="case-study-content">
 
         <h2>
-          A foundation designed to keep growing.
+          Designing an API around application resources.
         </h2>
 
         <p>
-          The resulting application connects a modern frontend to a
-          dedicated backend news pipeline while keeping provider-specific
-          data handling separate from presentation logic.
+          NewsLens exposes its own REST endpoints rather than requiring the
+          React frontend to communicate with external news services directly.
+          The API supports top-news retrieval, individual persisted articles,
+          saved stories, saved status, and save/remove operations.
+        </p>
+
+        <div class="endpoint-list">
+
+          <div class="endpoint">
+            <div class="endpoint-method">GET</div>
+            <div class="endpoint-path">/api/v1/news/top</div>
+          </div>
+
+          <div class="endpoint">
+            <div class="endpoint-method">GET</div>
+            <div class="endpoint-path">/api/v1/news/articles/:id</div>
+          </div>
+
+          <div class="endpoint">
+            <div class="endpoint-method">GET</div>
+            <div class="endpoint-path">/api/v1/news/saved</div>
+          </div>
+
+          <div class="endpoint">
+            <div class="endpoint-method">GET</div>
+            <div class="endpoint-path">/api/v1/news/articles/:id/saved</div>
+          </div>
+
+          <div class="endpoint">
+            <div class="endpoint-method">POST</div>
+            <div class="endpoint-path">/api/v1/news/articles/:id/saved</div>
+          </div>
+
+          <div class="endpoint">
+            <div class="endpoint-method">DELETE</div>
+            <div class="endpoint-path">/api/v1/news/articles/:id/saved</div>
+          </div>
+
+        </div>
+
+        <h3>STRUCTURED ERRORS</h3>
+
+        <p>
+          API failures use structured responses instead of arbitrary error
+          strings. This creates a more predictable contract for the frontend
+          and allows different failure conditions to be represented
+          explicitly.
+        </p>
+
+        <div class="code-window">
+
+          <div class="code-window-header">
+            <span>API ERROR RESPONSE</span>
+            <span>JSON</span>
+          </div>
+
+          <pre><code>{
+  "error": {
+    "code": "ARTICLE_NOT_FOUND",
+    "message": "The requested article was not found."
+  }
+}</code></pre>
+
+        </div>
+
+        <p>
+          Invalid article IDs are distinguished from valid IDs that simply do
+          not correspond to an existing article. Provider failures are also
+          handled separately from unexpected application failures.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         08 / Validation & Configuration
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        08 / VALIDATION
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Catching invalid state at system boundaries.
+        </h2>
+
+        <p>
+          NewsLens uses Zod for runtime validation while TypeScript provides
+          compile-time contracts during development. The project treats those
+          responsibilities as complementary rather than interchangeable.
+        </p>
+
+        <div class="comparison-grid">
+
+          <div class="comparison-column">
+            <h3>ZOD</h3>
+            <p>Validates data while the application is running.</p>
+            <p>Checks incoming query and route parameters.</p>
+            <p>Rejects malformed requests before deeper application layers.</p>
+          </div>
+
+          <div class="comparison-column">
+            <h3>TYPESCRIPT</h3>
+            <p>Checks assumptions during development.</p>
+            <p>Provides explicit application contracts.</p>
+            <p>Improves editor feedback and refactoring safety.</p>
+          </div>
+
+        </div>
+
+        <p>
+          Reusable Express middleware validates article IDs for multiple
+          endpoints instead of duplicating identical logic across route
+          handlers.
+        </p>
+
+        <h3>FAIL-FAST ENVIRONMENT CONFIGURATION</h3>
+
+        <p>
+          Server configuration is loaded from environment variables and
+          validated during startup. Required values include the runtime
+          environment, port, client origin, news-provider key, and MongoDB
+          connection string.
         </p>
 
         <p>
-          Building NewsLens provided practical experience with
-          full-stack TypeScript development, external API integration,
-          data transformation, frontend component design, debugging,
-          and structuring an application around maintainable
-          boundaries.
+          If required configuration is missing or malformed, the backend fails
+          during startup instead of running in a partially configured state.
+          Real credentials stay in the local server environment and are not
+          intended for source control.
         </p>
 
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         09 / Frontend Architecture
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        09 / FRONTEND
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Separating data access from presentation.
+        </h2>
+
+        <p>
+          The frontend is built with React, TypeScript, Vite, Tailwind CSS,
+          TanStack Query, React Router, motion/react, and Axios, with some
+          backend communication also using the native Fetch API.
+        </p>
+
+        <p>
+          API requests are being moved away from page components and into
+          dedicated API functions and query hooks. For example, Story
+          retrieval follows a responsibility chain rather than placing the
+          entire asynchronous request directly inside the page.
+        </p>
+
+        <div class="architecture-flow">
+
+          <div class="architecture-node">
+            <strong>STORY PAGE</strong>
+            <span>Presentation</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>useStory</strong>
+            <span>Query behavior</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>api/news.ts</strong>
+            <span>HTTP communication</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>BACKEND</strong>
+            <span>NewsLens REST API</span>
+          </div>
+
+        </div>
+
+        <h3>TANSTACK QUERY</h3>
+
+        <p>
+          TanStack Query manages asynchronous server state including loading,
+          errors, caching, query invalidation, mutation state, and
+          synchronization between the server and the interface.
+        </p>
+
+        <p>
+          This keeps server-owned data from being treated as ordinary local
+          component state and gives features such as saved stories a
+          consistent way to update the UI after mutations.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         10 / Story Experience
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        10 / STORIES
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Moving from outbound links to an internal story experience.
+        </h2>
+
+        <p>
+          Early versions of NewsLens linked article cards directly to their
+          original publishers. The application later evolved to include
+          internal Story pages.
+        </p>
+
+        <div class="pipeline">
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>NEWS FEED</strong>
+              <span>User discovers an article.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>ARTICLE CARD</strong>
+              <span>Selection routes into NewsLens.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>/stories/:id</strong>
+              <span>React Router loads the Story page.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>NEWSLENS API</strong>
+              <span>The persisted article is retrieved from MongoDB.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <p>
+          Story pages can present source information, publication date, image,
+          description, article content, saved status, and a link back to the
+          original publisher.
+        </p>
+
+        <p>
+          Keeping the original source available preserves attribution while
+          creating space for NewsLens to eventually add its own structured
+          context around a story.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         11 / Saved Stories
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        11 / SAVED STATE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Persistent interaction instead of temporary UI state.
+        </h2>
+
+        <p>
+          NewsLens includes persistent saved stories. Saving an article does
+          not merely toggle a React boolean or write an ID to browser storage.
+          The action travels through the application stack and is persisted in
+          MongoDB.
+        </p>
+
+        <div class="pipeline">
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>STORY PAGE</strong>
+              <span>User selects Save story.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>TANSTACK QUERY MUTATION</strong>
+              <span>Mutation state and invalidation are coordinated.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>EXPRESS API</strong>
+              <span>The request crosses the server boundary.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>SAVED ARTICLE REPOSITORY</strong>
+              <span>Persistence logic is isolated.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>MONGODB</strong>
+              <span>Saved state survives refreshes and later visits.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <p>
+          The dedicated Saved page supports loading, error, empty, and
+          populated states. Saved cards route back into their corresponding
+          internal Story pages.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         12 / Engineering Challenge
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        12 / CHALLENGE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Preserving saved-story order across database queries.
+        </h2>
+
+        <p>
+          One subtle issue appeared when loading the saved library. Saved
+          records are retrieved newest-first, but MongoDB's
+          <strong>$in</strong> query does not guarantee that matching article
+          documents will be returned in the same order as the supplied IDs.
+        </p>
+
+        <p>
+          Simply requesting all matching articles could therefore produce a
+          library whose order did not match the user's saved-record order.
+        </p>
+
+        <div class="pipeline">
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>LOAD SAVED RECORDS</strong>
+              <span>Retrieve records by createdAt, newest to oldest.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>COLLECT ARTICLE IDS</strong>
+              <span>Identify the corresponding persisted articles.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>FETCH MATCHING ARTICLES</strong>
+              <span>Retrieve the required article documents.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>BUILD LOOKUP MAP</strong>
+              <span>Index the returned articles by provider article ID.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>RECONSTRUCT ORDER</strong>
+              <span>
+                Rebuild the final array according to the ordered saved
+                records.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <p>
+          This produces deterministic ordering without relying on behavior the
+          database does not promise.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         13 / $0 Architecture
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        13 / COST
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Designing around a real deployment constraint: $0.
+        </h2>
+
+        <p>
+          One of NewsLens' most important evolving requirements is that the
+          final portfolio demonstration should be capable of operating within
+          free service tiers.
+        </p>
+
+        <p>
+          The objective is not to pretend a high-traffic production news
+          platform could operate indefinitely at no cost. The goal is to
+          demonstrate a complete deployed architecture at portfolio scale
+          without requiring ongoing paid infrastructure.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>REPLACEABLE PROVIDERS</h3>
+            <p>
+              News ingestion and AI generation sit behind interfaces so
+              pricing changes do not force an application rewrite.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>CACHE EXPENSIVE WORK</h3>
+            <p>
+              Generated AI context is intended to be persisted instead of
+              regenerated for every request.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>MINIMIZE API CALLS</h3>
+            <p>
+              Persisted articles and cached output reduce unnecessary requests
+              to external services.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>GRACEFUL FAILURE</h3>
+            <p>
+              Exhausting a free-tier quota should disable only the affected
+              capability rather than taking the entire application offline.
+            </p>
+          </div>
+
+        </div>
+
+        <p>
+          NewsAPI.ai was useful for developing the current ingestion pipeline,
+          but the final free demonstration may supplement or replace it with a
+          free ingestion strategy such as RSS. Because provider-specific
+          behavior is already isolated, the rest of the NewsLens architecture
+          can remain largely unchanged.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         14 / AI Architecture
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        14 / AI
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Preparing AI context without coupling the application to one model.
+        </h2>
+
+        <p>
+          AI summarization infrastructure is currently in progress. NewsLens
+          is being designed to provide structured article context rather than
+          treating AI output as an unrestricted block of generated text.
+        </p>
+
+        <div class="code-window">
+
+          <div class="code-window-header">
+            <span>PLANNED SUMMARY STRUCTURE</span>
+            <span>IN PROGRESS</span>
+          </div>
+
+          <pre><code>AI Summary
+├── Summary
+├── Why It Matters
+├── Key Points
+├── Unanswered Questions
+├── Generated At
+└── Model</code></pre>
+
+        </div>
+
+        <p class="technical-note">
+          This represents the planned structured summary contract; generation
+          is still under active development.
+        </p>
+
+        <p>
+          The AI system follows the same architectural principle as news
+          ingestion. A <strong>SummaryProvider</strong> interface separates
+          application behavior from the underlying AI vendor.
+        </p>
+
+        <div class="architecture-flow">
+
+          <div class="architecture-node">
+            <strong>SUMMARY SERVICE</strong>
+            <span>Coordinates summary behavior</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>SUMMARY PROVIDER</strong>
+            <span>Vendor-independent contract</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>GEMINI</strong>
+            <span>Current free-tier direction</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>FUTURE MODEL</strong>
+            <span>Replaceable implementation</span>
+          </div>
+
+        </div>
+
+        <h3>AI SUMMARY CACHING</h3>
+
+        <p>
+          Generated summaries are intended to be stored with their associated
+          article. If another request needs context for the same story,
+          NewsLens can return the cached result instead of paying the latency
+          and quota cost of another model invocation.
+        </p>
+
+        <p>
+          This becomes particularly important in a free-tier architecture
+          because one successful generation can serve multiple future
+          requests.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         15 / Development Approach
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        15 / PROCESS
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Refactoring toward stronger boundaries without stopping development.
+        </h2>
+
+        <p>
+          NewsLens has been developed incrementally rather than attempting to
+          predict the final architecture before the product existed.
+        </p>
+
+        <div class="pipeline">
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>MAKE IT WORK</strong>
+              <span>Establish the feature behavior.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>VERIFY BEHAVIOR</strong>
+              <span>Confirm that the implementation solves the problem.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>PERSIST IT</strong>
+              <span>Move important state into the application data layer.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>SEPARATE RESPONSIBILITIES</strong>
+              <span>Move logic into appropriate layers and abstractions.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>VALIDATE & HANDLE FAILURES</strong>
+              <span>Strengthen the system's boundaries and error behavior.</span>
+            </div>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-dot"></div>
+            <div>
+              <strong>IMPROVE THE EXPERIENCE</strong>
+              <span>Refine the UI without changing core behavior.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <p>
+          Story retrieval is one example. The feature originally lived more
+          directly inside the Story page and was later separated into the
+          page, a dedicated query hook, and the frontend API layer while
+          preserving the working behavior.
+        </p>
+
+        <p>
+          This approach avoids architecture for architecture's sake while
+          still moving the codebase toward more maintainable production-style
+          patterns.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         16 / Current Result
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        16 / RESULT
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          A functioning application foundation with room to evolve.
+        </h2>
+
+        <p>
+          NewsLens has progressed beyond a frontend news prototype. The
+          current application can retrieve provider articles, normalize them,
+          persist them in MongoDB, expose them through its own API, display
+          them through React, open persistent internal Story pages, and save
+          stories to a persistent library.
+        </p>
+
+        <div class="status-board">
+
+          <div class="status-column status-complete">
+
+            <h3>IMPLEMENTED</h3>
+
+            <div class="status-item">
+              React and TypeScript frontend
+            </div>
+
+            <div class="status-item">
+              Node / Express TypeScript backend
+            </div>
+
+            <div class="status-item">
+              News provider integration
+            </div>
+
+            <div class="status-item">
+              Provider abstraction
+            </div>
+
+            <div class="status-item">
+              Article normalization
+            </div>
+
+            <div class="status-item">
+              MongoDB Atlas persistence
+            </div>
+
+            <div class="status-item">
+              Bulk article upserts
+            </div>
+
+            <div class="status-item">
+              Repository and service layers
+            </div>
+
+            <div class="status-item">
+              Internal Story pages
+            </div>
+
+            <div class="status-item">
+              TanStack Query integration
+            </div>
+
+            <div class="status-item">
+              Persistent saved stories
+            </div>
+
+            <div class="status-item">
+              Saved library
+            </div>
+
+            <div class="status-item">
+              Request validation
+            </div>
+
+            <div class="status-item">
+              Structured API errors
+            </div>
+
+            <div class="status-item">
+              AI SummaryProvider interface
+            </div>
+
+          </div>
+
+
+          <div class="status-column status-future">
+
+            <h3>IN PROGRESS / PLANNED</h3>
+
+            <div class="status-item">
+              Gemini integration
+            </div>
+
+            <div class="status-item">
+              AI-generated article context
+            </div>
+
+            <div class="status-item">
+              AI summary persistence and caching
+            </div>
+
+            <div class="status-item">
+              Final free news-ingestion strategy
+            </div>
+
+            <div class="status-item">
+              Authentication
+            </div>
+
+            <div class="status-item">
+              User-specific saved libraries
+            </div>
+
+            <div class="status-item">
+              User preferences
+            </div>
+
+            <div class="status-item">
+              Topic following
+            </div>
+
+            <div class="status-item">
+              Related-story grouping
+            </div>
+
+            <div class="status-item">
+              Multi-source event coverage
+            </div>
+
+            <div class="status-item">
+              Free-tier deployment
+            </div>
+
+            <div class="status-item">
+              Additional automated testing
+            </div>
+
+            <div class="status-item">
+              CI / CD
+            </div>
+
+          </div>
+
+        </div>
 
         <a
           href="https://github.com/EmpressCatbug/News_Aggregator"
@@ -751,10 +2194,110 @@
     </section>
 
 
+    <!-- =====================================================
+         17 / Vision
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        17 / VISION
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          From individual articles to understanding developing events.
+        </h2>
+
+        <p>
+          The long-term goal for NewsLens is not simply to show a larger list
+          of articles. The larger idea is to help users understand what is
+          happening, how multiple sources are covering an event, why the story
+          matters, what remains unanswered, and how the event changes over
+          time.
+        </p>
+
+        <div class="architecture-flow">
+
+          <div class="architecture-node architecture-node-wide">
+            <strong>MAJOR EVENT</strong>
+            <span>Shared developing story</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>CONTEXT</strong>
+            <span>What is happening?</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>WHY IT MATTERS</strong>
+            <span>Why should the reader care?</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>TIMELINE</strong>
+            <span>How has the event developed?</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>COVERAGE</strong>
+            <span>How are sources reporting it?</span>
+          </div>
+
+        </div>
+
+        <p>
+          That direction builds naturally on the architecture already in
+          place: normalized articles, persistence, provider abstraction,
+          internal Story pages, shared application data, and structured AI
+          output.
+        </p>
+
+        <p>
+          The project therefore serves two purposes at once: building a useful
+          news product and demonstrating engineering decisions across
+          frontend development, backend architecture, databases, external API
+          integration, validation, persistence, cost constraints, and
+          AI-assisted software design.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="case-study-end">
+      <span>NEWSLENS / GLOBAL NEWS, WITH CONTEXT.</span>
+    </div>
+
   </main>
 
 
+  <!-- =====================================================
+       Background Music
+       Same shared setup used by portfolio project pages
+       ===================================================== -->
+
+  <audio id="background-music" loop>
+    <source
+      src="../assets/Claude Debussy Claire De Lune added reverb.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
+
+  <button
+    class="music-toggle"
+    id="music-toggle"
+    type="button"
+    aria-label="Toggle background music"
+  >
+    ☾
+  </button>
+
+
   <!-- Existing Portfolio Scripts -->
+  <script src="../music.js"></script>
   <script src="../script.js"></script>
 
 </body>
