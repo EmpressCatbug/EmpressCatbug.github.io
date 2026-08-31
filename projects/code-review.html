@@ -2,102 +2,1419 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Code Review Showcase | Takeria Thompson</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="../style.css" />
-  <script src="../script.js" defer></script>
+
   <style>
-    .project-page {
-      max-width: 900px;
+    /* =========================================================
+       Code Review Showcase Case Study
+       ========================================================= */
+
+    .case-study-page {
+      position: relative;
+      z-index: 1;
+
+      width: 100%;
+      max-width: 1160px;
+
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 90px 24px 120px;
     }
 
-    .project-page h1 {
-      font-size: 2.8rem;
-      text-align: center;
-      margin-bottom: 20px;
+    /* =========================================================
+       Back Navigation
+       ========================================================= */
+
+    .case-study-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 70px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+
+      color: rgba(216, 180, 254, 0.68);
+
+      transition:
+        color 0.25s ease,
+        gap 0.25s ease;
     }
 
-    .project-page h2 {
-      font-size: 2rem;
-      margin-top: 50px;
-      margin-bottom: 10px;
-      color: #e9d5ff;
+    .case-study-back:hover {
+      gap: 15px;
+      color: #ffffff;
     }
 
-    .project-page p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-top: 10px;
-      color: #ddd;
+    /* =========================================================
+       Hero
+       ========================================================= */
+
+    .case-study-hero {
+      max-width: 920px;
+      margin-bottom: 85px;
     }
 
-    .video-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-    }
+    .case-study-eyebrow {
+      display: block;
+      margin-bottom: 18px;
 
-    iframe {
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(187, 128, 255, 0.2);
-    }
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
 
-    .back-link {
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-      display: inline-block;
       color: #c084fc;
     }
 
-    .back-link:hover {
-      color: #fff;
+    .case-study-hero h1 {
+      margin: 0 0 26px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1;
+
+      color: #f3e8ff;
+
+      text-shadow:
+        0 0 24px rgba(147, 51, 234, 0.18);
+    }
+
+    .case-study-lead {
+      max-width: 820px;
+      margin-bottom: 0;
+
+      font-size: 1.08rem;
+      line-height: 1.9;
+
+      color: rgba(233, 213, 255, 0.76);
+    }
+
+    /* =========================================================
+       Technology / Discipline Strip
+       ========================================================= */
+
+    .case-study-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+
+      margin-top: 38px;
+    }
+
+    .case-study-tech span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+
+      color: rgba(216, 180, 254, 0.66);
+    }
+
+    .case-study-tech span:not(:last-child)::after {
+      content: " ·";
+      color: rgba(192, 132, 252, 0.40);
+    }
+
+    /* =========================================================
+       Project Facts
+       ========================================================= */
+
+    .project-status {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+
+      margin-top: 48px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.16);
+      border-bottom: 1px solid rgba(216, 180, 254, 0.16);
+    }
+
+    .project-status-item {
+      padding: 24px 22px;
+    }
+
+    .project-status-item:not(:last-child) {
+      border-right: 1px solid rgba(216, 180, 254, 0.12);
+    }
+
+    .project-status-item span {
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+
+      color: rgba(192, 132, 252, 0.62);
+    }
+
+    .project-status-item strong {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.5;
+
+      color: rgba(243, 232, 255, 0.88);
+    }
+
+    /* =========================================================
+       Main Sections
+       ========================================================= */
+
+    .case-study-section {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 70px;
+
+      padding: 68px 0;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
+    }
+
+    .case-study-section-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+
+      color: rgba(192, 132, 252, 0.72);
+    }
+
+    .case-study-content {
+      max-width: 760px;
+    }
+
+    .case-study-content h2 {
+      margin: 0 0 22px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      line-height: 1.25;
+
+      color: #f3e8ff;
+    }
+
+    .case-study-content h3 {
+      margin: 34px 0 12px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
+
+    .case-study-content p {
+      margin: 0 0 20px;
+
+      font-size: 1rem;
+      line-height: 1.85;
+
+      color: rgba(233, 213, 255, 0.72);
+    }
+
+    .case-study-content strong {
+      color: rgba(243, 232, 255, 0.92);
+    }
+
+    /* =========================================================
+       Highlight Quote
+       ========================================================= */
+
+    .case-study-quote {
+      margin: 34px 0;
+      padding: 26px 0 26px 28px;
+
+      border-left: 2px solid rgba(192, 132, 252, 0.48);
+
+      font-size: 1.08rem;
+      line-height: 1.8;
+
+      color: rgba(243, 232, 255, 0.84);
+    }
+
+    /* =========================================================
+       Review Framework
+       ========================================================= */
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px 36px;
+
+      margin-top: 35px;
+    }
+
+    .review-point {
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.12);
+    }
+
+    .review-point h3 {
+      margin: 0 0 10px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
+
+    .review-point p {
+      margin: 0;
+
+      font-size: 0.91rem;
+      line-height: 1.75;
+
+      color: rgba(233, 213, 255, 0.64);
+    }
+
+    /* =========================================================
+       Review Flow
+       ========================================================= */
+
+    .review-flow {
+      margin: 38px 0 26px;
+      padding: 26px 28px;
+
+      border: 1px solid rgba(216, 180, 254, 0.15);
+
+      background: rgba(33, 10, 55, 0.08);
+    }
+
+    .review-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+
+      position: relative;
+
+      padding: 9px 0;
+    }
+
+    .review-step:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+      left: 8px;
+      top: 35px;
+
+      width: 1px;
+      height: calc(100% - 18px);
+
+      background: rgba(192, 132, 252, 0.22);
+    }
+
+    .review-dot {
+      width: 17px;
+      height: 17px;
+
+      flex: 0 0 17px;
+
+      margin-top: 3px;
+
+      border: 1px solid rgba(216, 180, 254, 0.62);
+      border-radius: 50%;
+
+      background: rgba(147, 51, 234, 0.15);
+
+      box-shadow:
+        0 0 14px rgba(168, 85, 247, 0.2);
+    }
+
+    .review-step strong {
+      display: block;
+
+      margin-bottom: 3px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+
+      color: rgba(243, 232, 255, 0.9);
+    }
+
+    .review-step span {
+      font-size: 0.82rem;
+      line-height: 1.6;
+
+      color: rgba(233, 213, 255, 0.55);
+    }
+
+    /* =========================================================
+       Video
+       ========================================================= */
+
+    .video-shell {
+      margin: 34px 0;
+
+      border: 1px solid rgba(216, 180, 254, 0.16);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 7, 34, 0.66),
+          rgba(54, 16, 82, 0.26)
+        );
+
+      box-shadow:
+        0 0 40px rgba(126, 34, 206, 0.08);
+    }
+
+    .video-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 14px 18px;
+
+      border-bottom: 1px solid rgba(216, 180, 254, 0.11);
+    }
+
+    .video-header span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.09em;
+
+      color: rgba(216, 180, 254, 0.52);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+
+      overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+    }
+
+    /* =========================================================
+       Comparison
+       ========================================================= */
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+
+      margin: 34px 0;
+    }
+
+    .comparison-column {
+      padding: 25px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.18);
+    }
+
+    .comparison-column h3 {
+      margin: 0 0 18px;
+
+      font-size: 0.68rem;
+    }
+
+    .comparison-column p {
+      margin-bottom: 9px;
+
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       Principle Strip
+       ========================================================= */
+
+    .principle-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      margin: 36px 0;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.14);
+      border-bottom: 1px solid rgba(216, 180, 254, 0.14);
+    }
+
+    .principle {
+      padding: 24px 18px;
+      text-align: center;
+    }
+
+    .principle:not(:last-child) {
+      border-right: 1px solid rgba(216, 180, 254, 0.11);
+    }
+
+    .principle strong {
+      display: block;
+
+      margin-bottom: 7px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.64rem;
+      letter-spacing: 0.06em;
+
+      color: #d8b4fe;
+    }
+
+    .principle span {
+      font-size: 0.78rem;
+      line-height: 1.5;
+
+      color: rgba(233, 213, 255, 0.5);
+    }
+
+    /* =========================================================
+       Result
+       ========================================================= */
+
+    .result-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 34px;
+
+      margin-top: 32px;
+    }
+
+    .result-item {
+      position: relative;
+
+      padding: 17px 0 17px 22px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.11);
+
+      font-size: 0.9rem;
+      line-height: 1.7;
+
+      color: rgba(233, 213, 255, 0.65);
+    }
+
+    .result-item::before {
+      content: "✦";
+
+      position: absolute;
+      left: 0;
+
+      color: rgba(192, 132, 252, 0.66);
+    }
+
+    /* =========================================================
+       End
+       ========================================================= */
+
+    .case-study-end {
+      padding-top: 50px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
+
+      text-align: center;
+    }
+
+    .case-study-end span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.13em;
+
+      color: rgba(192, 132, 252, 0.54);
+    }
+
+    /* =========================================================
+       Mobile
+       ========================================================= */
+
+    @media (max-width: 768px) {
+      .case-study-page {
+        padding: 60px 20px 90px;
+      }
+
+      .case-study-back {
+        margin-bottom: 50px;
+      }
+
+      .case-study-hero {
+        margin-bottom: 70px;
+      }
+
+      .case-study-hero h1 {
+        font-size: 3rem;
+      }
+
+      .case-study-lead {
+        font-size: 0.96rem;
+        line-height: 1.8;
+      }
+
+      .project-status,
+      .review-grid,
+      .comparison-grid,
+      .result-list {
+        grid-template-columns: 1fr;
+      }
+
+      .project-status-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(216, 180, 254, 0.12);
+      }
+
+      .case-study-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+
+        padding: 50px 0;
+      }
+
+      .principle-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .principle:nth-child(2) {
+        border-right: none;
+      }
+
+      .principle:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(216, 180, 254, 0.11);
+      }
     }
   </style>
 </head>
+
 <body>
-  <div id="sparkle-container"></div>
-  <div class="project-page">
-    <h1 class="glow">Code Review Showcase</h1>
-    <a class="back-link" href="../home.html">← Back to Portfolio</a>
 
-    <h2>Overview</h2>
-    <p>
-      This project demonstrates my ability to conduct a professional, thoughtful code review — the kind expected in real-world engineering teams.
-      Whether reviewing my own code or giving feedback to others, I focus on clarity, performance, scalability, and maintainability.
-    </p>
-
-    <h2>Live Code Review Video</h2>
-    <p>
-      In this video, I walk through code implementation decisions, identify improvements, and discuss best practices using a real project.
-    </p>
-
-    <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/9CaSgKfrYw4" 
-        title="Code Review Walkthrough by Takeria Thompson" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <h2>Review Focus Areas</h2>
-    <ul>
-      <li>🔍 Naming conventions and readability</li>
-      <li>📦 Code organization and structure</li>
-      <li>🧠 Logic flow and efficiency</li>
-      <li>🛡️ Security and edge case awareness</li>
-    </ul>
-
-    <h2>Conclusion</h2>
-    <p>
-      Code review is more than just finding bugs — it's about improving collaboration, reducing technical debt, and building better software.
-      This video reflects my approach to reviewing code as a responsible and growth-oriented engineer.
-    </p>
-  </div>
-  <!-- Sparkle + Butterfly Cursor -->
+  <!-- Existing Portfolio Effects -->
   <div id="sparkle-container"></div>
   <div class="butterfly-cursor"></div>
 
-  <!-- Scripts -->
+  <main class="case-study-page">
+
+    <!-- =====================================================
+         Back
+         ===================================================== -->
+
+    <a
+      href="../projects.html"
+      class="case-study-back"
+    >
+      ← Back to Projects
+    </a>
+
+
+    <!-- =====================================================
+         Hero
+         ===================================================== -->
+
+    <header class="case-study-hero">
+
+      <span class="case-study-eyebrow">
+        SOFTWARE QUALITY / CODE REVIEW
+      </span>
+
+      <h1>Code Review Showcase</h1>
+
+      <p class="case-study-lead">
+        A walkthrough of my approach to evaluating code for readability,
+        structure, logic, maintainability, security awareness, and long-term
+        software quality.
+      </p>
+
+      <div class="case-study-tech">
+        <span>Code Review</span>
+        <span>Software Quality</span>
+        <span>Maintainability</span>
+        <span>Secure Development</span>
+        <span>Engineering Communication</span>
+      </div>
+
+      <div class="project-status">
+
+        <div class="project-status-item">
+          <span>PROJECT TYPE</span>
+          <strong>Technical Review Showcase</strong>
+        </div>
+
+        <div class="project-status-item">
+          <span>FORMAT</span>
+          <strong>Recorded Engineering Walkthrough</strong>
+        </div>
+
+        <div class="project-status-item">
+          <span>FOCUS</span>
+          <strong>Quality, Clarity & Maintainability</strong>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         01 / Overview
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        01 / OVERVIEW
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Reviewing code as an engineering practice.
+        </h2>
+
+        <p>
+          Writing functioning software is only one part of software
+          engineering. Code also needs to be understandable, maintainable,
+          adaptable, and safe for other developers to work with.
+        </p>
+
+        <p>
+          This showcase demonstrates how I approach code review by looking
+          beyond whether a piece of software simply works. I consider how
+          clearly the implementation communicates its intent, how well its
+          responsibilities are organized, whether the logic is easy to
+          reason about, and where future maintenance problems could emerge.
+        </p>
+
+        <div class="case-study-quote">
+          A useful code review should improve both the software and the shared
+          understanding of the people maintaining it.
+        </div>
+
+        <p>
+          The goal is not to criticize code for the sake of criticism.
+          Effective review should identify meaningful improvements while
+          preserving the original developer's intent and encouraging a
+          healthier engineering process.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         02 / Review Method
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        02 / METHOD
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          A structured way to move through unfamiliar code.
+        </h2>
+
+        <p>
+          Rather than beginning with isolated syntax changes, I approach a
+          review from the larger behavior of the code toward the details of
+          its implementation.
+        </p>
+
+        <div class="review-flow">
+
+          <div class="review-step">
+            <div class="review-dot"></div>
+            <div>
+              <strong>UNDERSTAND INTENT</strong>
+              <span>
+                Identify what the code is attempting to accomplish before
+                evaluating how it accomplishes it.
+              </span>
+            </div>
+          </div>
+
+          <div class="review-step">
+            <div class="review-dot"></div>
+            <div>
+              <strong>TRACE LOGIC</strong>
+              <span>
+                Follow the control and data flow to understand how inputs,
+                decisions, and outputs interact.
+              </span>
+            </div>
+          </div>
+
+          <div class="review-step">
+            <div class="review-dot"></div>
+            <div>
+              <strong>EXAMINE STRUCTURE</strong>
+              <span>
+                Evaluate whether responsibilities are organized clearly and
+                whether related behavior belongs together.
+              </span>
+            </div>
+          </div>
+
+          <div class="review-step">
+            <div class="review-dot"></div>
+            <div>
+              <strong>CHECK FAILURE PATHS</strong>
+              <span>
+                Consider edge cases, invalid input, unexpected state, and
+                security-sensitive behavior.
+              </span>
+            </div>
+          </div>
+
+          <div class="review-step">
+            <div class="review-dot"></div>
+            <div>
+              <strong>ASSESS MAINTAINABILITY</strong>
+              <span>
+                Consider how difficult the implementation will be to change,
+                debug, test, or extend later.
+              </span>
+            </div>
+          </div>
+
+          <div class="review-step">
+            <div class="review-dot"></div>
+            <div>
+              <strong>COMMUNICATE IMPROVEMENTS</strong>
+              <span>
+                Explain why a recommendation matters rather than simply
+                prescribing a different implementation.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         03 / Live Review
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        03 / WALKTHROUGH
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Reviewing implementation decisions in context.
+        </h2>
+
+        <p>
+          The recorded walkthrough demonstrates the review process against a
+          real implementation. I discuss code decisions, identify areas where
+          the implementation could be improved, and explain the engineering
+          principles behind those recommendations.
+        </p>
+
+        <div class="video-shell">
+
+          <div class="video-header">
+            <span>CODE REVIEW WALKTHROUGH</span>
+            <span>VIDEO</span>
+          </div>
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/9CaSgKfrYw4"
+              title="Code Review Walkthrough by Takeria Thompson"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+        </div>
+
+        <p>
+          The focus of the review is not simply to point out mistakes. It is
+          to explain how implementation choices affect readability,
+          collaboration, maintainability, and future development.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         04 / Readability
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        04 / READABILITY
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Code should communicate its intent.
+        </h2>
+
+        <p>
+          Readability influences nearly every other aspect of software
+          maintenance. Developers spend significant time reading existing code
+          before changing it, which means unclear naming and unnecessarily
+          complex logic create a recurring cost.
+        </p>
+
+        <div class="review-grid">
+
+          <div class="review-point">
+            <h3>NAMING</h3>
+            <p>
+              Variables, functions, classes, and modules should communicate
+              purpose without requiring the reader to reverse-engineer what
+              they represent.
+            </p>
+          </div>
+
+          <div class="review-point">
+            <h3>INTENT</h3>
+            <p>
+              The structure of a function should make its responsibility
+              understandable without excessive mental decoding.
+            </p>
+          </div>
+
+          <div class="review-point">
+            <h3>CONSISTENCY</h3>
+            <p>
+              Consistent patterns reduce cognitive load and help developers
+              predict how neighboring code is likely to behave.
+            </p>
+          </div>
+
+          <div class="review-point">
+            <h3>COMPLEXITY</h3>
+            <p>
+              Logic should be as simple as the problem allows rather than
+              becoming difficult to follow through unnecessary branching or
+              deeply nested behavior.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         05 / Organization
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        05 / STRUCTURE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Organizing code around clear responsibilities.
+        </h2>
+
+        <p>
+          Code organization affects how easily a project can grow. A small
+          implementation can tolerate mixed responsibilities for a while, but
+          those same choices become harder to manage as features and
+          dependencies accumulate.
+        </p>
+
+        <p>
+          During review, I look for places where unrelated behavior has become
+          tightly coupled, where a function or module is trying to do too many
+          things, or where duplicated logic could create multiple sources of
+          truth.
+        </p>
+
+        <div class="comparison-grid">
+
+          <div class="comparison-column">
+            <h3>WEAKER STRUCTURE</h3>
+            <p>Multiple responsibilities live in the same function.</p>
+            <p>Behavior becomes difficult to isolate or test.</p>
+            <p>Changes can create unexpected side effects elsewhere.</p>
+          </div>
+
+          <div class="comparison-column">
+            <h3>STRONGER STRUCTURE</h3>
+            <p>Responsibilities are easier to identify.</p>
+            <p>Related behavior is grouped deliberately.</p>
+            <p>Individual pieces can change with less disruption.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         06 / Logic & Efficiency
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        06 / LOGIC
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Following the path from input to outcome.
+        </h2>
+
+        <p>
+          A review should verify that the implementation's logic matches its
+          intended behavior. I trace important conditions and state changes to
+          understand what happens under both expected and unexpected inputs.
+        </p>
+
+        <p>
+          Efficiency is also considered, but performance recommendations need
+          to be proportional to the actual problem. Code should not become
+          harder to understand merely to optimize behavior that does not
+          meaningfully affect the application.
+        </p>
+
+        <div class="principle-strip">
+
+          <div class="principle">
+            <strong>CORRECTNESS</strong>
+            <span>Does the logic produce the intended result?</span>
+          </div>
+
+          <div class="principle">
+            <strong>CLARITY</strong>
+            <span>Can another developer follow the reasoning?</span>
+          </div>
+
+          <div class="principle">
+            <strong>EFFICIENCY</strong>
+            <span>Is unnecessary work being repeated?</span>
+          </div>
+
+          <div class="principle">
+            <strong>CHANGEABILITY</strong>
+            <span>Can the behavior evolve safely?</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         07 / Edge Cases
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        07 / EDGE CASES
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Looking beyond the successful path.
+        </h2>
+
+        <p>
+          Code often behaves correctly under the exact conditions used during
+          initial development while failing when assumptions are violated.
+          Review therefore includes considering what happens outside the
+          expected path.
+        </p>
+
+        <div class="review-grid">
+
+          <div class="review-point">
+            <h3>INVALID INPUT</h3>
+            <p>
+              What happens when the caller provides missing, malformed, or
+              unexpected values?
+            </p>
+          </div>
+
+          <div class="review-point">
+            <h3>EMPTY STATE</h3>
+            <p>
+              Does the implementation behave safely when expected collections
+              or resources contain nothing?
+            </p>
+          </div>
+
+          <div class="review-point">
+            <h3>FAILURE CONDITIONS</h3>
+            <p>
+              Are errors handled intentionally, or can a failure leave the
+              application in an inconsistent state?
+            </p>
+          </div>
+
+          <div class="review-point">
+            <h3>BOUNDARY CONDITIONS</h3>
+            <p>
+              What happens at the minimum, maximum, first, last, or otherwise
+              unusual points in the application's logic?
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         08 / Security Awareness
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        08 / SECURITY
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Treating security as part of code quality.
+        </h2>
+
+        <p>
+          Security concerns are easier to address when they are considered
+          during normal engineering work rather than postponed until the end
+          of development.
+        </p>
+
+        <p>
+          During review, I look for assumptions about trusted input,
+          accidentally exposed information, unsafe handling of data, missing
+          validation, and other areas where implementation decisions could
+          create unnecessary risk.
+        </p>
+
+        <div class="case-study-quote">
+          Secure development is not separate from maintainable development.
+          Both depend on making assumptions explicit and controlling how data
+          moves through a system.
+        </div>
+
+        <p>
+          The exact security concerns vary by application, so recommendations
+          should reflect the context of the code rather than applying generic
+          rules without understanding the system.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         09 / Maintainability
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        09 / MAINTAINABILITY
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Reviewing for the developer who comes next.
+        </h2>
+
+        <p>
+          Maintainability means thinking beyond the moment the code is first
+          written. A feature may work correctly today while still being
+          expensive to debug or extend later.
+        </p>
+
+        <p>
+          I consider how easily another developer could understand the code,
+          identify the correct place for a future change, isolate a defect,
+          and modify behavior without accidentally affecting unrelated
+          functionality.
+        </p>
+
+        <div class="review-grid">
+
+          <div class="review-point">
+            <h3>DUPLICATION</h3>
+            <p>
+              Repeated logic can become multiple competing versions of the
+              same behavior.
+            </p>
+          </div>
+
+          <div class="review-point">
+            <h3>COUPLING</h3>
+            <p>
+              Unnecessary dependencies make seemingly small changes affect
+              unrelated areas of the system.
+            </p>
+          </div>
+
+          <div class="review-point">
+            <h3>RESPONSIBILITY</h3>
+            <p>
+              Clear ownership makes it easier to determine where behavior
+              should be changed or tested.
+            </p>
+          </div>
+
+          <div class="review-point">
+            <h3>EXPLICITNESS</h3>
+            <p>
+              Hidden assumptions make maintenance harder than behavior that is
+              represented clearly in the code.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         10 / Collaboration
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        10 / COLLABORATION
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Good review feedback explains, not commands.
+        </h2>
+
+        <p>
+          Code review is fundamentally collaborative. The quality of a
+          suggestion matters, but so does the way that suggestion is
+          communicated.
+        </p>
+
+        <p>
+          I prefer feedback that identifies the concern, explains why it
+          matters, and gives the developer enough context to evaluate the
+          recommendation themselves.
+        </p>
+
+        <div class="comparison-grid">
+
+          <div class="comparison-column">
+            <h3>LESS USEFUL</h3>
+            <p>"Change this."</p>
+            <p>"This is wrong."</p>
+            <p>"I wouldn't write it this way."</p>
+          </div>
+
+          <div class="comparison-column">
+            <h3>MORE USEFUL</h3>
+            <p>Identify the engineering concern.</p>
+            <p>Explain the effect it could have.</p>
+            <p>Offer an improvement and its trade-offs.</p>
+          </div>
+
+        </div>
+
+        <p>
+          Review should help teams establish shared engineering expectations,
+          not turn personal coding preferences into arbitrary rules.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         11 / Engineering Perspective
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        11 / PERSPECTIVE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Distinguishing defects from preferences.
+        </h2>
+
+        <p>
+          Not every difference in implementation deserves a requested change.
+          An important part of review is distinguishing genuine engineering
+          concerns from stylistic preferences.
+        </p>
+
+        <p>
+          A meaningful recommendation should connect to an outcome such as
+          correctness, maintainability, readability, performance, security,
+          consistency, or team conventions.
+        </p>
+
+        <p>
+          If two implementations are both clear and appropriate, the review
+          process should not create unnecessary churn simply because one
+          reviewer personally prefers a different style.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         12 / Result
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        12 / RESULT
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Demonstrating how I evaluate software beyond implementation.
+        </h2>
+
+        <p>
+          This project showcases an engineering skill that is difficult to
+          demonstrate through finished applications alone: the ability to read
+          existing code critically, reason about its structure, identify
+          meaningful improvements, and communicate those improvements clearly.
+        </p>
+
+        <div class="result-list">
+
+          <div class="result-item">
+            Evaluate naming and readability.
+          </div>
+
+          <div class="result-item">
+            Examine code organization and responsibility boundaries.
+          </div>
+
+          <div class="result-item">
+            Trace logic and consider efficiency.
+          </div>
+
+          <div class="result-item">
+            Identify edge cases and failure scenarios.
+          </div>
+
+          <div class="result-item">
+            Include security awareness in normal review work.
+          </div>
+
+          <div class="result-item">
+            Consider long-term maintainability and technical debt.
+          </div>
+
+          <div class="result-item">
+            Explain recommendations in engineering terms.
+          </div>
+
+          <div class="result-item">
+            Treat review as a collaborative quality practice.
+          </div>
+
+        </div>
+
+        <p style="margin-top: 34px;">
+          The larger takeaway is that code review is not simply about finding
+          defects. It is a mechanism for improving software quality,
+          transferring knowledge, reducing technical debt, and helping teams
+          build systems that remain understandable as they evolve.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="case-study-end">
+      <span>CODE REVIEW / CLARITY • QUALITY • COLLABORATION</span>
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       Background Music
+       Same shared setup as the other portfolio project pages
+       ===================================================== -->
+
+  <audio id="background-music" loop>
+    <source
+      src="../assets/Claude Debussy Claire De Lune added reverb.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
+
+  <button
+    class="music-toggle"
+    id="music-toggle"
+    type="button"
+    aria-label="Toggle background music"
+  >
+    ☾
+  </button>
+
+
+  <!-- Existing Portfolio Scripts -->
+  <script src="../music.js"></script>
   <script src="../script.js"></script>
+
 </body>
 </html>
