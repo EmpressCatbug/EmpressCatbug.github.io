@@ -351,18 +351,361 @@ body {
     color: #d6bcfa;
   }
   
-  /* Avatar */
-  #avatar {
-    width: 180px;
-    height: auto;
-    margin-top: 25px;
-    animation: floatAvatar 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px #b084f4);
+  /* =========================
+   About Section
+   ========================= */
+
+.about-section {
+  max-width: 1180px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  text-align: left;
+}
+
+
+/* -------------------------
+   Section introduction
+   ------------------------- */
+
+.about-heading {
+  max-width: 760px;
+  margin-bottom: 70px;
+}
+
+
+.section-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+
+  color: #c084fc;
+}
+
+
+.about-section .about-heading h2 {
+  margin-bottom: 18px;
+
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.15;
+
+  color: #f3e8ff;
+}
+
+
+.about-heading-text {
+  max-width: 680px;
+
+  color: rgba(233, 213, 255, 0.76);
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* -------------------------
+   Main two-column layout
+   ------------------------- */
+
+.about-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.85fr)
+    minmax(0, 1.15fr);
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+
+/* -------------------------
+   Astronaut visual
+   ------------------------- */
+
+.about-visual {
+  position: relative;
+
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.about-avatar-wrap {
+  position: relative;
+
+  width: min(100%, 390px);
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(147, 51, 234, 0.15) 0%,
+      rgba(88, 28, 135, 0.07) 48%,
+      transparent 72%
+    );
+}
+
+
+#avatar {
+  position: relative;
+  z-index: 3;
+
+  width: min(80%, 300px);
+  height: auto;
+
+  margin: 0;
+
+  filter:
+    drop-shadow(0 0 12px rgba(216, 180, 254, 0.55))
+    drop-shadow(0 0 35px rgba(147, 51, 234, 0.22));
+
+  animation: floatAvatar 5s ease-in-out infinite;
+}
+
+
+@keyframes floatAvatar {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  @keyframes floatAvatar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+  50% {
+    transform: translateY(-12px);
   }
+
+}
+
+
+/* Thin celestial orbit lines */
+.about-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border: 1px solid rgba(216, 180, 254, 0.14);
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%) rotate(-18deg);
+
+  pointer-events: none;
+}
+
+
+.about-orbit-one {
+  width: 370px;
+  height: 240px;
+}
+
+
+.about-orbit-two {
+  width: 430px;
+  height: 300px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(25deg);
+
+  border-color: rgba(192, 132, 252, 0.09);
+}
+
+
+.about-star {
+  position: absolute;
+
+  color: #d8b4fe;
+
+  text-shadow:
+    0 0 8px rgba(216, 180, 254, 0.8),
+    0 0 18px rgba(147, 51, 234, 0.5);
+}
+
+
+.about-star-one {
+  top: 17%;
+  right: 15%;
+
+  font-size: 1rem;
+}
+
+
+.about-star-two {
+  bottom: 20%;
+  left: 12%;
+
+  font-size: 0.8rem;
+}
+
+
+/* -------------------------
+   About text
+   ------------------------- */
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 36px;
+}
+
+
+.about-block {
+  position: relative;
+
+  padding-left: 28px;
+
+  border-left:
+    1px solid rgba(216, 180, 254, 0.18);
+}
+
+
+.about-label {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  font-family: 'Orbitron', sans-serif;
+
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+
+  color: #c084fc;
+}
+
+
+.about-block h3 {
+  max-width: 590px;
+
+  margin-bottom: 14px;
+
+  font-family: 'Orbitron', sans-serif;
+
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.35;
+
+  color: #f3e8ff;
+}
+
+
+.about-block p {
+  max-width: 650px;
+
+  color: rgba(233, 213, 255, 0.74);
+
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+
+.about-now {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+
+/* -------------------------
+   Education facts
+   ------------------------- */
+
+.about-facts {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1px;
+
+  margin-top: 90px;
+
+  border-top:
+    1px solid rgba(216, 180, 254, 0.14);
+
+  border-bottom:
+    1px solid rgba(216, 180, 254, 0.14);
+}
+
+
+.about-fact {
+  min-height: 140px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 28px 32px;
+}
+
+
+.about-fact + .about-fact {
+  border-left:
+    1px solid rgba(216, 180, 254, 0.14);
+}
+
+
+.about-fact-value {
+  margin-bottom: 8px;
+
+  font-family: 'Orbitron', sans-serif;
+
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+
+  color: #f3e8ff;
+}
+
+
+.about-fact-label {
+  color: rgba(233, 213, 255, 0.60);
+
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+
+/* -------------------------
+   Discipline strip
+   ------------------------- */
+
+.about-disciplines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  padding-top: 36px;
+
+  font-family: 'Orbitron', sans-serif;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+
+  color: rgba(233, 213, 255, 0.58);
+}
+
+
+.discipline-star {
+  color: rgba(192, 132, 252, 0.7);
+
+  font-size: 0.6rem;
+}
   
   /* Contact & Footer */
   a {
@@ -427,9 +770,79 @@ body {
       font-size: 2rem;
     }
   
+        .about-section {
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+
+    .about-heading {
+      margin-bottom: 45px;
+    }
+
+    .about-section .about-heading h2 {
+      font-size: 2.2rem;
+    }
+
+    .about-layout {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+
+    .about-visual {
+      min-height: 360px;
+    }
+
+    .about-avatar-wrap {
+      width: min(90%, 320px);
+    }
+
     #avatar {
-      width: 120px;
-      height: 120px;
+      width: min(78%, 230px);
+    }
+
+    .about-orbit-one {
+      width: 300px;
+      height: 190px;
+    }
+
+    .about-orbit-two {
+      width: 340px;
+      height: 235px;
+    }
+
+    .about-content {
+      gap: 30px;
+    }
+
+    .about-block {
+      padding-left: 20px;
+    }
+
+    .about-facts {
+      grid-template-columns: 1fr;
+
+      margin-top: 60px;
+    }
+
+    .about-fact {
+      min-height: auto;
+
+      padding: 24px 8px;
+    }
+
+    .about-fact + .about-fact {
+      border-left: none;
+
+      border-top:
+        1px solid rgba(216, 180, 254, 0.14);
+    }
+
+    .about-disciplines {
+      justify-content: flex-start;
+
+      gap: 10px;
+
+      font-size: 0.65rem;
     }
           .hero {
       padding: 150px 20px 70px;
