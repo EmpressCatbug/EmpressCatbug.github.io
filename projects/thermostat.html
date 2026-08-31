@@ -1,267 +1,1654 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Smart Thermostat Project | Takeria Thompson</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    Smart Thermostat | Takeria Thompson
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="../style.css"
+  />
+
+
   <style>
-    .project-page {
-      max-width: 900px;
+
+    /* =========================
+       Smart Thermostat
+       Case Study
+       ========================= */
+
+    .case-study-page {
+      position: relative;
+      z-index: 1;
+
+      width: 100%;
+      max-width: 1120px;
+
       margin: 0 auto;
-      padding: 60px 20px;
+
+      padding:
+        90px 24px
+        120px;
     }
 
-    .project-page h1 {
-      font-size: 2.8rem;
-      text-align: center;
+
+    /* =========================
+       Back Navigation
+       ========================= */
+
+    .case-study-back {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 70px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+
+      color:
+        rgba(216, 180, 254, 0.68);
+
+      transition:
+        color 0.25s ease,
+        gap 0.25s ease;
+    }
+
+
+    .case-study-back:hover {
+      gap: 15px;
+
+      color: #ffffff;
+    }
+
+
+    /* =========================
+       Hero
+       ========================= */
+
+    .case-study-hero {
+      max-width: 920px;
+
+      margin-bottom: 90px;
+    }
+
+
+    .case-study-eyebrow {
+      display: block;
+
+      margin-bottom: 18px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+
+      color: #c084fc;
+    }
+
+
+    .case-study-hero h1 {
+      max-width: 920px;
+
+      margin-bottom: 26px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size:
+        clamp(3rem, 7vw, 6rem);
+
+      line-height: 1.02;
+
+      color: #f3e8ff;
+
+      text-shadow:
+        0 0 24px rgba(147, 51, 234, 0.18);
+    }
+
+
+    .case-study-lead {
+      max-width: 780px;
+
+      font-size: 1.08rem;
+      line-height: 1.9;
+
+      color:
+        rgba(233, 213, 255, 0.76);
+    }
+
+
+    /* =========================
+       Tech Strip
+       ========================= */
+
+    .case-study-tech {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap:
+        10px 18px;
+
+      margin-top: 38px;
+    }
+
+
+    .case-study-tech span {
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+
+      color:
+        rgba(216, 180, 254, 0.66);
+    }
+
+
+    .case-study-tech span:not(:last-child)::after {
+      content: " ·";
+
+      color:
+        rgba(192, 132, 252, 0.40);
+    }
+
+
+    /* =========================
+       Case Study Sections
+       ========================= */
+
+    .case-study-section {
+      display: grid;
+
+      grid-template-columns:
+        210px
+        minmax(0, 1fr);
+
+      gap: 70px;
+
+      padding:
+        65px 0;
+
+      border-top:
+        1px solid rgba(216, 180, 254, 0.15);
+    }
+
+
+    .case-study-section-label {
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+
+      color:
+        rgba(192, 132, 252, 0.72);
+    }
+
+
+    .case-study-content {
+      max-width: 760px;
+    }
+
+
+    .case-study-content h2 {
+      margin-bottom: 22px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size:
+        clamp(1.6rem, 3vw, 2.35rem);
+
+      line-height: 1.2;
+
+      color: #f3e8ff;
+    }
+
+
+    .case-study-content h3 {
+      margin:
+        36px 0
+        12px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.77rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
+
+
+    .case-study-content p {
       margin-bottom: 20px;
+
+      font-size: 1rem;
+      line-height: 1.85;
+
+      color:
+        rgba(233, 213, 255, 0.72);
     }
 
-    .project-page h2 {
-      font-size: 2rem;
-      margin-top: 50px;
+
+    /* =========================
+       Project Facts
+       ========================= */
+
+    .project-facts {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+      margin-top: 38px;
+    }
+
+
+    .project-fact {
+      min-height: 130px;
+
+      padding: 24px;
+
+      border:
+        1px solid rgba(216, 180, 254, 0.14);
+
+      background:
+        rgba(42, 10, 70, 0.07);
+    }
+
+
+    .project-fact strong {
+      display: block;
+
       margin-bottom: 10px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+
+      color: #d8b4fe;
+    }
+
+
+    .project-fact span {
+      font-size: 0.86rem;
+      line-height: 1.65;
+
+      color:
+        rgba(233, 213, 255, 0.62);
+    }
+
+
+    /* =========================
+       Architecture Flow
+       ========================= */
+
+    .architecture-flow {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 14px;
+
+      margin:
+        38px 0
+        30px;
+    }
+
+
+    .architecture-node {
+      position: relative;
+
+      min-height: 130px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      padding: 20px;
+
+      border:
+        1px solid rgba(216, 180, 254, 0.15);
+
+      background:
+        rgba(42, 10, 70, 0.07);
+
+      text-align: center;
+    }
+
+
+    .architecture-node strong {
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.66rem;
+      letter-spacing: 0.07em;
+
       color: #e9d5ff;
     }
 
-    .project-page h3 {
-      margin-top: 30px;
-      font-size: 1.2rem;
-      color: #c084fc;
+
+    .architecture-node span {
+      font-size: 0.76rem;
+      line-height: 1.5;
+
+      color:
+        rgba(233, 213, 255, 0.50);
     }
 
-    .project-page p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-top: 10px;
-      color: #ddd;
+
+    /* =========================
+       Diagram
+       ========================= */
+
+    .case-study-diagram {
+      margin-top: 38px;
     }
 
-    .project-diagram {
+
+    .case-study-diagram img {
       display: block;
-      margin: 30px auto;
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(186, 127, 255, 0.3);
+
+      width: 100%;
+      max-width: 760px;
+
+      margin: 0 auto;
+
+      border:
+        1px solid rgba(216, 180, 254, 0.18);
+
+      background:
+        rgba(10, 2, 25, 0.30);
+
+      box-shadow:
+        0 0 30px rgba(147, 51, 234, 0.10);
     }
 
-    .video-container {
-      display: flex;
-      justify-content: center;
+
+    .diagram-caption {
+      margin-top: 15px !important;
+
+      font-size: 0.8rem !important;
+
+      line-height: 1.6 !important;
+
+      color:
+        rgba(233, 213, 255, 0.46) !important;
+    }
+
+
+    /* =========================
+       Engineering Grid
+       ========================= */
+
+    .engineering-list {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap:
+        28px 36px;
+
+      margin-top: 35px;
+    }
+
+
+    .engineering-point {
+      padding-top: 20px;
+
+      border-top:
+        1px solid rgba(216, 180, 254, 0.12);
+    }
+
+
+    .engineering-point h3 {
+      margin:
+        0 0
+        10px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.74rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
+
+
+    .engineering-point p {
+      margin: 0;
+
+      font-size: 0.91rem;
+      line-height: 1.75;
+
+      color:
+        rgba(233, 213, 255, 0.64);
+    }
+
+
+    /* =========================
+       Platform Comparison
+       ========================= */
+
+    .platform-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+      margin-top: 35px;
+    }
+
+
+    .platform-item {
+      padding:
+        25px 22px;
+
+      border-top:
+        1px solid rgba(216, 180, 254, 0.16);
+    }
+
+
+    .platform-item strong {
+      display: block;
+
+      margin-bottom: 12px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+
+      color: #d8b4fe;
+    }
+
+
+    .platform-item p {
+      margin: 0;
+
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       Code
+       ========================= */
+
+    .code-block {
       margin-top: 30px;
+
+      overflow-x: auto;
+
+      border:
+        1px solid rgba(216, 180, 254, 0.14);
+
+      background:
+        rgba(5, 1, 15, 0.54);
     }
 
-    .back-link {
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-      display: inline-block;
-      color: #c084fc;
+
+    .code-block pre {
+      margin: 0;
+
+      padding: 28px;
     }
 
-    .back-link:hover {
-      color: #fff;
+
+    .code-block code {
+      font-family:
+        Consolas,
+        'Courier New',
+        monospace;
+
+      font-size: 0.88rem;
+      line-height: 1.7;
+
+      color:
+        rgba(243, 232, 255, 0.82);
+
+      white-space: pre;
     }
+
+
+    /* =========================
+       Reflection
+       ========================= */
+
+    .reflection-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap:
+        28px 36px;
+
+      margin-top: 32px;
+    }
+
+
+    .reflection-item {
+      padding-top: 20px;
+
+      border-top:
+        1px solid rgba(216, 180, 254, 0.12);
+    }
+
+
+    .reflection-item h3 {
+      margin:
+        0 0
+        10px;
+    }
+
+
+    .reflection-item p {
+      margin: 0;
+
+      font-size: 0.91rem;
+      line-height: 1.75;
+    }
+
+
+    /* =========================
+       CTA
+       ========================= */
+
+    .case-study-link {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 13px;
+
+      margin-top: 22px;
+      padding-bottom: 7px;
+
+      border-bottom:
+        1px solid rgba(216, 180, 254, 0.34);
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.70rem;
+      letter-spacing: 0.08em;
+
+      color: #e9d5ff;
+
+      transition:
+        gap 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+
+    .case-study-link:hover {
+      gap: 18px;
+
+      color: #ffffff;
+
+      border-color:
+        rgba(216, 180, 254, 0.72);
+    }
+
+
+    /* =========================
+       Mobile
+       ========================= */
+
+    @media (max-width: 768px) {
+
+      .case-study-page {
+        padding:
+          60px 20px
+          90px;
+      }
+
+
+      .case-study-back {
+        margin-bottom: 50px;
+      }
+
+
+      .case-study-hero {
+        margin-bottom: 70px;
+      }
+
+
+      .case-study-hero h1 {
+        font-size: 3rem;
+      }
+
+
+      .case-study-lead {
+        font-size: 0.96rem;
+
+        line-height: 1.8;
+      }
+
+
+      .case-study-section {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding:
+          50px 0;
+      }
+
+
+      .project-facts,
+      .engineering-list,
+      .reflection-grid,
+      .platform-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .architecture-flow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      .architecture-flow {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
   </style>
+
 </head>
+
+
 <body>
+
+
+  <!-- =========================
+       Existing Portfolio Effects
+       ========================= -->
+
   <div id="sparkle-container"></div>
-  <div class="project-page">
-    <h1 class="glow">Smart Thermostat Project</h1>
-    <a class="back-link" href="../home.html">← Back to Portfolio</a>
 
-    <h2>Overview</h2>
-    <p>
-      This project demonstrates a smart thermostat system built on the Texas Instruments CC3220x LaunchPad, a microcontroller commonly used in embedded systems. 
-      Embedded systems are small, dedicated computers integrated into larger devices — like thermostats, medical devices, or even space probes — where they control specific functions in real-time.
-    </p>
-    
-    <p>
-      The thermostat monitors ambient temperature, allows user input via physical buttons, and controls an LED to simulate a heating element's status. It also mimics data reporting to a server, just like how smart home devices share data with a mobile app or cloud platform.
-    </p>
-    
-    <p>
-      Several hardware communication protocols were used to bring this system together:
-      <strong>I2C (Inter-Integrated Circuit)</strong> was used to communicate with a digital temperature sensor — think of it like a short-range conversation between two components on the same circuit board.
-      <strong>UART (Universal Asynchronous Receiver/Transmitter)</strong> enabled data to be sent to a virtual server, similar to how your computer communicates with a USB device.
-      <strong>GPIO (General Purpose Input/Output)</strong> was used to detect when buttons were pressed by the user.
-    </p>
-    
-    <p>
-      Together, these elements form a responsive, modular system that could serve as the foundation for more advanced smart home technologies. This project emphasizes clean architecture, hardware integration, and real-time feedback — core principles in embedded software engineering.
-    </p>    
-
-    <h2>Task Scheduler</h2>
-<p>
-  At the heart of the smart thermostat system is a task scheduler — a logical structure that determines the order and timing of each system action.
-  In embedded systems like this one, we can’t rely on large operating systems to manage tasks in the background, so we build our own simple scheduler
-  to make sure each component runs in the right order, at the right time.
-</p>
-
-<p>
-  The diagram below illustrates the main control flow of the thermostat:
-</p>
-
-<img src="images/TaskScheduler.drawio.png" alt="Task Scheduler Diagram" class="project-diagram" />
-
-<p>
-  The cycle begins with <strong>System Initialization</strong>, where hardware peripherals like sensors, timers, and communication interfaces are configured.
-  Once the system is ready, it proceeds to <strong>Read Temperature via I2C</strong>, which retrieves real-time temperature data from a digital sensor.
-</p>
-
-<p>
-  Next, the program checks for user input in <strong>Check Button States via GPIO</strong>. These physical buttons allow users to raise or lower the target temperature.
-  The <strong>Control LED</strong> step compares the current room temperature with the setpoint and updates the LED status accordingly — for example, turning the light on if the room is too cold.
-</p>
-
-<p>
-  After that, the system enters the <strong>Send Data via UART</strong> stage. Here, simulated data is packaged and sent out as if reporting to a remote server.
-  This step mimics how smart devices communicate with cloud platforms or mobile apps in real-world IoT systems.
-</p>
-
-<p>
-  Finally, a <strong>Timer Event Trigger</strong> introduces a short delay or interval before the scheduler reaches the <strong>End of Cycle</strong>, where it loops back and starts again.
-  This continuous loop ensures the system stays responsive and up to date, monitoring and reacting to new temperature readings and user actions in real time.
-</p>
-
-<p>
-  This modular, loop-based approach is a common practice in embedded systems, and designing it from scratch helped reinforce core concepts like system timing, I/O coordination, and real-time responsiveness.
-</p>
+  <div class="butterfly-cursor"></div>
 
 
-<h2>Source Code & Architecture</h2>
 
-<p>
-  The smart thermostat was developed using <strong>Texas Instruments’ Code Composer Studio</strong> and programmed for the TI CC3220x LaunchPad — a powerful microcontroller designed for connected embedded applications.
-  The firmware implements real-time temperature monitoring, user input handling, LED status control, and UART communication using onboard peripherals and drivers from TI’s Software Development Kit (SDK).
-</p>
+  <main class="case-study-page">
 
-<h3>Embedded Communication Interfaces</h3>
-<p>
-  <strong>I2C</strong> (Inter-Integrated Circuit) was used to retrieve live temperature data from a TMP006 digital sensor.<br>
-  <strong>GPIO</strong> (General Purpose Input/Output) was used to detect button presses and to control an LED that reflects the system’s heating status.<br>
-  <strong>UART</strong> (Universal Asynchronous Receiver/Transmitter) was used to simulate data transmission to a remote server, mirroring how real-world IoT devices report to cloud platforms.
-</p>
 
-<h3>Platform Evaluation</h3>
-<p>
-  I conducted a technical comparison of three microcontroller platforms — <strong>TI</strong>, <strong>Microchip</strong>, and <strong>Freescale (NXP)</strong> — to evaluate peripheral support, memory capacity, Wi-Fi integration, and development ecosystem.
-</p>
-<ul>
-  <li><strong>TI CC3220x:</strong> Most integrated platform with built-in Wi-Fi, robust security features, and excellent documentation and tooling.</li>
-  <li><strong>Microchip:</strong> Strong performance and support across multiple families, but requires more effort to configure and integrate Wi-Fi solutions.</li>
-  <li><strong>Freescale (NXP):</strong> Powerful architecture, but lacks built-in wireless support, leading to added hardware and software complexity.</li>
-</ul>
+    <!-- Back to Projects -->
 
-<h3>Wi-Fi & Cloud Integration</h3>
-<p>
-  The CC3220x includes built-in Wi-Fi (802.11 b/g/n) and secure socket support, making it ideal for cloud-based communication. It also includes hardware-based encryption and a secure boot process — critical features for any real-world IoT solution.
-</p>
+    <a
+      href="../projects.html"
+      class="case-study-back"
+    >
+      ← Back to Projects
+    </a>
 
-<h3>Memory & Expandability</h3>
-<p>
-  The TI platform offers 1MB of Flash and 256KB of SRAM, which provides ample room for modular code, expansion, and future feature additions such as mobile app connectivity or external sensor integration. These specifications exceed the minimum requirements and allow for scalability.
-</p>
 
-<h3>Code Sample</h3>
-<p>Below is a snippet from the system’s main file, which initializes the board, starts the lightweight TI NoRTOS scheduler, and launches the main application thread:</p>
 
-<pre><code>
-int main(void)
+    <!-- =========================
+         Hero
+         ========================= -->
+
+    <header class="case-study-hero">
+
+      <span class="case-study-eyebrow">
+        FEATURED PROJECT / EMBEDDED SYSTEMS
+      </span>
+
+
+      <h1>
+        Smart Thermostat
+      </h1>
+
+
+      <p class="case-study-lead">
+        A hardware-integrated thermostat prototype built on the
+        Texas Instruments CC3220x LaunchPad, combining real-time
+        temperature sensing, physical user input, heating-state
+        control, task scheduling, and simulated server communication.
+      </p>
+
+
+      <div class="case-study-tech">
+
+        <span>Embedded C</span>
+
+        <span>TI CC3220x</span>
+
+        <span>I2C</span>
+
+        <span>GPIO</span>
+
+        <span>UART</span>
+
+        <span>NoRTOS</span>
+
+        <span>Code Composer Studio</span>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         01 / Overview
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        01 / OVERVIEW
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Connecting software logic to physical hardware.
+        </h2>
+
+
+        <p>
+          The Smart Thermostat project was designed as a working
+          embedded-system prototype using the Texas Instruments
+          CC3220x LaunchPad.
+        </p>
+
+
+        <p>
+          The system continuously monitors ambient temperature,
+          accepts target-temperature adjustments through physical
+          buttons, determines whether heating should be active,
+          reflects that state through an LED, and sends simulated
+          system data through UART.
+        </p>
+
+
+        <p>
+          The project required coordinating several hardware
+          peripherals within one responsive software system rather
+          than treating temperature sensing, user input, output
+          control, and communication as isolated features.
+        </p>
+
+
+        <div class="project-facts">
+
+          <div class="project-fact">
+
+            <strong>
+              INPUT
+            </strong>
+
+            <span>
+              Digital temperature readings and physical
+              setpoint-control buttons.
+            </span>
+
+          </div>
+
+
+          <div class="project-fact">
+
+            <strong>
+              CONTROL
+            </strong>
+
+            <span>
+              Application logic compares the measured temperature
+              against the target setpoint.
+            </span>
+
+          </div>
+
+
+          <div class="project-fact">
+
+            <strong>
+              OUTPUT
+            </strong>
+
+            <span>
+              LED heating-state feedback and simulated UART
+              reporting to an external system.
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         02 / System Architecture
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        02 / ARCHITECTURE
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          A repeating control cycle coordinates the system.
+        </h2>
+
+
+        <p>
+          The thermostat uses a task-oriented control flow that
+          determines when each hardware and application operation
+          should occur.
+        </p>
+
+
+        <p>
+          After system initialization, the software reads the
+          temperature sensor, evaluates button input, updates the
+          heating indicator, reports system information through
+          UART, and then waits for the next scheduled cycle.
+        </p>
+
+
+        <div class="architecture-flow">
+
+
+          <div class="architecture-node">
+
+            <strong>
+              TEMPERATURE
+            </strong>
+
+            <span>
+              Read sensor data through I2C
+            </span>
+
+          </div>
+
+
+          <div class="architecture-node">
+
+            <strong>
+              USER INPUT
+            </strong>
+
+            <span>
+              Detect setpoint changes through GPIO
+            </span>
+
+          </div>
+
+
+          <div class="architecture-node">
+
+            <strong>
+              HEATING STATE
+            </strong>
+
+            <span>
+              Compare temperature and control LED output
+            </span>
+
+          </div>
+
+
+          <div class="architecture-node">
+
+            <strong>
+              REPORTING
+            </strong>
+
+            <span>
+              Send simulated system data through UART
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+        <p>
+          A timer event controls the interval between cycles so the
+          system repeatedly returns to the sensor-reading stage and
+          remains responsive to environmental and user changes.
+        </p>
+
+
+        <div class="case-study-diagram">
+
+          <img
+            src="images/TaskScheduler.drawio.png"
+            alt="Smart thermostat task scheduler diagram showing initialization, temperature sensing, button input, LED control, UART transmission, and timed repetition"
+          />
+
+
+          <p class="diagram-caption">
+            Task scheduler designed for the thermostat's repeating
+            control cycle.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         03 / Hardware Integration
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        03 / HARDWARE
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Multiple communication interfaces working together.
+        </h2>
+
+
+        <p>
+          The project integrates several hardware interfaces available
+          through the TI platform and its SDK. Each protocol serves a
+          different responsibility within the thermostat.
+        </p>
+
+
+        <div class="engineering-list">
+
+
+          <div class="engineering-point">
+
+            <h3>
+              I2C / TEMPERATURE SENSOR
+            </h3>
+
+            <p>
+              I2C communication retrieves live temperature readings
+              from the TMP006 digital temperature sensor and supplies
+              the environmental input used by the thermostat logic.
+            </p>
+
+          </div>
+
+
+          <div class="engineering-point">
+
+            <h3>
+              GPIO / USER INPUT
+            </h3>
+
+            <p>
+              GPIO interfaces detect physical button presses, allowing
+              the user to increase or decrease the desired temperature
+              setpoint.
+            </p>
+
+          </div>
+
+
+          <div class="engineering-point">
+
+            <h3>
+              GPIO / HEATING OUTPUT
+            </h3>
+
+            <p>
+              An LED represents the heating element. Its state is
+              updated according to the relationship between current
+              temperature and the user-selected setpoint.
+            </p>
+
+          </div>
+
+
+          <div class="engineering-point">
+
+            <h3>
+              UART / DATA REPORTING
+            </h3>
+
+            <p>
+              UART communication simulates sending thermostat data to
+              an external server, representing how a connected IoT
+              device could report information to a cloud service or
+              application.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         04 / Scheduler
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        04 / SCHEDULER
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Coordinating timing without a heavyweight operating system.
+        </h2>
+
+
+        <p>
+          A central challenge of the project was coordinating tasks
+          with different responsibilities and timing requirements in
+          a constrained embedded environment.
+        </p>
+
+
+        <p>
+          Rather than relying on a desktop-style operating system to
+          manage application work, the project uses a lightweight
+          scheduling approach built around TI NoRTOS and application
+          logic.
+        </p>
+
+
+        <p>
+          The scheduler establishes a predictable execution sequence:
+          initialize peripherals, obtain a fresh temperature reading,
+          inspect the buttons, calculate the required heating state,
+          update the LED, transmit system information, and then wait
+          until the next timer-triggered cycle.
+        </p>
+
+
+        <p>
+          Keeping these responsibilities separated made it easier to
+          reason about timing and helped prevent one hardware operation
+          from becoming tightly coupled to another.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         05 / Platform
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        05 / PLATFORM
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Evaluating the hardware platform, not just programming it.
+        </h2>
+
+
+        <p>
+          The project also included a technical comparison of
+          microcontroller platforms from Texas Instruments,
+          Microchip, and Freescale/NXP.
+        </p>
+
+
+        <p>
+          The evaluation considered peripheral support, available
+          memory, wireless connectivity, development tooling, and how
+          much additional complexity each platform would introduce for
+          a connected thermostat application.
+        </p>
+
+
+        <div class="platform-grid">
+
+
+          <div class="platform-item">
+
+            <strong>
+              TEXAS INSTRUMENTS
+            </strong>
+
+            <p>
+              The CC3220x provided the strongest overall integration
+              for this use case, including built-in Wi-Fi, security
+              capabilities, peripheral support, and a mature
+              development ecosystem.
+            </p>
+
+          </div>
+
+
+          <div class="platform-item">
+
+            <strong>
+              MICROCHIP
+            </strong>
+
+            <p>
+              Microchip offered strong performance and broad hardware
+              support, but wireless connectivity could require
+              additional configuration and integration effort.
+            </p>
+
+          </div>
+
+
+          <div class="platform-item">
+
+            <strong>
+              FREESCALE / NXP
+            </strong>
+
+            <p>
+              The platform provided capable architecture and
+              processing options, but the lack of equivalent built-in
+              wireless support increased hardware and software
+              complexity for this particular design.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         06 / Connected Systems
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        06 / CONNECTIVITY
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Designed with connected-device expansion in mind.
+        </h2>
+
+
+        <p>
+          Although the prototype uses UART to simulate remote
+          communication, the CC3220x platform provides integrated
+          Wi-Fi support that makes the architecture relevant to a
+          larger IoT system.
+        </p>
+
+
+        <p>
+          The platform includes 802.11 wireless capability and secure
+          communication features that could support future integration
+          with cloud services, mobile applications, remote monitoring,
+          or additional connected sensors.
+        </p>
+
+
+        <p>
+          Its available Flash and SRAM also provide space for extending
+          the firmware beyond the prototype's current control loop.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         07 / Implementation
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        07 / IMPLEMENTATION
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Firmware built with TI's embedded development tools.
+        </h2>
+
+
+        <p>
+          Development was completed using Texas Instruments Code
+          Composer Studio and TI's software-development resources for
+          the CC3220x platform.
+        </p>
+
+
+        <p>
+          The firmware initializes board peripherals and drivers,
+          starts the lightweight NoRTOS environment, and then launches
+          the application thread responsible for thermostat behavior.
+        </p>
+
+
+        <div class="code-block">
+
+<pre><code>int main(void)
 {
-    Board_init();           // Initialize board peripherals and drivers
+    Board_init();
 
-    /* Start NoRTOS (TI’s lightweight real-time OS) */
+    /* Start TI's lightweight NoRTOS environment */
     NoRTOS_start();
 
-    /* Launch main thread where application logic runs */
+    /* Launch the main thermostat application */
     mainThread(NULL);
 
     while (1) {}
-}
-</code></pre>
+}</code></pre>
 
-<h3>View the Full Source</h3>
-<p>
-  The complete implementation, including task scheduler logic, I2C sensor integration, UART communication routines, and project documentation, is available here:<br>
-  <a href="https://github.com/EmpressCatbug/CS350Final" target="_blank">🔗 View Code on GitHub</a>
-</p>
+        </div>
 
 
-<h2>Reflection</h2>
+        <p>
+          Separating board initialization from the application's main
+          thread gives the firmware a clearer startup sequence and
+          keeps hardware setup distinct from ongoing thermostat logic.
+        </p>
 
-<h3>A. Key Accomplishments</h3>
-<p>
-  One of the project’s standout achievements was the successful integration of multiple hardware communication protocols — I2C, UART, and GPIO —
-  into a unified, responsive system. I effectively implemented a task-driven architecture that ensured real-time feedback from the
-  temperature sensor, immediate LED status updates, and seamless user interaction through physical buttons.
-  Additionally, simulating cloud communication via UART demonstrated a working prototype that could easily transition into a connected IoT device.
-</p>
+      </div>
 
-<h3>B. Areas for Improvement</h3>
-<p>
-  While the system operated reliably under normal conditions, I identified opportunities to further optimize the task scheduler for speed and responsiveness.
-  The system could benefit from interrupt-based scheduling for certain tasks rather than a looped polling model. Additionally, adding advanced error handling for
-  UART and sensor read failures would improve system robustness, especially in edge cases or production scenarios.
-</p>
-
-<h3>C. Tools & Support Network</h3>
-<p>
-  To support development, I utilized <strong>TI Code Composer Studio</strong> for coding and debugging, along with draw.io for planning
-  system state diagrams and task flow. I also referenced TI’s developer forums, official documentation, and GitHub repositories from the embedded systems community
-  to troubleshoot hardware communication and system timing behavior. These resources not only helped solve project-specific issues,
-  but also expanded my embedded systems knowledge base for future projects.
-</p>
-
-<h3>D. Transferable Skills</h3>
-<p>
-  This project strengthened a variety of technical and problem-solving skills that are highly transferable to both embedded and general software engineering roles:
-</p>
-<ul>
-  <li>Peripheral communication (I2C, UART, GPIO)</li>
-  <li>Real-time system design and task scheduling</li>
-  <li>Hardware/software integration and debugging</li>
-  <li>Documentation and code modularity</li>
-</ul>
-<p>
-  Beyond the technical aspects, the iterative problem-solving and hands-on implementation process helped reinforce agile thinking,
-  adaptability, and communication — all essential skills for professional development and team collaboration.
-</p>
-
-<h3>E. Maintainability & Scalability</h3>
-<p>
-  The codebase was written with long-term usability in mind. By modularizing core functions and following consistent naming and commenting practices,
-  I ensured that new developers or collaborators could easily understand and extend the system. The design supports scalability;
-  additional sensors, controls, or outputs could be added with minimal structural changes, making this a strong foundation for future smart home applications.
-</p>
+    </section>
 
 
-<h2>Conclusion</h2>
-<p>
-  This project provided a comprehensive, hands-on opportunity to design and implement a real-world embedded system from the ground up.
-  Through the integration of multiple communication protocols, responsive user controls, and simulated server communication,
-  I successfully created a functional prototype that mirrors the behavior of a commercial smart thermostat.
-</p>
 
-<p>
-  Beyond just achieving technical functionality, the experience deepened my understanding of how software interacts with hardware in a live environment.
-  I gained insight into system design considerations such as timing, modularity, and error handling — all of which are crucial for building
-  reliable and scalable embedded applications.
-</p>
+    <!-- =========================
+         08 / Engineering Challenges
+         ========================= -->
 
-<p>
-  This smart thermostat project represents more than a school assignment; it’s a practical demonstration of my ability to design,
-  build, and document embedded solutions that can evolve into real-world products. The knowledge and skills developed during this process
-  directly contribute to my growth as a software engineer and will continue to inform how I approach future hardware-integrated and IoT-based systems.
-</p>
+    <section class="case-study-section">
 
-  </div>
-  <!-- Sparkle + Butterfly Cursor -->
-  <div id="sparkle-container"></div>
-  <div class="butterfly-cursor"></div>
+      <div class="case-study-section-label">
+        08 / CHALLENGES
+      </div>
 
-  <!-- Scripts -->
+
+      <div class="case-study-content">
+
+        <h2>
+          Reliability depends on more than getting the happy path to work.
+        </h2>
+
+
+        <p>
+          Successfully integrating the temperature sensor, physical
+          controls, LED output, timer behavior, and UART communication
+          required careful coordination between software state and
+          hardware behavior.
+        </p>
+
+
+        <div class="engineering-list">
+
+
+          <div class="engineering-point">
+
+            <h3>
+              TIMING
+            </h3>
+
+            <p>
+              Each operation needed to occur often enough to keep the
+              thermostat responsive without creating unnecessary work
+              inside the control loop.
+            </p>
+
+          </div>
+
+
+          <div class="engineering-point">
+
+            <h3>
+              I/O COORDINATION
+            </h3>
+
+            <p>
+              Sensor readings, user input, state calculations, and
+              output updates needed a predictable sequence so the
+              system acted on current information.
+            </p>
+
+          </div>
+
+
+          <div class="engineering-point">
+
+            <h3>
+              DEBUGGING
+            </h3>
+
+            <p>
+              Hardware/software integration required debugging both
+              application logic and communication with physical
+              peripherals rather than examining software output alone.
+            </p>
+
+          </div>
+
+
+          <div class="engineering-point">
+
+            <h3>
+              ROBUSTNESS
+            </h3>
+
+            <p>
+              The prototype identified opportunities for stronger
+              error handling around failed sensor reads and UART
+              communication in a future production-oriented version.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         09 / Reflection
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        09 / REFLECTION
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          What worked, and what I would improve next.
+        </h2>
+
+
+        <div class="reflection-grid">
+
+
+          <div class="reflection-item">
+
+            <h3>
+              KEY ACCOMPLISHMENT
+            </h3>
+
+            <p>
+              The strongest result was successfully integrating I2C,
+              UART, GPIO, timing logic, user controls, and system state
+              into one functioning embedded application.
+            </p>
+
+          </div>
+
+
+          <div class="reflection-item">
+
+            <h3>
+              SCHEDULER IMPROVEMENT
+            </h3>
+
+            <p>
+              A future revision could move selected operations from
+              polling toward interrupt-driven behavior where
+              appropriate, reducing unnecessary work and improving
+              responsiveness.
+            </p>
+
+          </div>
+
+
+          <div class="reflection-item">
+
+            <h3>
+              ERROR HANDLING
+            </h3>
+
+            <p>
+              Production-oriented firmware should explicitly handle
+              sensor communication failures, invalid readings, UART
+              transmission errors, and other peripheral edge cases.
+            </p>
+
+          </div>
+
+
+          <div class="reflection-item">
+
+            <h3>
+              DEVELOPMENT RESOURCES
+            </h3>
+
+            <p>
+              Code Composer Studio, TI documentation and developer
+              resources, embedded-community repositories, and draw.io
+              supported implementation, debugging, and system-design
+              planning.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         10 / Maintainability
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        10 / MAINTAINABILITY
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Structured to support extension instead of one-off behavior.
+        </h2>
+
+
+        <p>
+          The project separates major responsibilities such as sensor
+          communication, input handling, output control, scheduling,
+          and data transmission rather than placing every behavior
+          into a single tightly coupled routine.
+        </p>
+
+
+        <p>
+          Consistent naming, comments, and modular functions make the
+          application easier to understand and provide clear points
+          where future features could be introduced.
+        </p>
+
+
+        <p>
+          The same foundation could be extended with additional
+          environmental sensors, new control outputs, remote
+          configuration, mobile connectivity, cloud reporting, or
+          stronger fault-handling behavior without redesigning the
+          entire application.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         11 / Result
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        11 / RESULT
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          A complete embedded control prototype.
+        </h2>
+
+
+        <p>
+          The final system demonstrates an end-to-end embedded workflow:
+          obtaining information from physical hardware, processing
+          that information through application logic, reacting through
+          physical output, responding to user input, and communicating
+          system state externally.
+        </p>
+
+
+        <p>
+          The project strengthened my understanding of real-time
+          application design, task scheduling, peripheral
+          communication, hardware/software debugging, modular firmware
+          structure, and the constraints involved in developing
+          software for connected devices.
+        </p>
+
+
+        <a
+          href="https://github.com/EmpressCatbug/CS350Final"
+          class="case-study-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Repository on GitHub
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       Background Music
+       ========================= -->
+
+  <audio
+    id="background-music"
+    loop
+  >
+
+    <source
+      src="../assets/Claude Debussy Claire De Lune added reverb.mp3"
+      type="audio/mpeg"
+    />
+
+  </audio>
+
+
+  <button
+    class="music-toggle"
+    id="music-toggle"
+    type="button"
+    aria-label="Toggle background music"
+  >
+    ☾
+  </button>
+
+
+
+  <!-- =========================
+       Scripts
+       ========================= -->
+
+  <script src="../music.js"></script>
+
   <script src="../script.js"></script>
+
+
 </body>
+
 </html>
