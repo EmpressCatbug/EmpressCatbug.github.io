@@ -1,154 +1,1835 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pirate Maze AI Project | Takeria Thompson</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css" />
-  <script src="../script.js" defer></script>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    Pirate AI Agent | Takeria Thompson
+  </title>
+
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+
+  <link
+    rel="stylesheet"
+    href="../style.css"
+  />
+
+
   <style>
-    .project-page {
-      max-width: 900px;
+
+    /* =========================
+       Pirate AI Agent
+       Case Study
+       ========================= */
+
+    .case-study-page {
+      position: relative;
+      z-index: 1;
+
+      width: 100%;
+      max-width: 1120px;
+
       margin: 0 auto;
-      padding: 60px 20px;
+
+      padding:
+        90px 24px
+        120px;
     }
 
-    .project-page h1 {
-      font-size: 2.8rem;
-      text-align: center;
+
+    /* =========================
+       Back Navigation
+       ========================= */
+
+    .case-study-back {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 70px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+
+      color:
+        rgba(216, 180, 254, 0.68);
+
+      transition:
+        color 0.25s ease,
+        gap 0.25s ease;
+    }
+
+
+    .case-study-back:hover {
+      gap: 15px;
+
+      color: #ffffff;
+    }
+
+
+    /* =========================
+       Hero
+       ========================= */
+
+    .case-study-hero {
+      max-width: 920px;
+
+      margin-bottom: 90px;
+    }
+
+
+    .case-study-eyebrow {
+      display: block;
+
+      margin-bottom: 18px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+
+      color: #c084fc;
+    }
+
+
+    .case-study-hero h1 {
+      margin-bottom: 26px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size:
+        clamp(3rem, 7vw, 6rem);
+
+      line-height: 1;
+
+      color: #f3e8ff;
+
+      text-shadow:
+        0 0 24px rgba(147, 51, 234, 0.18);
+    }
+
+
+    .case-study-lead {
+      max-width: 790px;
+
+      font-size: 1.08rem;
+      line-height: 1.9;
+
+      color:
+        rgba(233, 213, 255, 0.76);
+    }
+
+
+    /* =========================
+       Tech Strip
+       ========================= */
+
+    .case-study-tech {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap:
+        10px 18px;
+
+      margin-top: 38px;
+    }
+
+
+    .case-study-tech span {
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+
+      color:
+        rgba(216, 180, 254, 0.66);
+    }
+
+
+    .case-study-tech span:not(:last-child)::after {
+      content: " ·";
+
+      color:
+        rgba(192, 132, 252, 0.40);
+    }
+
+
+    /* =========================
+       Sections
+       ========================= */
+
+    .case-study-section {
+      display: grid;
+
+      grid-template-columns:
+        210px
+        minmax(0, 1fr);
+
+      gap: 70px;
+
+      padding:
+        65px 0;
+
+      border-top:
+        1px solid rgba(216, 180, 254, 0.15);
+    }
+
+
+    .case-study-section-label {
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+
+      color:
+        rgba(192, 132, 252, 0.72);
+    }
+
+
+    .case-study-content {
+      max-width: 760px;
+    }
+
+
+    .case-study-content h2 {
+      margin-bottom: 22px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size:
+        clamp(1.6rem, 3vw, 2.35rem);
+
+      line-height: 1.2;
+
+      color: #f3e8ff;
+    }
+
+
+    .case-study-content h3 {
+      margin:
+        36px 0
+        12px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.77rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
+
+
+    .case-study-content p {
       margin-bottom: 20px;
+
+      font-size: 1rem;
+      line-height: 1.85;
+
+      color:
+        rgba(233, 213, 255, 0.72);
     }
 
-    .project-page h2 {
-      font-size: 2rem;
-      margin-top: 50px;
+
+    /* =========================
+       Project Facts
+       ========================= */
+
+    .project-facts {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+      margin-top: 38px;
+    }
+
+
+    .project-fact {
+      min-height: 135px;
+
+      padding: 24px;
+
+      border:
+        1px solid rgba(216, 180, 254, 0.14);
+
+      background:
+        rgba(42, 10, 70, 0.07);
+    }
+
+
+    .project-fact strong {
+      display: block;
+
       margin-bottom: 10px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+
+      color: #d8b4fe;
+    }
+
+
+    .project-fact span {
+      font-size: 0.86rem;
+      line-height: 1.65;
+
+      color:
+        rgba(233, 213, 255, 0.62);
+    }
+
+
+    /* =========================
+       Architecture
+       ========================= */
+
+    .architecture-flow {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 14px;
+
+      margin:
+        38px 0
+        30px;
+    }
+
+
+    .architecture-node {
+      min-height: 135px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      padding: 20px;
+
+      border:
+        1px solid rgba(216, 180, 254, 0.15);
+
+      background:
+        rgba(42, 10, 70, 0.07);
+
+      text-align: center;
+    }
+
+
+    .architecture-node strong {
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.66rem;
+      letter-spacing: 0.07em;
+
       color: #e9d5ff;
     }
 
-    .project-page h3 {
-      margin-top: 30px;
-      font-size: 1.2rem;
-      color: #c084fc;
+
+    .architecture-node span {
+      font-size: 0.76rem;
+      line-height: 1.5;
+
+      color:
+        rgba(233, 213, 255, 0.50);
     }
 
-    .project-page p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-top: 10px;
-      color: #ddd;
+
+    /* =========================
+       Engineering Grid
+       ========================= */
+
+    .engineering-list {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap:
+        28px 36px;
+
+      margin-top: 35px;
     }
 
-    pre code {
-      font-size: 0.9rem;
-      background: rgba(255,255,255,0.05);
-      padding: 10px 15px;
+
+    .engineering-point {
+      padding-top: 20px;
+
+      border-top:
+        1px solid rgba(216, 180, 254, 0.12);
+    }
+
+
+    .engineering-point h3 {
+      margin:
+        0 0
+        10px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.74rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
+
+
+    .engineering-point p {
+      margin: 0;
+
+      font-size: 0.91rem;
+      line-height: 1.75;
+
+      color:
+        rgba(233, 213, 255, 0.64);
+    }
+
+
+    /* =========================
+       Agent Learning Loop
+       ========================= */
+
+    .learning-loop {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 12px;
+
+      margin:
+        38px 0
+        30px;
+    }
+
+
+    .learning-step {
+      min-height: 125px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 18px;
+
+      border-top:
+        1px solid rgba(216, 180, 254, 0.17);
+
+      text-align: center;
+    }
+
+
+    .learning-step strong {
       display: block;
-      border-radius: 10px;
-      margin-top: 10px;
-      white-space: pre-wrap;
+
+      margin-bottom: 8px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.63rem;
+      letter-spacing: 0.06em;
+
+      color: #d8b4fe;
     }
 
-    .back-link {
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-      display: inline-block;
-      color: #c084fc;
+
+    .learning-step span {
+      font-size: 0.75rem;
+      line-height: 1.55;
+
+      color:
+        rgba(233, 213, 255, 0.55);
     }
 
-    .back-link:hover {
-      color: #fff;
+
+    /* =========================
+       Code Blocks
+       ========================= */
+
+    .code-block {
+      margin-top: 30px;
+
+      overflow-x: auto;
+
+      border:
+        1px solid rgba(216, 180, 254, 0.14);
+
+      background:
+        rgba(5, 1, 15, 0.54);
     }
+
+
+    .code-block pre {
+      margin: 0;
+
+      padding: 28px;
+    }
+
+
+    .code-block code {
+      font-family:
+        Consolas,
+        'Courier New',
+        monospace;
+
+      font-size: 0.87rem;
+      line-height: 1.7;
+
+      color:
+        rgba(243, 232, 255, 0.82);
+
+      white-space: pre;
+    }
+
+
+    /* =========================
+       Comparison
+       ========================= */
+
+    .comparison-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 28px;
+
+      margin-top: 34px;
+    }
+
+
+    .comparison-item {
+      padding:
+        26px 24px;
+
+      border:
+        1px solid rgba(216, 180, 254, 0.13);
+
+      background:
+        rgba(42, 10, 70, 0.06);
+    }
+
+
+    .comparison-item h3 {
+      margin:
+        0 0
+        14px;
+
+      font-size: 0.72rem;
+    }
+
+
+    .comparison-item p {
+      margin: 0;
+
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+
+    /* =========================
+       Reflection
+       ========================= */
+
+    .reflection-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap:
+        28px 36px;
+
+      margin-top: 32px;
+    }
+
+
+    .reflection-item {
+      padding-top: 20px;
+
+      border-top:
+        1px solid rgba(216, 180, 254, 0.12);
+    }
+
+
+    .reflection-item h3 {
+      margin:
+        0 0
+        10px;
+    }
+
+
+    .reflection-item p {
+      margin: 0;
+
+      font-size: 0.91rem;
+      line-height: 1.75;
+    }
+
+
+    /* =========================
+       Links
+       ========================= */
+
+    .case-study-links {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 28px;
+
+      margin-top: 26px;
+    }
+
+
+    .case-study-link {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 13px;
+
+      padding-bottom: 7px;
+
+      border-bottom:
+        1px solid rgba(216, 180, 254, 0.34);
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 0.70rem;
+      letter-spacing: 0.08em;
+
+      color: #e9d5ff;
+
+      transition:
+        gap 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+
+    .case-study-link:hover {
+      gap: 18px;
+
+      color: #ffffff;
+
+      border-color:
+        rgba(216, 180, 254, 0.72);
+    }
+
+
+    /* =========================
+       Mobile
+       ========================= */
+
+    @media (max-width: 768px) {
+
+      .case-study-page {
+        padding:
+          60px 20px
+          90px;
+      }
+
+
+      .case-study-back {
+        margin-bottom: 50px;
+      }
+
+
+      .case-study-hero {
+        margin-bottom: 70px;
+      }
+
+
+      .case-study-hero h1 {
+        font-size: 3rem;
+      }
+
+
+      .case-study-lead {
+        font-size: 0.96rem;
+
+        line-height: 1.8;
+      }
+
+
+      .case-study-section {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding:
+          50px 0;
+      }
+
+
+      .project-facts,
+      .engineering-list,
+      .comparison-grid,
+      .reflection-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .architecture-flow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+
+      .learning-loop {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      .architecture-flow {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
   </style>
+
 </head>
+
+
 <body>
+
+
+  <!-- Existing Portfolio Effects -->
+
   <div id="sparkle-container"></div>
-  <div class="project-page">
-    <h1 class="glow">Pirate Maze AI Project</h1>
-    <a class="back-link" href="../home.html">← Back to Portfolio</a>
 
-    <h2>Overview</h2>
-    <p>
-      This project involved designing an intelligent pirate agent to compete with a human player in a treasure hunt maze.
-      The pirate uses reinforcement learning to navigate the environment and reach the treasure before the player.
-      This is a classic pathfinding challenge, where the goal is to train the agent to learn optimal movement patterns using rewards and trial-and-error.
-    </p>
-
-    <h2>Project Architecture</h2>
-    <p>
-      The game was implemented in Python and consisted of three key files:
-    </p>
-    <ul>
-      <li><strong>TreasureMaze.py</strong>: Defines the environment, maze layout, rewards, and movement rules.</li>
-      <li><strong>GameExperience.py</strong>: Captures episodes of state transitions and rewards for training.</li>
-      <li><strong>TreasureHuntGame.ipynb</strong>: The Jupyter Notebook where the agent, neural network, and training loop were implemented.</li>
-    </ul>
-    <p>
-      I created a deep Q-learning algorithm to train the pirate using a neural network. This involved defining the reward system,
-      balancing exploration vs. exploitation, and iterating over hundreds of training episodes.
-    </p>
-
-    <h3>Neural Network Training Snippet</h3>
-    <pre><code>
-model = Sequential()
-model.add(Dense(24, input_dim=state_size, activation='relu'))
-model.add(Dense(24, activation='relu'))
-model.add(Dense(action_size, activation='linear'))
-model.compile(loss='mse', optimizer=Adam(lr=learning_rate))
-
-def q_learning_train(maze, agent, episodes, gamma, epsilon):
-    for episode in range(episodes):
-        state = maze.reset()
-        done = False
-        while not done:
-            action = choose_action(state, epsilon)
-            next_state, reward, done = maze.step(action)
-            target = reward + gamma * np.max(agent.predict(next_state))
-            q_values = agent.predict(state)
-            q_values[0][action] = target
-            agent.fit(state, q_values, epochs=1, verbose=0)
-            state = next_state
-    </code></pre>
-
-    <h2>Design Reflection</h2>
-    <p>
-      Designing an intelligent agent that could consistently beat a human in a maze-based treasure hunt required more than just coding —
-      it demanded careful analysis of how both humans and machines approach problem-solving.
-      In my design defense, I explored the parallels between human reasoning (like memory, trial and error, and pattern recognition)
-      and machine learning techniques like reinforcement learning and Q-value approximation.
-    </p>
-
-    <p>
-      The pirate agent learned through trial and error — using rewards to reinforce correct paths and punish inefficient or failed ones.
-      This mirrors how a human might learn a maze by exploring dead ends and eventually building an internal map of where to go.
-      I evaluated how different parameters like reward structure, exploration rate (epsilon), and learning rate impact the agent’s ability
-      to generalize and adapt to new environments.
-    </p>
-
-    <p>
-      I also discussed ethical and design considerations, such as ensuring the agent behaves fairly within the rules of the game
-      and doesn’t exploit unintended behaviors or bugs. While this was a simulated environment, these concerns are directly
-      applicable to real-world AI — where bias, transparency, and predictability are critical to user trust and safety.
-    </p>
-
-    <p>
-      Ultimately, the design defense helped me articulate not just how the algorithm worked, but why the solution was effective,
-      and how to improve or scale it for future use cases.
-    </p>
-
-    <h2>Conclusion</h2>
-    <p>
-      This project significantly expanded my understanding of reinforcement learning, neural networks, and agent-based design.
-      I gained experience in applying deep learning to dynamic environments, tuning training parameters, and interpreting AI performance in real-time.
-      The skills acquired through this project are directly applicable to fields like robotics, game development, and intelligent automation.
-    </p>
-  </div>
-  <!-- Sparkle + Butterfly Cursor -->
-  <div id="sparkle-container"></div>
   <div class="butterfly-cursor"></div>
 
-  <!-- Scripts -->
+
+
+  <main class="case-study-page">
+
+
+    <!-- Back -->
+
+    <a
+      href="../projects.html"
+      class="case-study-back"
+    >
+      ← Back to Projects
+    </a>
+
+
+
+    <!-- =========================
+         Hero
+         ========================= -->
+
+    <header class="case-study-hero">
+
+      <span class="case-study-eyebrow">
+        FEATURED PROJECT / ARTIFICIAL INTELLIGENCE
+      </span>
+
+
+      <h1>
+        Pirate AI Agent
+      </h1>
+
+
+      <p class="case-study-lead">
+        A reinforcement-learning project in which an intelligent
+        pirate agent learns to navigate a maze, evaluate possible
+        actions, and reach a treasure using a deep Q-learning
+        strategy built around rewards, exploration, exploitation,
+        and neural-network-based Q-value approximation.
+      </p>
+
+
+      <div class="case-study-tech">
+
+        <span>Python</span>
+
+        <span>Deep Q-Learning</span>
+
+        <span>Reinforcement Learning</span>
+
+        <span>Neural Networks</span>
+
+        <span>Pathfinding</span>
+
+        <span>Jupyter Notebook</span>
+
+        <span>Machine Learning</span>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         01 / Overview
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        01 / OVERVIEW
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Teaching an agent to find its own path.
+        </h2>
+
+
+        <p>
+          The Pirate AI Agent project explores how reinforcement
+          learning can be applied to a pathfinding problem inside a
+          maze-based treasure hunt.
+        </p>
+
+
+        <p>
+          Instead of being given a complete sequence of moves, the
+          pirate agent interacts with the environment repeatedly and
+          learns which actions are more likely to move it toward a
+          successful outcome.
+        </p>
+
+
+        <p>
+          The core objective is simple to describe but technically
+          important: train the pirate to reach the treasure efficiently
+          by learning from previous decisions rather than following
+          a hard-coded route.
+        </p>
+
+
+        <div class="project-facts">
+
+
+          <div class="project-fact">
+
+            <strong>
+              PROBLEM
+            </strong>
+
+            <span>
+              Navigate a maze and locate the treasure before the
+              competing human player.
+            </span>
+
+          </div>
+
+
+          <div class="project-fact">
+
+            <strong>
+              LEARNING METHOD
+            </strong>
+
+            <span>
+              Deep Q-learning combines reinforcement learning with
+              neural-network approximation.
+            </span>
+
+          </div>
+
+
+          <div class="project-fact">
+
+            <strong>
+              DECISION MODEL
+            </strong>
+
+            <span>
+              The agent evaluates possible actions using learned
+              Q-values and a balance of exploration and exploitation.
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         02 / Architecture
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        02 / ARCHITECTURE
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Separating the environment, experience, and learning logic.
+        </h2>
+
+
+        <p>
+          The project is structured around three major responsibilities:
+          defining the maze environment, storing agent experiences,
+          and training the intelligent agent.
+        </p>
+
+
+        <div class="architecture-flow">
+
+
+          <div class="architecture-node">
+
+            <strong>
+              MAZE
+            </strong>
+
+            <span>
+              Defines the environment, legal movement, rewards,
+              and terminal states
+            </span>
+
+          </div>
+
+
+          <div class="architecture-node">
+
+            <strong>
+              EXPERIENCE
+            </strong>
+
+            <span>
+              Stores state transitions and outcomes collected during
+              gameplay
+            </span>
+
+          </div>
+
+
+          <div class="architecture-node">
+
+            <strong>
+              Q-NETWORK
+            </strong>
+
+            <span>
+              Estimates the expected value of available actions
+            </span>
+
+          </div>
+
+
+          <div class="architecture-node">
+
+            <strong>
+              TRAINING LOOP
+            </strong>
+
+            <span>
+              Repeats episodes and updates the agent from experience
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+        <p>
+          The supplied project foundation included
+          <strong>TreasureMaze.py</strong> for environment behavior and
+          <strong>GameExperience.py</strong> for storing experience,
+          together with notebook-based starter material for the
+          intelligent agent.
+        </p>
+
+
+        <p>
+          My work centered on implementing the Q-training behavior that
+          connects these pieces and gives the pirate the ability to
+          improve through repeated interaction with the environment.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         03 / Reinforcement Learning
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        03 / LEARNING
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Learning from state, action, reward, and outcome.
+        </h2>
+
+
+        <p>
+          Reinforcement learning frames the maze as a sequence of
+          decisions. At any point, the pirate occupies a particular
+          state, chooses an action, observes the resulting state, and
+          receives feedback through the reward structure.
+        </p>
+
+
+        <p>
+          Over many episodes, those experiences influence how the
+          agent evaluates future actions.
+        </p>
+
+
+        <div class="learning-loop">
+
+
+          <div class="learning-step">
+
+            <strong>
+              01 / STATE
+            </strong>
+
+            <span>
+              Observe the pirate's current position and environment.
+            </span>
+
+          </div>
+
+
+          <div class="learning-step">
+
+            <strong>
+              02 / ACTION
+            </strong>
+
+            <span>
+              Select a possible movement through the maze.
+            </span>
+
+          </div>
+
+
+          <div class="learning-step">
+
+            <strong>
+              03 / REWARD
+            </strong>
+
+            <span>
+              Receive positive or negative feedback from the result.
+            </span>
+
+          </div>
+
+
+          <div class="learning-step">
+
+            <strong>
+              04 / UPDATE
+            </strong>
+
+            <span>
+              Adjust the estimated value associated with the decision.
+            </span>
+
+          </div>
+
+
+          <div class="learning-step">
+
+            <strong>
+              05 / REPEAT
+            </strong>
+
+            <span>
+              Begin another decision using newly learned information.
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+        <p>
+          This feedback loop allows successful behavior to become more
+          valuable while inefficient or unsuccessful behavior becomes
+          less attractive to the agent over time.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         04 / Q-Learning
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        04 / Q-LEARNING
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Estimating the long-term value of an action.
+        </h2>
+
+
+        <p>
+          Q-learning attempts to estimate how valuable an action is
+          when taken from a particular state.
+        </p>
+
+
+        <p>
+          Rather than considering only the immediate reward, the update
+          also considers the expected value of the next state. This
+          helps the pirate learn strategies that lead toward the
+          treasure even when the benefit of a decision is not
+          immediate.
+        </p>
+
+
+        <p>
+          In this project, a neural network approximates the Q-value
+          function. The network receives a representation of the
+          current state and produces values associated with the
+          possible actions.
+        </p>
+
+
+        <div class="code-block">
+
+<pre><code>model = Sequential()
+
+model.add(
+    Dense(
+        24,
+        input_dim=state_size,
+        activation='relu'
+    )
+)
+
+model.add(
+    Dense(
+        24,
+        activation='relu'
+    )
+)
+
+model.add(
+    Dense(
+        action_size,
+        activation='linear'
+    )
+)
+
+model.compile(
+    loss='mse',
+    optimizer=Adam(
+        lr=learning_rate
+    )
+)</code></pre>
+
+        </div>
+
+
+        <p>
+          The hidden layers use ReLU activation, while the output layer
+          produces action-value estimates. Mean squared error is used
+          during optimization so predicted Q-values can be adjusted
+          toward updated targets.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         05 / Training Loop
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        05 / TRAINING
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Repeated episodes turn experience into policy.
+        </h2>
+
+
+        <p>
+          Training proceeds through repeated episodes. Each episode
+          begins with the maze in an initial state and continues until
+          the agent reaches a terminal condition.
+        </p>
+
+
+        <p>
+          For each decision, the agent chooses an action, observes the
+          next state and reward, calculates an updated target value,
+          and trains the neural network against that new estimate.
+        </p>
+
+
+        <div class="code-block">
+
+<pre><code>def q_learning_train(
+    maze,
+    agent,
+    episodes,
+    gamma,
+    epsilon
+):
+
+    for episode in range(episodes):
+
+        state = maze.reset()
+        done = False
+
+        while not done:
+
+            action = choose_action(
+                state,
+                epsilon
+            )
+
+            next_state, reward, done = (
+                maze.step(action)
+            )
+
+            target = (
+                reward
+                + gamma
+                * np.max(
+                    agent.predict(next_state)
+                )
+            )
+
+            q_values = agent.predict(state)
+
+            q_values[0][action] = target
+
+            agent.fit(
+                state,
+                q_values,
+                epochs=1,
+                verbose=0
+            )
+
+            state = next_state</code></pre>
+
+        </div>
+
+
+        <p>
+          The discount factor, represented by
+          <strong>gamma</strong>, controls how strongly future rewards
+          influence the current update. The exploration parameter,
+          <strong>epsilon</strong>, influences whether the agent relies
+          on learned behavior or tries something new.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         06 / Exploration
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        06 / STRATEGY
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Balancing exploration with exploitation.
+        </h2>
+
+
+        <p>
+          One of the important design problems in reinforcement
+          learning is deciding how much the agent should trust what it
+          already knows.
+        </p>
+
+
+        <div class="comparison-grid">
+
+
+          <div class="comparison-item">
+
+            <h3>
+              EXPLORATION
+            </h3>
+
+            <p>
+              The agent intentionally tries actions that may not
+              currently appear optimal. This creates opportunities to
+              discover routes or behaviors that its current experience
+              has not yet revealed.
+            </p>
+
+          </div>
+
+
+          <div class="comparison-item">
+
+            <h3>
+              EXPLOITATION
+            </h3>
+
+            <p>
+              The agent selects an action that its current model
+              predicts will produce the strongest long-term outcome,
+              allowing it to benefit from what it has already learned.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <p>
+          Too much exploration prevents stable behavior from emerging.
+          Too little exploration can cause the agent to settle on an
+          inefficient route before it has sufficiently investigated
+          the environment.
+        </p>
+
+
+        <p>
+          Tuning this balance was therefore part of the learning
+          process rather than merely an implementation detail.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         07 / Reward Design
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        07 / REWARDS
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          The reward function teaches the agent what success means.
+        </h2>
+
+
+        <p>
+          The agent cannot inherently understand that reaching the
+          treasure is desirable or that wandering through inefficient
+          paths is undesirable. That behavior has to be represented
+          through the environment's reward structure.
+        </p>
+
+
+        <p>
+          Positive outcomes reinforce decisions associated with
+          progress and success, while negative outcomes reduce the
+          attractiveness of inefficient or failed behavior.
+        </p>
+
+
+        <p>
+          Reward design is particularly important because the agent
+          optimizes what the system measures. A poorly designed reward
+          structure can produce behavior that technically earns reward
+          while failing to represent the intended objective.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         08 / Engineering Challenges
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        08 / CHALLENGES
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Training behavior is an engineering problem, not just a model call.
+        </h2>
+
+
+        <div class="engineering-list">
+
+
+          <div class="engineering-point">
+
+            <h3>
+              STATE REPRESENTATION
+            </h3>
+
+            <p>
+              The agent needs a useful numerical representation of the
+              environment so the neural network can learn relationships
+              between maze states and possible actions.
+            </p>
+
+          </div>
+
+
+          <div class="engineering-point">
+
+            <h3>
+              REWARD DESIGN
+            </h3>
+
+            <p>
+              Rewards must guide the agent toward the intended goal
+              without encouraging unintended shortcuts or repetitive
+              behavior.
+            </p>
+
+          </div>
+
+
+          <div class="engineering-point">
+
+            <h3>
+              TRAINING STABILITY
+            </h3>
+
+            <p>
+              Learning parameters affect how aggressively the agent
+              updates its behavior and whether training converges
+              toward a useful navigation strategy.
+            </p>
+
+          </div>
+
+
+          <div class="engineering-point">
+
+            <h3>
+              EXPLORATION CONTROL
+            </h3>
+
+            <p>
+              The exploration strategy must expose the agent to enough
+              alternatives to learn the maze without preventing it
+              from taking advantage of successful behavior.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         09 / Human vs Machine
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        09 / DESIGN DEFENSE
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          Comparing human reasoning with machine learning.
+        </h2>
+
+
+        <p>
+          The accompanying design defense examined the difference
+          between how a human might solve the maze and how the
+          intelligent agent learns to do so.
+        </p>
+
+
+        <div class="comparison-grid">
+
+
+          <div class="comparison-item">
+
+            <h3>
+              HUMAN APPROACH
+            </h3>
+
+            <p>
+              A human player may rely on visual reasoning, memory,
+              pattern recognition, intuition, and recollection of
+              previous dead ends when deciding where to move next.
+            </p>
+
+          </div>
+
+
+          <div class="comparison-item">
+
+            <h3>
+              MACHINE APPROACH
+            </h3>
+
+            <p>
+              The agent learns statistically from repeated state,
+              action, and reward relationships. Rather than reasoning
+              about the maze symbolically, it improves its behavior
+              through accumulated training experience.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <p>
+          The comparison helped connect the implementation to the
+          larger question of how intelligent systems transform
+          experience into decision-making behavior.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         10 / Responsible AI
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        10 / RESPONSIBILITY
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          An intelligent system should optimize the intended objective.
+        </h2>
+
+
+        <p>
+          Even in a game environment, training an autonomous agent
+          raises an important design question: does the learned
+          behavior reflect what the developer actually intended?
+        </p>
+
+
+        <p>
+          A successful agent should navigate within the rules of the
+          environment rather than benefiting from unintended behavior,
+          bugs, or poorly specified rewards.
+        </p>
+
+
+        <p>
+          That concern scales beyond games. Machine-learning systems
+          need clearly defined objectives, appropriate evaluation, and
+          attention to predictability and unintended behavior whenever
+          their decisions affect real users.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         11 / Reflection
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        11 / REFLECTION
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          What this project taught me about intelligent systems.
+        </h2>
+
+
+        <div class="reflection-grid">
+
+
+          <div class="reflection-item">
+
+            <h3>
+              ALGORITHMIC THINKING
+            </h3>
+
+            <p>
+              The project required translating reinforcement-learning
+              pseudocode and concepts into an executable training
+              process with clearly defined inputs, decisions, and
+              updates.
+            </p>
+
+          </div>
+
+
+          <div class="reflection-item">
+
+            <h3>
+              PARAMETER TUNING
+            </h3>
+
+            <p>
+              Learning behavior depends on parameters such as
+              exploration rate, learning behavior, discounting, and
+              reward structure rather than on the neural network
+              architecture alone.
+            </p>
+
+          </div>
+
+
+          <div class="reflection-item">
+
+            <h3>
+              DEBUGGING BEHAVIOR
+            </h3>
+
+            <p>
+              Machine-learning debugging involves evaluating behavior
+              and training outcomes in addition to finding conventional
+              code errors.
+            </p>
+
+          </div>
+
+
+          <div class="reflection-item">
+
+            <h3>
+              EXPLAINABILITY
+            </h3>
+
+            <p>
+              The design defense strengthened my ability to explain
+              not only what an algorithm does, but why its learning
+              strategy is appropriate for the problem.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         12 / Result
+         ========================= -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        12 / RESULT
+      </div>
+
+
+      <div class="case-study-content">
+
+        <h2>
+          From maze environment to learning agent.
+        </h2>
+
+
+        <p>
+          The completed project demonstrates the full reinforcement
+          learning workflow: representing an environment, allowing an
+          agent to interact with it, collecting experience, calculating
+          updated value estimates, training a neural network, and
+          repeatedly refining behavior through additional episodes.
+        </p>
+
+
+        <p>
+          More importantly, the project provided practical experience
+          connecting machine-learning concepts to working application
+          logic rather than treating reinforcement learning only as a
+          mathematical or theoretical topic.
+        </p>
+
+
+        <p>
+          The same underlying concepts appear in areas such as game AI,
+          robotics, autonomous systems, scheduling, optimization, and
+          other problems where an agent must learn a sequence of
+          decisions from feedback.
+        </p>
+
+
+        <div class="case-study-links">
+
+
+          <a
+            href="https://github.com/EmpressCatbug/Pirate-AI-Agent"
+            class="case-study-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Repository on GitHub
+            <span aria-hidden="true">→</span>
+          </a>
+
+
+          <a
+            href="https://github.com/EmpressCatbug/Pirate-AI-Agent/blob/main/CS%20370%20Project%202%20Design%20Defense%20Thompson.pdf"
+            class="case-study-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Design Defense
+            <span aria-hidden="true">→</span>
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       Background Music
+       ========================= -->
+
+  <audio
+    id="background-music"
+    loop
+  >
+
+    <source
+      src="../assets/Claude Debussy Claire De Lune added reverb.mp3"
+      type="audio/mpeg"
+    />
+
+  </audio>
+
+
+  <button
+    class="music-toggle"
+    id="music-toggle"
+    type="button"
+    aria-label="Toggle background music"
+  >
+    ☾
+  </button>
+
+
+
+  <!-- =========================
+       Scripts
+       ========================= -->
+
+  <script src="../music.js"></script>
+
   <script src="../script.js"></script>
+
+
 </body>
+
 </html>
