@@ -2,148 +2,1648 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>3D Scene Project | Takeria Thompson</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>3D Scene Enhancement | Takeria Thompson</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="../style.css" />
-  <script src="../script.js" defer></script>
+
   <style>
-    .project-page {
-      max-width: 900px;
+    /* =========================================================
+       3D Scene Enhancement Case Study
+       ========================================================= */
+
+    .case-study-page {
+      position: relative;
+      z-index: 1;
+
+      width: 100%;
+      max-width: 1160px;
+
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 90px 24px 120px;
     }
 
-    .project-page h1 {
-      font-size: 2.8rem;
-      text-align: center;
-      margin-bottom: 20px;
+    /* =========================================================
+       Back Navigation
+       ========================================================= */
+
+    .case-study-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 70px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+
+      color: rgba(216, 180, 254, 0.68);
+
+      transition:
+        color 0.25s ease,
+        gap 0.25s ease;
     }
 
-    .project-page h2 {
-      font-size: 2rem;
-      margin-top: 50px;
-      margin-bottom: 10px;
-      color: #e9d5ff;
+    .case-study-back:hover {
+      gap: 15px;
+      color: #ffffff;
     }
 
-    .project-page h3 {
-      margin-top: 30px;
-      font-size: 1.2rem;
-      color: #c084fc;
+    /* =========================================================
+       Hero
+       ========================================================= */
+
+    .case-study-hero {
+      max-width: 920px;
+      margin-bottom: 85px;
     }
 
-    .project-page p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-top: 10px;
-      color: #ddd;
-    }
-
-    ul {
-      color: #ddd;
-      margin-top: 10px;
-    }
-
-    img {
+    .case-study-eyebrow {
       display: block;
-      margin: 20px auto;
-      border-radius: 12px;
-      max-width: 100%;
-      box-shadow: 0 0 15px rgba(186, 127, 255, 0.2);
-    }
+      margin-bottom: 18px;
 
-    .back-link {
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-      display: inline-block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+
       color: #c084fc;
     }
 
-    .back-link:hover {
-      color: #fff;
+    .case-study-hero h1 {
+      margin: 0 0 26px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1;
+
+      color: #f3e8ff;
+
+      text-shadow:
+        0 0 24px rgba(147, 51, 234, 0.18);
+    }
+
+    .case-study-lead {
+      max-width: 820px;
+      margin-bottom: 0;
+
+      font-size: 1.08rem;
+      line-height: 1.9;
+
+      color: rgba(233, 213, 255, 0.76);
+    }
+
+    /* =========================================================
+       Technology Strip
+       ========================================================= */
+
+    .case-study-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+
+      margin-top: 38px;
+    }
+
+    .case-study-tech span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+
+      color: rgba(216, 180, 254, 0.66);
+    }
+
+    .case-study-tech span:not(:last-child)::after {
+      content: " ·";
+      color: rgba(192, 132, 252, 0.40);
+    }
+
+    /* =========================================================
+       Project Status
+       ========================================================= */
+
+    .project-status {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+
+      margin-top: 48px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.16);
+      border-bottom: 1px solid rgba(216, 180, 254, 0.16);
+    }
+
+    .project-status-item {
+      padding: 24px 22px;
+    }
+
+    .project-status-item:not(:last-child) {
+      border-right: 1px solid rgba(216, 180, 254, 0.12);
+    }
+
+    .project-status-item span {
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+
+      color: rgba(192, 132, 252, 0.62);
+    }
+
+    .project-status-item strong {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.5;
+
+      color: rgba(243, 232, 255, 0.88);
+    }
+
+    /* =========================================================
+       Main Sections
+       ========================================================= */
+
+    .case-study-section {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 70px;
+
+      padding: 68px 0;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
+    }
+
+    .case-study-section-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+
+      color: rgba(192, 132, 252, 0.72);
+    }
+
+    .case-study-content {
+      max-width: 760px;
+    }
+
+    .case-study-content h2 {
+      margin: 0 0 22px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      line-height: 1.25;
+
+      color: #f3e8ff;
+    }
+
+    .case-study-content h3 {
+      margin: 34px 0 12px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
+
+    .case-study-content p {
+      margin: 0 0 20px;
+
+      font-size: 1rem;
+      line-height: 1.85;
+
+      color: rgba(233, 213, 255, 0.72);
+    }
+
+    .case-study-content strong {
+      color: rgba(243, 232, 255, 0.92);
+    }
+
+    /* =========================================================
+       Highlight Quote
+       ========================================================= */
+
+    .case-study-quote {
+      margin: 34px 0;
+      padding: 26px 0 26px 28px;
+
+      border-left: 2px solid rgba(192, 132, 252, 0.48);
+
+      font-size: 1.08rem;
+      line-height: 1.8;
+
+      color: rgba(243, 232, 255, 0.84);
+    }
+
+    /* =========================================================
+       Engineering Grid
+       ========================================================= */
+
+    .engineering-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px 36px;
+
+      margin-top: 35px;
+    }
+
+    .engineering-point {
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.12);
+    }
+
+    .engineering-point h3 {
+      margin: 0 0 10px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.07em;
+
+      color: #d8b4fe;
+    }
+
+    .engineering-point p {
+      margin: 0;
+
+      font-size: 0.91rem;
+      line-height: 1.75;
+
+      color: rgba(233, 213, 255, 0.64);
+    }
+
+    /* =========================================================
+       Technical Flow
+       ========================================================= */
+
+    .technical-flow {
+      margin: 38px 0 26px;
+      padding: 26px 28px;
+
+      border: 1px solid rgba(216, 180, 254, 0.15);
+
+      background: rgba(33, 10, 55, 0.08);
+    }
+
+    .technical-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+
+      position: relative;
+
+      padding: 9px 0;
+    }
+
+    .technical-step:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+      left: 8px;
+      top: 35px;
+
+      width: 1px;
+      height: calc(100% - 18px);
+
+      background: rgba(192, 132, 252, 0.22);
+    }
+
+    .technical-dot {
+      width: 17px;
+      height: 17px;
+
+      flex: 0 0 17px;
+
+      margin-top: 3px;
+
+      border: 1px solid rgba(216, 180, 254, 0.62);
+      border-radius: 50%;
+
+      background: rgba(147, 51, 234, 0.15);
+
+      box-shadow:
+        0 0 14px rgba(168, 85, 247, 0.2);
+    }
+
+    .technical-step strong {
+      display: block;
+
+      margin-bottom: 3px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+
+      color: rgba(243, 232, 255, 0.9);
+    }
+
+    .technical-step span {
+      font-size: 0.82rem;
+      line-height: 1.6;
+
+      color: rgba(233, 213, 255, 0.55);
+    }
+
+    /* =========================================================
+       Scene Images
+       ========================================================= */
+
+    .scene-comparison {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+
+      margin: 38px 0 12px;
+    }
+
+    .scene-panel {
+      border: 1px solid rgba(216, 180, 254, 0.16);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 7, 34, 0.65),
+          rgba(51, 15, 78, 0.24)
+        );
+    }
+
+    .scene-panel-header {
+      padding: 15px 18px;
+
+      border-bottom: 1px solid rgba(216, 180, 254, 0.11);
+    }
+
+    .scene-panel-header span {
+      display: block;
+
+      margin-bottom: 4px;
+
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.57rem;
+      letter-spacing: 0.09em;
+
+      color: rgba(192, 132, 252, 0.6);
+    }
+
+    .scene-panel-header strong {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+
+      color: rgba(243, 232, 255, 0.86);
+    }
+
+    .scene-panel img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      margin: 0;
+    }
+
+    .scene-caption {
+      padding: 14px 18px 18px;
+
+      font-size: 0.78rem;
+      line-height: 1.6;
+
+      color: rgba(233, 213, 255, 0.5);
+    }
+
+    /* =========================================================
+       Controls
+       ========================================================= */
+
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+
+      margin: 35px 0;
+
+      border: 1px solid rgba(216, 180, 254, 0.14);
+    }
+
+    .control-item {
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      gap: 18px;
+
+      padding: 21px;
+
+      background: rgba(31, 10, 51, 0.06);
+    }
+
+    .control-item:nth-child(odd) {
+      border-right: 1px solid rgba(216, 180, 254, 0.1);
+    }
+
+    .control-item:nth-child(-n + 4) {
+      border-bottom: 1px solid rgba(216, 180, 254, 0.1);
+    }
+
+    .control-key {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.66rem;
+      letter-spacing: 0.06em;
+
+      color: #d8b4fe;
+    }
+
+    .control-description {
+      font-size: 0.84rem;
+      line-height: 1.6;
+
+      color: rgba(233, 213, 255, 0.58);
+    }
+
+    /* =========================================================
+       Comparison
+       ========================================================= */
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+
+      margin: 34px 0;
+    }
+
+    .comparison-column {
+      padding: 25px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.18);
+    }
+
+    .comparison-column h3 {
+      margin: 0 0 18px;
+
+      font-size: 0.68rem;
+    }
+
+    .comparison-column p {
+      margin-bottom: 9px;
+
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       Result
+       ========================================================= */
+
+    .result-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 34px;
+
+      margin-top: 32px;
+    }
+
+    .result-item {
+      position: relative;
+
+      padding: 17px 0 17px 22px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.11);
+
+      font-size: 0.9rem;
+      line-height: 1.7;
+
+      color: rgba(233, 213, 255, 0.65);
+    }
+
+    .result-item::before {
+      content: "✦";
+
+      position: absolute;
+      left: 0;
+
+      color: rgba(192, 132, 252, 0.66);
+    }
+
+    /* =========================================================
+       End
+       ========================================================= */
+
+    .case-study-end {
+      padding-top: 50px;
+
+      border-top: 1px solid rgba(216, 180, 254, 0.15);
+
+      text-align: center;
+    }
+
+    .case-study-end span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.13em;
+
+      color: rgba(192, 132, 252, 0.54);
+    }
+
+    /* =========================================================
+       Mobile
+       ========================================================= */
+
+    @media (max-width: 768px) {
+      .case-study-page {
+        padding: 60px 20px 90px;
+      }
+
+      .case-study-back {
+        margin-bottom: 50px;
+      }
+
+      .case-study-hero {
+        margin-bottom: 70px;
+      }
+
+      .case-study-hero h1 {
+        font-size: 3rem;
+      }
+
+      .case-study-lead {
+        font-size: 0.96rem;
+        line-height: 1.8;
+      }
+
+      .project-status,
+      .engineering-list,
+      .scene-comparison,
+      .comparison-grid,
+      .result-list,
+      .controls-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-status-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(216, 180, 254, 0.12);
+      }
+
+      .case-study-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+
+        padding: 50px 0;
+      }
+
+      .control-item,
+      .control-item:nth-child(odd),
+      .control-item:nth-child(-n + 4) {
+        border-right: none;
+        border-bottom: 1px solid rgba(216, 180, 254, 0.1);
+      }
+
+      .control-item:last-child {
+        border-bottom: none;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div id="sparkle-container"></div>
-  <div class="project-page">
-    <h1 class="glow">3D Scene Project Enhancement</h1>
-    <a class="back-link" href="../home.html">← Back to Portfolio</a>
 
-    <h2>Overview</h2>
-    <p>
-      This 3D graphics project began as a final assignment in my CS 330: Computational Graphics and Visualization course.
-      I created a fully interactive OpenGL scene replicating my desk setup — featuring a lavender corner desk, three monitors, and keyboard.
-      The scene included WASD movement, perspective switching, textured surfaces, and multiple lighting types.
-    </p>
-    <p>
-      To improve visual quality and workflow, I enhanced the project by recreating the scene in Blender. This transition allowed me to incorporate high-resolution textures, advanced lighting, animation, and camera control.
-    </p>
-
-    <h2>OpenGL Implementation Highlights</h2>
-<p>
-  The original version of this scene was developed in OpenGL from scratch using C++, with direct control over shaders, geometry, and user interaction logic. I focused on both technical accuracy and user experience.
-</p>
-<ul>
-  <li>📦 Modeled the entire scene using primitive shapes (cubes, cylinders, etc.)</li>
-  <li>🖱️ Mouse-controlled camera orientation (look up/down/left/right)</li>
-  <li>🎮 Keyboard navigation (W/A/S/D movement) with mouse scroll for movement speed adjustment</li>
-  <li>🔁 Real-time perspective switching with keys (P for perspective, O for orthographic)</li>
-  <li>💡 Implemented ambient, diffuse, and specular lighting for realism</li>
-  <li>🧩 Modular function structure (lighting, input, draw calls) for clean, reusable code</li>
-</ul>
-<p>
-  This interactive control system created an intuitive first-person navigation experience, showcasing both visual composition and responsive camera mechanics.
-</p>
-
-
-    <h2>Visual Comparison</h2>
-    <p>Below you can see the transformation from OpenGL to Blender:</p>
-
-    <h3>Before: OpenGL Scene</h3>
-    <img src="images/cat1before.png" alt="OpenGL scene before enhancement" />
-
-    <h3>After: Blender Enhancement</h3>
-    <img src="images/cat1after.png" alt="Blender scene after enhancement" />
-
-    <h2>Blender Enhancement Goals</h2>
-    <p>
-      My goal was to bring realism, creativity, and technical depth to the original concept using Blender.
-      I applied real-world materials, animations, and improved visual feedback that would be difficult to achieve in OpenGL alone.
-    </p>
-    <ul>
-      <li>🎨 UV unwrapping, stylized pastel palette, and reflective materials</li>
-      <li>💡 Advanced lighting (area lights, HDR reflections, soft shadows)</li>
-      <li>📸 Dynamic camera movement and layout control</li>
-      <li>🕹️ Interactive elements such as a floating hologram and backlit keyboard</li>
-    </ul>
-
-    <h2>Reflection</h2>
-<p>
-  One of the most rewarding aspects of this project was developing the camera control system in OpenGL. By handling input buffers and transformation matrices directly, I created a responsive and immersive navigation system — allowing users to move freely with the keyboard (WASD), look around with the mouse, and dynamically adjust speed and viewpoint with scroll and key toggles.
-</p>
-<p>
-  This low-level implementation gave me hands-on experience with mathematical foundations of 3D graphics, including view matrices, field of view adjustments, and event polling.
-  It also helped reinforce best practices in modular programming, which later made the Blender transition easier.
-</p>
-<p>
-  Iteration, modularity, and user-centered interaction design were core to my process — skills that will carry forward in future UI/UX or 3D development roles.
-</p>
-
-
-    <h2>Final Outcome</h2>
-    <p>
-      This project directly aligns with outcomes in software design, innovation, and visual communication.
-      I demonstrated advanced modeling, interactive controls, and creative visual design while adapting to new tools. 
-      It also reflects my attention to usability, detail, and immersive design — all of which will be important in my future UI/UX and graphics work.
-    </p>
-  </div>
-  <!-- Sparkle + Butterfly Cursor -->
+  <!-- Existing Portfolio Effects -->
   <div id="sparkle-container"></div>
   <div class="butterfly-cursor"></div>
 
-  <!-- Scripts -->
+  <main class="case-study-page">
+
+    <!-- =====================================================
+         Back
+         ===================================================== -->
+
+    <a
+      href="../projects.html"
+      class="case-study-back"
+    >
+      ← Back to Projects
+    </a>
+
+
+    <!-- =====================================================
+         Hero
+         ===================================================== -->
+
+    <header class="case-study-hero">
+
+      <span class="case-study-eyebrow">
+        3D GRAPHICS / INTERACTIVE DESIGN
+      </span>
+
+      <h1>3D Scene Enhancement</h1>
+
+      <p class="case-study-lead">
+        An interactive 3D graphics project that began as a C++ and OpenGL
+        recreation of my desk setup and later evolved into a visually enhanced
+        Blender scene with improved materials, lighting, animation, and camera
+        presentation.
+      </p>
+
+      <div class="case-study-tech">
+        <span>C++</span>
+        <span>OpenGL</span>
+        <span>Blender</span>
+        <span>3D Modeling</span>
+        <span>Lighting</span>
+        <span>Camera Systems</span>
+        <span>Interactive Graphics</span>
+      </div>
+
+      <div class="project-status">
+
+        <div class="project-status-item">
+          <span>ORIGIN</span>
+          <strong>CS 330 Computational Graphics</strong>
+        </div>
+
+        <div class="project-status-item">
+          <span>FIRST IMPLEMENTATION</span>
+          <strong>C++ / OpenGL</strong>
+        </div>
+
+        <div class="project-status-item">
+          <span>ENHANCEMENT</span>
+          <strong>Blender Recreation</strong>
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         01 / Overview
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        01 / OVERVIEW
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Building the same scene from two different perspectives.
+        </h2>
+
+        <p>
+          This project began as the final assignment for my CS 330:
+          Computational Graphics and Visualization course. I created an
+          interactive 3D scene inspired by my own desk setup, including a
+          lavender corner desk, three monitors, and a keyboard.
+        </p>
+
+        <p>
+          The first version was developed in C++ with OpenGL. The goal was not
+          simply to model the scene visually, but to control the rendering,
+          transformations, camera behavior, user input, textures, and lighting
+          directly.
+        </p>
+
+        <div class="case-study-quote">
+          The project became an exploration of both sides of 3D development:
+          low-level graphics programming and higher-level visual refinement.
+        </div>
+
+        <p>
+          After completing the OpenGL version, I recreated and enhanced the
+          scene in Blender. That second phase allowed me to focus more heavily
+          on realism, material treatment, lighting quality, animation, and
+          composition while building on the visual decisions established in
+          the original implementation.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         02 / Scene Design
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        02 / SCENE DESIGN
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Reconstructing a familiar physical environment in 3D.
+        </h2>
+
+        <p>
+          The scene is based on a desk environment rather than an abstract
+          graphics demonstration. This gave the project recognizable spatial
+          relationships and made it easier to evaluate proportion, placement,
+          movement, and lighting.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>CORNER DESK</h3>
+            <p>
+              The lavender desk establishes the primary form and layout of the
+              scene.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>THREE MONITORS</h3>
+            <p>
+              Multiple displays introduce repeated geometry, orientation, and
+              composition challenges.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>KEYBOARD</h3>
+            <p>
+              Smaller scene details help establish scale and create a more
+              complete workstation environment.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>VIEWER MOVEMENT</h3>
+            <p>
+              The scene is designed to be explored interactively rather than
+              viewed from only one fixed camera position.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         03 / OpenGL
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        03 / OPENGL
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Building the original scene with direct graphics control.
+        </h2>
+
+        <p>
+          The original version was developed from scratch using C++ and
+          OpenGL. This required direct control over the pieces that a 3D
+          content tool normally abstracts away, including geometry,
+          transformations, shaders, lighting behavior, camera movement, and
+          event-driven input.
+        </p>
+
+        <div class="technical-flow">
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>CREATE GEOMETRY</strong>
+              <span>
+                Build the scene using reusable primitive shapes such as cubes
+                and cylinders.
+              </span>
+            </div>
+          </div>
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>TRANSFORM OBJECTS</strong>
+              <span>
+                Position, rotate, and scale primitives to construct recognizable
+                scene elements.
+              </span>
+            </div>
+          </div>
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>APPLY TEXTURES</strong>
+              <span>
+                Add surface detail and visual differentiation to geometry.
+              </span>
+            </div>
+          </div>
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>CALCULATE LIGHTING</strong>
+              <span>
+                Use ambient, diffuse, and specular components to create depth.
+              </span>
+            </div>
+          </div>
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>UPDATE CAMERA</strong>
+              <span>
+                Respond to keyboard, mouse, scroll, and perspective controls.
+              </span>
+            </div>
+          </div>
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>RENDER FRAME</strong>
+              <span>
+                Draw the updated scene from the current camera viewpoint.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <p>
+          Working at this level made the relationship between rendering,
+          transformations, interaction, and the camera much more explicit.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         04 / Modeling
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        04 / MODELING
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Constructing complex objects from simple primitives.
+        </h2>
+
+        <p>
+          The OpenGL scene was modeled using primitive geometry rather than
+          importing completed 3D assets. Objects were assembled by combining,
+          positioning, scaling, and orienting shapes such as cubes and
+          cylinders.
+        </p>
+
+        <p>
+          This required breaking recognizable real-world objects into simpler
+          forms and then rebuilding those forms through transformations.
+        </p>
+
+        <div class="comparison-grid">
+
+          <div class="comparison-column">
+            <h3>VISUAL PROBLEM</h3>
+            <p>Think of a monitor as a finished object.</p>
+            <p>Think of a desk as one complete model.</p>
+            <p>Think visually first.</p>
+          </div>
+
+          <div class="comparison-column">
+            <h3>GRAPHICS PROBLEM</h3>
+            <p>Break a monitor into transformable geometric pieces.</p>
+            <p>Construct the desk from reusable primitive forms.</p>
+            <p>Think in coordinates, scale, rotation, and hierarchy.</p>
+          </div>
+
+        </div>
+
+        <p>
+          That process strengthened my understanding of how complex visual
+          environments can be composed from relatively simple building blocks.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         05 / Camera System
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        05 / CAMERA
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Turning a rendered scene into an explorable environment.
+        </h2>
+
+        <p>
+          One of the most important parts of the OpenGL implementation was the
+          interactive camera system. Instead of viewing the model from a single
+          fixed point, the user can move through the environment and control
+          orientation in real time.
+        </p>
+
+        <div class="controls-grid">
+
+          <div class="control-item">
+            <div class="control-key">W / A / S / D</div>
+            <div class="control-description">
+              Move the camera through the environment.
+            </div>
+          </div>
+
+          <div class="control-item">
+            <div class="control-key">MOUSE</div>
+            <div class="control-description">
+              Look left, right, up, and down.
+            </div>
+          </div>
+
+          <div class="control-item">
+            <div class="control-key">SCROLL</div>
+            <div class="control-description">
+              Adjust movement speed.
+            </div>
+          </div>
+
+          <div class="control-item">
+            <div class="control-key">P</div>
+            <div class="control-description">
+              Switch to perspective projection.
+            </div>
+          </div>
+
+          <div class="control-item">
+            <div class="control-key">O</div>
+            <div class="control-description">
+              Switch to orthographic projection.
+            </div>
+          </div>
+
+          <div class="control-item">
+            <div class="control-key">REAL TIME</div>
+            <div class="control-description">
+              Camera input updates while the rendered scene remains responsive.
+            </div>
+          </div>
+
+        </div>
+
+        <p>
+          Implementing this system directly required handling user input,
+          camera orientation, view transformations, and event polling rather
+          than relying on a built-in scene editor.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         06 / Projection
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        06 / PROJECTION
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Comparing perspective and orthographic views.
+        </h2>
+
+        <p>
+          The scene supports switching between perspective and orthographic
+          projection during runtime.
+        </p>
+
+        <div class="comparison-grid">
+
+          <div class="comparison-column">
+            <h3>PERSPECTIVE</h3>
+            <p>
+              Objects appear smaller as their distance from the camera
+              increases.
+            </p>
+            <p>
+              This creates a view that more closely resembles normal visual
+              perception.
+            </p>
+          </div>
+
+          <div class="comparison-column">
+            <h3>ORTHOGRAPHIC</h3>
+            <p>
+              Object size remains more consistent regardless of depth.
+            </p>
+            <p>
+              This provides a flatter technical view of the scene's spatial
+              arrangement.
+            </p>
+          </div>
+
+        </div>
+
+        <p>
+          Being able to switch between them made projection behavior something
+          the user could experience directly rather than only something
+          implemented mathematically.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         07 / Lighting
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        07 / LIGHTING
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Using light to communicate depth and material.
+        </h2>
+
+        <p>
+          The OpenGL version implements multiple components of lighting to
+          create more realistic surface response.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>AMBIENT</h3>
+            <p>
+              Provides a baseline amount of illumination throughout the scene
+              so surfaces are not completely black outside direct light.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>DIFFUSE</h3>
+            <p>
+              Changes brightness based on a surface's orientation relative to
+              the light source.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>SPECULAR</h3>
+            <p>
+              Adds reflective highlights that help surfaces communicate
+              material and shape.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>MULTIPLE LIGHTS</h3>
+            <p>
+              Allows different regions of the scene to receive varied visual
+              emphasis.
+            </p>
+          </div>
+
+        </div>
+
+        <p>
+          Lighting was not only decorative. It provided visual feedback about
+          geometry, orientation, and depth within the rendered environment.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         08 / Modularity
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        08 / CODE DESIGN
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Keeping graphics behavior organized as the scene grew.
+        </h2>
+
+        <p>
+          The project used a modular function structure for concerns such as
+          lighting, input handling, and draw operations.
+        </p>
+
+        <p>
+          This separation was important because an interactive graphics
+          program brings together several systems at once: user input,
+          rendering, object transformations, lighting, camera updates, and
+          scene construction.
+        </p>
+
+        <div class="case-study-quote">
+          Modularity reduced the amount of unrelated behavior that had to be
+          understood at the same time.
+        </div>
+
+        <p>
+          Organizing those responsibilities into reusable pieces made the
+          implementation easier to reason about and reinforced software-design
+          principles that apply well beyond graphics programming.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         09 / Before & After
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        09 / COMPARISON
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          From graphics implementation to visual refinement.
+        </h2>
+
+        <p>
+          After completing the OpenGL assignment, I recreated the scene in
+          Blender to explore how the same concept could be pushed further
+          visually.
+        </p>
+
+        <div class="scene-comparison">
+
+          <div class="scene-panel">
+
+            <div class="scene-panel-header">
+              <span>BEFORE</span>
+              <strong>OpenGL Scene</strong>
+            </div>
+
+            <img
+              src="images/cat1before.png"
+              alt="Original interactive OpenGL desk scene before Blender enhancement"
+            />
+
+            <div class="scene-caption">
+              Original C++ / OpenGL implementation focused on graphics
+              programming, camera interaction, geometry, textures, and lighting.
+            </div>
+
+          </div>
+
+
+          <div class="scene-panel">
+
+            <div class="scene-panel-header">
+              <span>AFTER</span>
+              <strong>Blender Enhancement</strong>
+            </div>
+
+            <img
+              src="images/cat1after.png"
+              alt="Enhanced Blender recreation of the desk scene"
+            />
+
+            <div class="scene-caption">
+              Blender recreation focused on higher visual fidelity, materials,
+              lighting, composition, animation, and presentation.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         10 / Blender
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        10 / BLENDER
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Enhancing the concept with a visual production workflow.
+        </h2>
+
+        <p>
+          Rebuilding the project in Blender changed which parts of the
+          development process required the most attention. OpenGL required
+          direct control over the rendering system; Blender made it possible
+          to spend more time refining the appearance and presentation of the
+          same scene.
+        </p>
+
+        <div class="engineering-list">
+
+          <div class="engineering-point">
+            <h3>UV UNWRAPPING</h3>
+            <p>
+              Surface coordinates were prepared to support more deliberate
+              texture placement.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>PASTEL PALETTE</h3>
+            <p>
+              The scene was visually refined around a stylized color direction
+              rather than relying only on basic material treatment.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>REFLECTIVE MATERIALS</h3>
+            <p>
+              Material properties were used to create more convincing surface
+              response.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>SOFT LIGHTING</h3>
+            <p>
+              Area lights, reflections, and softer shadows improved the visual
+              depth of the scene.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>CAMERA PRESENTATION</h3>
+            <p>
+              Camera positioning and movement could be composed more
+              deliberately for presentation.
+            </p>
+          </div>
+
+          <div class="engineering-point">
+            <h3>INTERACTIVE DETAILS</h3>
+            <p>
+              The enhanced concept included additions such as a floating
+              hologram and backlit keyboard.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         11 / Tool Comparison
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        11 / WORKFLOW
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          OpenGL and Blender solved different parts of the problem.
+        </h2>
+
+        <p>
+          Recreating the scene in Blender did not make the OpenGL version
+          obsolete. The two implementations emphasized different skills and
+          exposed different layers of the graphics process.
+        </p>
+
+        <div class="comparison-grid">
+
+          <div class="comparison-column">
+            <h3>OPENGL</h3>
+            <p>Direct rendering control.</p>
+            <p>C++ application logic.</p>
+            <p>Manual camera implementation.</p>
+            <p>Transformation matrices.</p>
+            <p>Input and event handling.</p>
+            <p>Lighting calculations.</p>
+          </div>
+
+          <div class="comparison-column">
+            <h3>BLENDER</h3>
+            <p>Visual modeling workflow.</p>
+            <p>Material refinement.</p>
+            <p>Advanced scene lighting.</p>
+            <p>Camera composition.</p>
+            <p>Animation capabilities.</p>
+            <p>Higher-fidelity presentation.</p>
+          </div>
+
+        </div>
+
+        <p>
+          Working in both environments gave me a stronger understanding of
+          what 3D tools automate and what must happen beneath those tools to
+          turn data into a rendered image.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         12 / Challenge
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        12 / CHALLENGE
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Coordinating input, transformations, and rendering in real time.
+        </h2>
+
+        <p>
+          One of the more technically demanding parts of the project was the
+          OpenGL camera system because several pieces of application state had
+          to remain synchronized as the user moved through the environment.
+        </p>
+
+        <div class="technical-flow">
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>READ INPUT</strong>
+              <span>Keyboard, mouse, scroll, and projection controls.</span>
+            </div>
+          </div>
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>UPDATE CAMERA STATE</strong>
+              <span>Position, orientation, speed, and view settings.</span>
+            </div>
+          </div>
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>BUILD VIEW TRANSFORMATION</strong>
+              <span>Translate camera state into the view used for rendering.</span>
+            </div>
+          </div>
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>UPDATE PROJECTION</strong>
+              <span>Apply perspective or orthographic behavior.</span>
+            </div>
+          </div>
+
+          <div class="technical-step">
+            <div class="technical-dot"></div>
+            <div>
+              <strong>RENDER UPDATED FRAME</strong>
+              <span>
+                Present the scene immediately from the user's new viewpoint.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <p>
+          That work gave me practical experience with view matrices, field of
+          view behavior, event polling, and the relationship between user
+          interaction and the graphics pipeline.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         13 / Reflection
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        13 / REFLECTION
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          Understanding 3D systems from both the code and visual sides.
+        </h2>
+
+        <p>
+          The camera controls were one of the most rewarding parts of the
+          project because they connected mathematical graphics concepts with a
+          very immediate user experience.
+        </p>
+
+        <p>
+          A change to a matrix or input calculation was not abstract; it
+          directly affected how natural or frustrating it felt to move through
+          the environment.
+        </p>
+
+        <p>
+          The Blender enhancement then provided a different lesson. Once the
+          lower-level graphics systems were no longer the primary concern,
+          decisions about materials, visual hierarchy, light, color, and
+          composition became much more prominent.
+        </p>
+
+        <div class="case-study-quote">
+          The project reinforced that interactive graphics sits at the
+          intersection of mathematics, software architecture, visual design,
+          and user experience.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         14 / Result
+         ===================================================== -->
+
+    <section class="case-study-section">
+
+      <div class="case-study-section-label">
+        14 / RESULT
+      </div>
+
+      <div class="case-study-content">
+
+        <h2>
+          A project that grew beyond its original course requirements.
+        </h2>
+
+        <p>
+          The final project demonstrates both the original engineering work
+          required to create an interactive 3D scene and the later visual
+          iteration used to enhance that concept.
+        </p>
+
+        <div class="result-list">
+
+          <div class="result-item">
+            Built an interactive 3D scene in C++ and OpenGL.
+          </div>
+
+          <div class="result-item">
+            Constructed objects from reusable primitive geometry.
+          </div>
+
+          <div class="result-item">
+            Implemented real-time WASD and mouse camera navigation.
+          </div>
+
+          <div class="result-item">
+            Added perspective and orthographic projection switching.
+          </div>
+
+          <div class="result-item">
+            Implemented ambient, diffuse, and specular lighting.
+          </div>
+
+          <div class="result-item">
+            Structured graphics behavior into reusable functions.
+          </div>
+
+          <div class="result-item">
+            Recreated and visually enhanced the scene in Blender.
+          </div>
+
+          <div class="result-item">
+            Applied UV mapping, materials, lighting, and visual refinement.
+          </div>
+
+          <div class="result-item">
+            Explored camera composition and animation workflows.
+          </div>
+
+          <div class="result-item">
+            Connected graphics programming with UI/UX and visual-design thinking.
+          </div>
+
+        </div>
+
+        <p style="margin-top: 34px;">
+          More than anything, the project shows my ability to iterate on an
+          existing technical implementation, adopt a new tool when it provides
+          meaningful advantages, and carry lessons from software engineering
+          into interactive and visual development.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="case-study-end">
+      <span>3D SCENE / CODE • INTERACTION • VISUAL DESIGN</span>
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       Background Music
+       Same shared setup used by the other portfolio project pages
+       ===================================================== -->
+
+  <audio id="background-music" loop>
+    <source
+      src="../assets/Claude Debussy Claire De Lune added reverb.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
+
+  <button
+    class="music-toggle"
+    id="music-toggle"
+    type="button"
+    aria-label="Toggle background music"
+  >
+    ☾
+  </button>
+
+
+  <!-- Existing Portfolio Scripts -->
+  <script src="../music.js"></script>
   <script src="../script.js"></script>
+
 </body>
 </html>
