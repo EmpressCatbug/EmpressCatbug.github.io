@@ -232,6 +232,567 @@
         0 0 18px rgba(167, 118, 240, 0.5);
     }
 
+    /* =========================================================
+   SHARED ABOUT PAGE SECTIONS
+   ========================================================= */
+
+.about-detail-section {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 80px;
+
+  padding: 100px 0;
+
+  border-top: 1px solid rgba(207, 181, 255, 0.2);
+}
+
+.about-detail-label {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.72rem;
+  line-height: 1.7;
+  letter-spacing: 0.15em;
+
+  color: #cbb6ff;
+}
+
+.about-detail-content {
+  max-width: 850px;
+}
+
+.about-detail-content h2 {
+  margin: 0 0 28px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.18;
+  font-weight: 500;
+
+  color: #ffffff;
+}
+
+.about-detail-content > p {
+  max-width: 780px;
+  margin: 0 0 24px;
+
+  font-size: 1rem;
+  line-height: 1.9;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.about-section-kicker {
+  display: block;
+  margin-bottom: 14px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+
+  color: rgba(207, 181, 255, 0.68);
+}
+
+
+/* =========================================================
+   02 / CREATIVITY
+   ========================================================= */
+
+.creative-process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+
+  margin-top: 44px;
+
+  border: 1px solid rgba(207, 181, 255, 0.18);
+
+  background: rgba(207, 181, 255, 0.12);
+}
+
+.creative-step {
+  min-height: 150px;
+  padding: 25px;
+
+  background: rgba(12, 8, 26, 0.72);
+}
+
+.creative-number {
+  display: block;
+  margin-bottom: 22px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.66rem;
+
+  color: rgba(203, 181, 255, 0.56);
+}
+
+.creative-step strong {
+  display: block;
+  margin-bottom: 9px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+
+  color: #ffffff;
+}
+
+.creative-step p {
+  margin: 0;
+
+  font-size: 0.88rem;
+  line-height: 1.65;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.creative-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+.creative-interests span {
+  padding: 8px 13px;
+
+  border: 1px solid rgba(203, 181, 255, 0.2);
+  border-radius: 999px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+
+  color: rgba(235, 224, 255, 0.78);
+}
+
+
+/* =========================================================
+   03 / FAITH
+   ========================================================= */
+
+.faith-quote {
+  margin: 42px 0;
+  padding: 28px 0 28px 30px;
+
+  border-left: 1px solid rgba(215, 193, 255, 0.55);
+}
+
+.faith-quote p {
+  margin: 0;
+
+  font-size: clamp(1.08rem, 2vw, 1.35rem);
+  line-height: 1.75;
+  font-style: italic;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.baptism-video {
+  margin-top: 48px;
+
+  border: 1px solid rgba(207, 181, 255, 0.2);
+
+  background: rgba(10, 7, 21, 0.7);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 45px rgba(158, 113, 225, 0.06);
+}
+
+.baptism-video-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+
+  padding: 25px 28px;
+
+  border-bottom: 1px solid rgba(207, 181, 255, 0.16);
+}
+
+.baptism-video-header span:first-child {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+
+  color: #d7c4ff;
+}
+
+.baptism-video-header span:last-child {
+  font-size: 0.82rem;
+
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.baptism-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+}
+
+.baptism-video-frame iframe {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+
+/* =========================================================
+   04 / COMMUNITY
+   ========================================================= */
+
+.community-note {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+
+  margin-top: 42px;
+  padding: 28px 30px;
+
+  border-top: 1px solid rgba(207, 181, 255, 0.18);
+  border-bottom: 1px solid rgba(207, 181, 255, 0.18);
+}
+
+.community-note strong {
+  display: block;
+  margin-bottom: 7px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.82rem;
+
+  color: #ffffff;
+}
+
+.community-note p {
+  margin: 0;
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.about-external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #d8c6ff;
+  text-decoration: none;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.about-external-link:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   05 / LIFE BEYOND THE SCREEN
+   ========================================================= */
+
+.life-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+
+  margin-top: 42px;
+
+  border: 1px solid rgba(207, 181, 255, 0.16);
+
+  background: rgba(207, 181, 255, 0.1);
+}
+
+.life-item {
+  min-height: 155px;
+  padding: 28px;
+
+  background: rgba(12, 8, 26, 0.72);
+}
+
+.life-icon {
+  display: block;
+  margin-bottom: 22px;
+
+  color: #d4beff;
+
+  text-shadow: 0 0 12px rgba(193, 158, 255, 0.45);
+}
+
+.life-item h3 {
+  margin: 0 0 9px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.84rem;
+  letter-spacing: 0.05em;
+
+  color: #ffffff;
+}
+
+.life-item p {
+  margin: 0;
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* =========================================================
+   06 / VALUES
+   ========================================================= */
+
+.values-list {
+  margin-top: 42px;
+}
+
+.value-row {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 45px;
+
+  padding: 24px 0;
+
+  border-top: 1px solid rgba(207, 181, 255, 0.15);
+}
+
+.value-row:last-child {
+  border-bottom: 1px solid rgba(207, 181, 255, 0.15);
+}
+
+.value-row strong {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+
+  color: #d5c0ff;
+}
+
+.value-row p {
+  margin: 0;
+
+  font-size: 0.94rem;
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.64);
+}
+
+
+/* =========================================================
+   07 / LOOKING FORWARD
+   ========================================================= */
+
+.dream-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+
+  margin-top: 42px;
+}
+
+.dream-item {
+  position: relative;
+
+  min-height: 210px;
+  padding: 30px;
+
+  border: 1px solid rgba(207, 181, 255, 0.18);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(39, 25, 70, 0.42),
+      rgba(11, 8, 24, 0.58)
+    );
+}
+
+.dream-symbol {
+  display: block;
+  margin-bottom: 34px;
+
+  font-size: 1rem;
+
+  color: #d5c0ff;
+
+  text-shadow:
+    0 0 8px rgba(213, 192, 255, 0.7),
+    0 0 18px rgba(167, 118, 240, 0.45);
+}
+
+.dream-item h3 {
+  margin: 0 0 12px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+
+  color: #ffffff;
+}
+
+.dream-item p {
+  margin: 0;
+
+  font-size: 0.92rem;
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.62);
+}
+
+
+/* =========================================================
+   08 / GIVING
+   ========================================================= */
+
+.giving-links {
+  display: grid;
+  gap: 12px;
+
+  margin-top: 40px;
+}
+
+.giving-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding: 22px 0;
+
+  border-top: 1px solid rgba(207, 181, 255, 0.16);
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.giving-link:last-child {
+  border-bottom: 1px solid rgba(207, 181, 255, 0.16);
+}
+
+.giving-link-name {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+
+  color: #ffffff;
+}
+
+.giving-link-arrow {
+  color: #d3bbff;
+
+  transition: transform 0.2s ease;
+}
+
+.giving-link:hover .giving-link-arrow {
+  transform: translate(4px, -4px);
+}
+
+
+/* =========================================================
+   ABOUT PAGE CLOSING
+   ========================================================= */
+
+.about-closing {
+  padding: 120px 0 50px;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(207, 181, 255, 0.2);
+}
+
+.about-closing-star {
+  display: block;
+  margin-bottom: 25px;
+
+  color: #d5c0ff;
+
+  text-shadow:
+    0 0 10px rgba(213, 192, 255, 0.7),
+    0 0 25px rgba(167, 118, 240, 0.45);
+}
+
+.about-closing h2 {
+  max-width: 820px;
+  margin: 0 auto 28px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.15;
+  font-weight: 500;
+
+  color: #ffffff;
+}
+
+.about-closing p {
+  max-width: 720px;
+  margin: 0 auto;
+
+  font-size: 1rem;
+  line-height: 1.9;
+
+  color: rgba(255, 255, 255, 0.67);
+}
+
+.about-closing-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 40px;
+}
+
+.about-closing-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 13px 20px;
+
+  border: 1px solid rgba(201, 170, 255, 0.32);
+  border-radius: 999px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+
+  color: #decfff;
+  text-decoration: none;
+
+  background: rgba(125, 82, 190, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.about-closing-links a:hover {
+  transform: translateY(-2px);
+
+  background: rgba(153, 105, 222, 0.16);
+
+  color: #ffffff;
+}
+
 
     /* Mobile */
 
@@ -252,6 +813,25 @@
         gap: 25px;
         padding: 70px 0;
       }
+
+      .about-detail-section {
+  grid-template-columns: 1fr;
+  gap: 25px;
+  padding: 75px 0;
+}
+
+.creative-process {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.community-note {
+  grid-template-columns: 1fr;
+}
+
+.value-row {
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 30px;
+}
 
     }
 
@@ -278,6 +858,27 @@
       .curiosity-statement {
         padding-left: 20px;
       }
+
+      .creative-process,
+.life-grid,
+.dream-grid {
+  grid-template-columns: 1fr;
+}
+
+.value-row {
+  grid-template-columns: 1fr;
+  gap: 9px;
+}
+
+.baptism-video-header {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-closing {
+  padding-top: 90px;
+}
 
     }
 
@@ -447,12 +1048,581 @@
     </section>
 
 
-    <!-- More sections will be built next -->
-    <div class="about-continue" aria-hidden="true">
-      <span class="about-continue-line"></span>
-      <span class="about-continue-star">✦</span>
-      <span class="about-continue-line"></span>
+   <!-- =====================================================
+     02 / CREATIVITY
+     ===================================================== -->
+
+<section class="about-detail-section" data-aos="fade-up">
+
+  <div class="about-detail-label">
+    02 / CREATIVITY
+  </div>
+
+  <div class="about-detail-content">
+
+    <span class="about-section-kicker">
+      MAKING IDEAS TANGIBLE
+    </span>
+
+    <h2>
+      I like turning “what if?” into something real.
+    </h2>
+
+    <p>
+      Creativity, to me, is the process of taking an abstract idea
+      and finding a way to bring it into the real world. I enjoy
+      building the foundation first and then refining the details
+      until the result feels intentional, useful, and visually complete.
+    </p>
+
+    <p>
+      That mindset shows up in a lot of places in my life. I enjoy
+      imagining stories and games, designing websites, experimenting
+      with visual ideas, getting creative in the kitchen, and looking
+      for approaches that might not be the most obvious solution.
+    </p>
+
+    <div class="creative-process">
+
+      <div class="creative-step">
+        <span class="creative-number">01</span>
+        <strong>IMAGINE</strong>
+        <p>
+          Start with an idea, question, story, problem, or possibility.
+        </p>
+      </div>
+
+      <div class="creative-step">
+        <span class="creative-number">02</span>
+        <strong>BUILD</strong>
+        <p>
+          Give the idea structure and turn it into something functional.
+        </p>
+      </div>
+
+      <div class="creative-step">
+        <span class="creative-number">03</span>
+        <strong>REFINE</strong>
+        <p>
+          Experiment, adjust, and improve what does not quite work yet.
+        </p>
+      </div>
+
+      <div class="creative-step">
+        <span class="creative-number">04</span>
+        <strong>POLISH</strong>
+        <p>
+          Shape the visual details so the finished experience feels complete.
+        </p>
+      </div>
+
     </div>
+
+    <div class="creative-interests" aria-label="Creative interests">
+      <span>STORYTELLING</span>
+      <span>GAMES</span>
+      <span>WEBSITES</span>
+      <span>DESIGN</span>
+      <span>COOKING</span>
+      <span>PROBLEM SOLVING</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     03 / FAITH
+     ===================================================== -->
+
+<section class="about-detail-section" data-aos="fade-up">
+
+  <div class="about-detail-label">
+    03 / FAITH
+  </div>
+
+  <div class="about-detail-content">
+
+    <span class="about-section-kicker">
+      THE FOUNDATION BENEATH EVERYTHING
+    </span>
+
+    <h2>
+      Learning to trust beyond my own strength.
+    </h2>
+
+    <p>
+      I first came to faith in Jesus as a child. Growing up in the
+      church, I came to know God as my Savior, healer, provider, and
+      the foundation of my faith. At six years old, I was baptized
+      alongside my mom, which remains a special memory for me.
+    </p>
+
+    <p>
+      As I grew into adulthood, however, I found myself increasingly
+      relying on my own strength. I tried to control what I could,
+      carried fears on my own, and began placing limits on what I
+      trusted God to handle. Over time, that left me feeling spiritually
+      lost and searching for hope in places that could not truly provide it.
+    </p>
+
+    <p>
+      Returning more intentionally to my faith has meant learning to
+      surrender fear, anxiety, perfectionism, and the need for control.
+      I am learning to trust God with every part of my life rather than
+      only the parts I feel comfortable releasing.
+    </p>
+
+    <div class="faith-quote">
+      <p>
+        My childhood baptism is a memory I treasure. My adult baptism
+        was a decision I made intentionally for myself.
+      </p>
+    </div>
+
+    <p>
+      Choosing baptism again as an adult became a public declaration
+      of my faith and my desire to continue growing closer to Christ.
+      My faith shapes the values I try to carry into the rest of my
+      life: kindness, compassion, humility, perseverance, generosity,
+      and the way I treat the people around me.
+    </p>
+
+
+    <!-- Baptism Video -->
+    <div class="baptism-video">
+
+      <div class="baptism-video-header">
+        <span>MY BAPTISM STORY</span>
+        <span>A personal declaration of faith</span>
+      </div>
+
+      <div class="baptism-video-frame">
+
+        <iframe
+          src="https://player.vimeo.com/video/1212384731?h=356c3e9729"
+          title="Takeria Thompson baptism story"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     04 / COMMUNITY
+     ===================================================== -->
+
+<section class="about-detail-section" data-aos="fade-up">
+
+  <div class="about-detail-label">
+    04 / COMMUNITY
+  </div>
+
+  <div class="about-detail-content">
+
+    <span class="about-section-kicker">
+      FINDING A CHURCH HOME
+    </span>
+
+    <h2>
+      Faith grows differently when it is lived in community.
+    </h2>
+
+    <p>
+      My connection with Buckhead Church began through my partner,
+      who attended there as a child and later returned as an adult.
+      We first began watching services online together before eventually
+      attending in person.
+    </p>
+
+    <p>
+      Since then, I have been trying to become more involved rather than
+      simply attending services. That has included participating in Bible
+      study and small groups, meeting other people in the church community,
+      and creating more intentional space for faith in everyday life.
+    </p>
+
+    <p>
+      Buckhead Church also became the place where I chose to be baptized
+      again as an adult, making it an important part of this chapter of
+      my walk with Christ.
+    </p>
+
+    <div class="community-note">
+
+      <div>
+        <strong>BUCKHEAD CHURCH</strong>
+        <p>
+          A church community that has become part of my continued journey
+          of faith, connection, learning, and service.
+        </p>
+      </div>
+
+      <a
+        href="https://buckheadchurch.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="about-external-link"
+      >
+        Visit Church Website →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     05 / BEYOND THE SCREEN
+     ===================================================== -->
+
+<section class="about-detail-section" data-aos="fade-up">
+
+  <div class="about-detail-label">
+    05 / BEYOND THE SCREEN
+  </div>
+
+  <div class="about-detail-content">
+
+    <span class="about-section-kicker">
+      LIFE OUTSIDE TECHNOLOGY
+    </span>
+
+    <h2>
+      Curiosity doesn’t stop when the laptop closes.
+    </h2>
+
+    <p>
+      I’m naturally a more reserved and private person, but the people,
+      experiences, and interests outside of work are an important part
+      of what keeps me grounded.
+    </p>
+
+    <div class="life-grid">
+
+      <div class="life-item">
+        <span class="life-icon" aria-hidden="true">✦</span>
+        <h3>FAMILY &amp; FRIENDS</h3>
+        <p>
+          Some of my favorite time is simply time spent with the people
+          closest to me.
+        </p>
+      </div>
+
+      <div class="life-item">
+        <span class="life-icon" aria-hidden="true">✦</span>
+        <h3>TRAVEL</h3>
+        <p>
+          I enjoy seeing new places and hope to experience much more of
+          the world throughout my life.
+        </p>
+      </div>
+
+      <div class="life-item">
+        <span class="life-icon" aria-hidden="true">✦</span>
+        <h3>COOKING</h3>
+        <p>
+          The kitchen is another creative space for me, especially when
+          I can experiment and make something my own.
+        </p>
+      </div>
+
+      <div class="life-item">
+        <span class="life-icon" aria-hidden="true">✦</span>
+        <h3>READING</h3>
+        <p>
+          Reading gives me another way to explore ideas, stories, and
+          topics that catch my curiosity.
+        </p>
+      </div>
+
+      <div class="life-item">
+        <span class="life-icon" aria-hidden="true">✦</span>
+        <h3>GAMES</h3>
+        <p>
+          Video games, card games, board games—I enjoy the challenge,
+          stories, strategy, and time spent playing with others.
+        </p>
+      </div>
+
+      <div class="life-item">
+        <span class="life-icon" aria-hidden="true">✦</span>
+        <h3>TRYING SOMETHING NEW</h3>
+        <p>
+          I enjoy picking up new hobbies and seeing where an unexpected
+          interest might lead.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     06 / WHAT GUIDES ME
+     ===================================================== -->
+
+<section class="about-detail-section" data-aos="fade-up">
+
+  <div class="about-detail-label">
+    06 / WHAT GUIDES ME
+  </div>
+
+  <div class="about-detail-content">
+
+    <span class="about-section-kicker">
+      CHARACTER &amp; VALUES
+    </span>
+
+    <h2>
+      What I build matters. How I live matters more.
+    </h2>
+
+    <p>
+      I try to let my values show through how I treat people, how I
+      approach commitments, and how I respond when things do not go
+      according to plan.
+    </p>
+
+    <div class="values-list">
+
+      <div class="value-row">
+        <strong>FAITH</strong>
+        <p>
+          Keeping my relationship with God at the center of the values
+          and decisions that shape my life.
+        </p>
+      </div>
+
+      <div class="value-row">
+        <strong>KINDNESS</strong>
+        <p>
+          Trying to treat people with the compassion, patience, and
+          grace that Jesus demonstrated.
+        </p>
+      </div>
+
+      <div class="value-row">
+        <strong>DEPENDABILITY</strong>
+        <p>
+          Being someone people can trust to follow through and take
+          responsibilities seriously.
+        </p>
+      </div>
+
+      <div class="value-row">
+        <strong>LOYALTY</strong>
+        <p>
+          Valuing relationships and commitments instead of treating
+          people as temporary or transactional.
+        </p>
+      </div>
+
+      <div class="value-row">
+        <strong>GROWTH</strong>
+        <p>
+          Staying willing to learn, improve, reconsider, practice, and
+          become better than I was yesterday.
+        </p>
+      </div>
+
+      <div class="value-row">
+        <strong>CARE</strong>
+        <p>
+          I tend to care deeply—sometimes to a fault—but I would rather
+          be someone who genuinely cares than someone who has stopped trying.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     07 / LOOKING FORWARD
+     ===================================================== -->
+
+<section class="about-detail-section" data-aos="fade-up">
+
+  <div class="about-detail-label">
+    07 / LOOKING FORWARD
+  </div>
+
+  <div class="about-detail-content">
+
+    <span class="about-section-kicker">
+      DREAMS WORTH BUILDING TOWARD
+    </span>
+
+    <h2>
+      I’m building more than a career. I’m building a life.
+    </h2>
+
+    <p>
+      I have goals that stretch across different parts of who I am.
+      Some are professional, some deeply personal, and some I expect
+      will continue evolving as I do.
+    </p>
+
+    <div class="dream-grid">
+
+      <div class="dream-item">
+        <span class="dream-symbol" aria-hidden="true">✦</span>
+        <h3>BUILD</h3>
+        <p>
+          Grow into a successful and meaningful career in software
+          engineering while continuing to strengthen my craft.
+        </p>
+      </div>
+
+      <div class="dream-item">
+        <span class="dream-symbol" aria-hidden="true">✦</span>
+        <h3>EXPLORE</h3>
+        <p>
+          Travel the world, experience new places, and continue learning
+          from perspectives beyond my own.
+        </p>
+      </div>
+
+      <div class="dream-item">
+        <span class="dream-symbol" aria-hidden="true">✦</span>
+        <h3>FAMILY</h3>
+        <p>
+          Build a loving family and a meaningful life centered around
+          the relationships that matter most.
+        </p>
+      </div>
+
+      <div class="dream-item">
+        <span class="dream-symbol" aria-hidden="true">✦</span>
+        <h3>FAITH</h3>
+        <p>
+          Continue growing closer to God and becoming more confident
+          in trusting Him with every part of my life.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     08 / GIVING
+     ===================================================== -->
+
+<section class="about-detail-section" data-aos="fade-up">
+
+  <div class="about-detail-label">
+    08 / GIVING
+  </div>
+
+  <div class="about-detail-content">
+
+    <span class="about-section-kicker">
+      GENEROSITY &amp; SERVICE
+    </span>
+
+    <h2>
+      Faith should reach beyond what I believe.
+    </h2>
+
+    <p>
+      One of the ways I try to put my values into practice is through
+      generosity. Through my connection with Buckhead Church, I have
+      personally contributed to giving initiatives and organizations
+      connected with the church and its broader community.
+    </p>
+
+    <p>
+      For me, giving is not about recognition. It is about remembering
+      that what we have can become meaningful when it is used to serve
+      somebody beyond ourselves.
+    </p>
+
+    <div class="giving-links">
+
+      <a
+        href="https://berich.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="giving-link"
+      >
+        <span class="giving-link-name">Be Rich</span>
+        <span class="giving-link-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <div class="giving-link">
+        <span class="giving-link-name">Deeper Wider</span>
+        <span class="giving-link-arrow" aria-hidden="true">✦</span>
+      </div>
+
+      <div class="giving-link">
+        <span class="giving-link-name">Irresistible Church Network</span>
+        <span class="giving-link-arrow" aria-hidden="true">✦</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CLOSING
+     ===================================================== -->
+
+<section class="about-closing" data-aos="fade-up">
+
+  <span class="about-closing-star" aria-hidden="true">✦</span>
+
+  <h2>
+    Still learning. Still creating. Still becoming.
+  </h2>
+
+  <p>
+    I’m still learning, still creating, still growing in my faith,
+    and still discovering what some of the dreams ahead will look like.
+    I don’t expect that process to ever really stop—and I think that is
+    part of what makes the journey worthwhile.
+  </p>
+
+  <div class="about-closing-links">
+
+    <a href="projects.html">
+      Explore My Work →
+    </a>
+
+    <a href="experience.html">
+      View My Experience →
+    </a>
+
+    <a href="schedule.html">
+      Let’s Connect →
+    </a>
+
+  </div>
+
+</section>
 
 
   </main>
