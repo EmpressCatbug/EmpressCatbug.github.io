@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About Me | Takeria Thompson</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- AOS -->
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  />
+
+  <!-- Shared Site Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    /* =========================================================
+       ABOUT ME PAGE
+       ========================================================= */
+
+    .about-page {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 140px 0 120px;
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* Page Introduction */
+
+    .about-page-intro {
+      min-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px 0 100px;
+    }
+
+    .about-page-eyebrow {
+      display: block;
+      margin-bottom: 22px;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
+
+      color: #c9afff;
+    }
+
+    .about-page-intro h1 {
+      max-width: 980px;
+      margin: 0;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 1.02;
+      font-weight: 500;
+
+      color: #ffffff;
+
+      text-shadow:
+        0 0 18px rgba(203, 174, 255, 0.22),
+        0 0 48px rgba(145, 97, 226, 0.14);
+    }
+
+    .about-page-lead {
+      max-width: 720px;
+      margin: 34px 0 0;
+
+      font-size: 1.08rem;
+      line-height: 1.9;
+
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+
+    /* Intro Identity Line */
+
+    .about-identity-line {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+
+      margin-top: 48px;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+
+      color: rgba(216, 198, 255, 0.68);
+    }
+
+    .about-identity-line .identity-divider {
+      width: 45px;
+      height: 1px;
+
+      background: rgba(207, 181, 255, 0.35);
+    }
+
+    .about-identity-line .identity-star {
+      color: #d5c0ff;
+
+      text-shadow:
+        0 0 8px rgba(213, 192, 255, 0.7),
+        0 0 18px rgba(167, 118, 240, 0.5);
+    }
+
+
+    /* Opening Story */
+
+    .about-story {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 80px;
+
+      padding: 90px 0;
+
+      border-top: 1px solid rgba(207, 181, 255, 0.2);
+    }
+
+    .about-story-label {
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.72rem;
+      line-height: 1.7;
+      letter-spacing: 0.15em;
+
+      color: #cbb6ff;
+    }
+
+    .about-story-content {
+      max-width: 790px;
+    }
+
+    .about-story-content h2 {
+      margin: 0 0 28px;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      line-height: 1.18;
+      font-weight: 500;
+
+      color: #ffffff;
+    }
+
+    .about-story-content p {
+      margin: 0 0 24px;
+
+      font-size: 1rem;
+      line-height: 1.9;
+
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .about-story-content p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* Curiosity Statement */
+
+    .curiosity-statement {
+      margin-top: 46px;
+      padding: 28px 0 28px 30px;
+
+      border-left: 1px solid rgba(211, 187, 255, 0.5);
+    }
+
+    .curiosity-statement span {
+      display: block;
+      margin-bottom: 12px;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+
+      color: #cbb6ff;
+    }
+
+    .curiosity-statement p {
+      margin: 0;
+
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.8;
+
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+
+    /* Temporary Continue Marker */
+
+    .about-continue {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+
+      width: min(480px, 75%);
+      margin: 30px auto 20px;
+    }
+
+    .about-continue-line {
+      height: 1px;
+      flex: 1;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(205, 181, 255, 0.35)
+        );
+    }
+
+    .about-continue-line:last-child {
+      transform: rotate(180deg);
+    }
+
+    .about-continue-star {
+      color: #d5c0ff;
+
+      text-shadow:
+        0 0 8px rgba(213, 192, 255, 0.7),
+        0 0 18px rgba(167, 118, 240, 0.5);
+    }
+
+
+    /* Mobile */
+
+    @media (max-width: 850px) {
+
+      .about-page {
+        width: min(100% - 32px, 1180px);
+        padding-top: 110px;
+      }
+
+      .about-page-intro {
+        min-height: auto;
+        padding: 80px 0 90px;
+      }
+
+      .about-story {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 70px 0;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .about-page {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .about-page-intro h1 {
+        font-size: clamp(2.6rem, 13vw, 4.2rem);
+      }
+
+      .about-page-lead {
+        font-size: 0.98rem;
+      }
+
+      .about-identity-line {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .curiosity-statement {
+        padding-left: 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- Butterfly Cursor -->
+  <div class="butterfly-cursor"></div>
+
+  <!-- Sparkle Effect -->
+  <div id="sparkle-container"></div>
+
+
+  <!-- Celestial Background -->
+  <div id="background" aria-hidden="true">
+
+    <div class="shooting-stars">
+      <span class="shooting-star shooting-star-1"></span>
+      <span class="shooting-star shooting-star-2"></span>
+      <span class="shooting-star shooting-star-3"></span>
+      <span class="shooting-star shooting-star-4"></span>
+      <span class="shooting-star shooting-star-5"></span>
+    </div>
+
+  </div>
+
+
+  <!-- Main Navigation -->
+  <nav class="site-nav" aria-label="Main navigation">
+
+    <a href="home.html" class="nav-brand" aria-label="Takeria Thompson home">
+      <span class="nav-star">✦</span>
+      <span class="nav-name">Takeria Thompson</span>
+    </a>
+
+    <div class="nav-links">
+
+      <a href="home.html" class="nav-link">
+        Home
+      </a>
+
+      <a href="about.html" class="nav-link active">
+        About
+      </a>
+
+      <a href="experience.html" class="nav-link">
+        Experience
+      </a>
+
+      <a href="projects.html" class="nav-link">
+        Projects
+      </a>
+
+      <a href="schedule.html" class="nav-link nav-schedule">
+        Schedule a Call
+      </a>
+
+      <a href="home.html#contact" class="nav-link">
+        Contact
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <main class="about-page">
+
+
+    <!-- =====================================================
+         INTRODUCTION
+         ===================================================== -->
+
+    <section class="about-page-intro" data-aos="fade-up">
+
+      <span class="about-page-eyebrow">
+        ABOUT ME
+      </span>
+
+      <h1>
+        There’s more to me than what I build.
+      </h1>
+
+      <p class="about-page-lead">
+        I’m an engineer, creator, lifelong learner, and person of faith.
+        Curiosity pushes me to understand how things work, creativity
+        challenges me to imagine what they could become, and the people
+        and values I care about keep me grounded along the way.
+      </p>
+
+      <div class="about-identity-line" aria-label="Personal themes">
+
+        <span>CURIOSITY</span>
+
+        <span class="identity-divider"></span>
+
+        <span>CREATIVITY</span>
+
+        <span class="identity-star" aria-hidden="true">✦</span>
+
+        <span>FAITH</span>
+
+        <span class="identity-divider"></span>
+
+        <span>GROWTH</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         01 / MY STORY
+         ===================================================== -->
+
+    <section class="about-story" data-aos="fade-up">
+
+      <div class="about-story-label">
+        01 / MY STORY
+      </div>
+
+      <div class="about-story-content">
+
+        <h2>
+          Curiosity has a habit of becoming a project.
+        </h2>
+
+        <p>
+          I’ve always been drawn to learning by doing. When something
+          catches my interest, I tend to go down the rabbit hole—reading,
+          watching, researching, experimenting, and trying to understand
+          as much of it as I can.
+        </p>
+
+        <p>
+          Learning something conceptually is only part of the process for
+          me. I want to put it into practice. Sometimes that means finding
+          an exercise to work through, and other times it means creating
+          an entire project simply because I want somewhere to apply what
+          I’m learning.
+        </p>
+
+        <p>
+          That mindset is one of the things that draws me to software
+          engineering. Technology is constantly changing. There will
+          always be another problem to understand, another tool to explore,
+          or another skill worth developing—and I genuinely enjoy that.
+        </p>
+
+
+        <div class="curiosity-statement">
+
+          <span>HOW I LEARN</span>
+
+          <p>
+            Explore deeply. Practice deliberately. Build something.
+            Learn from what didn’t work. Then keep going.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- More sections will be built next -->
+    <div class="about-continue" aria-hidden="true">
+      <span class="about-continue-line"></span>
+      <span class="about-continue-star">✦</span>
+      <span class="about-continue-line"></span>
+    </div>
+
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Takeria Thompson | Crafted with stardust ✨</p>
+  </footer>
+
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop preload="auto">
+    <source
+      src="assets/Claude Debussy Claire De Lune added reverb.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
+
+  <button
+    id="musicToggle"
+    class="music-toggle playing"
+    aria-label="Toggle background music"
+  >
+    ☾
+  </button>
+
+
+  <!-- Scripts -->
+  <script src="music.js"></script>
+  <script src="script.js"></script>
+  <script src="particles.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>
